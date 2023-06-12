@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+   
+
+}
+body{
+    background-color: #24164B;;
+}
+.home-bar{
+    position: sticky;
+    display: flex;
+    flex-direction: row;
+}
+.logo{
+    color: aliceblue;
+    margin-top: 40px;
+    margin-left: 40px;
+    font-size: 45px;
+    letter-spacing: 3px;
+}
+.logo-img{
+    position: absolute;
+    margin-top: 40px;
+    margin-left: 220px;
+    width: 170px;
+}
+.menu-icon{
+    display: none;
+}
+nav{
+    margin-top: -66px;
+    position: absolute;
+    right: 0px;
+    margin-right:70px ;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    
+    
+}
+nav ul li{
+    list-style: none;
+    padding-left: 30px;
+    font-size: 23px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 3px;
+}
+li:hover{
+    font-size: 28px;
+    
+}
+.slogan{
+    color: #FFFFFF;
+    font-weight: 100;
+    font-size: 57px;
+    max-width: 1000px;
+    margin-top: 100px;
+    margin-left: 70px;
+    line-height: 90px;
+}
+.chat-img{
+    position: absolute;
+    top: 200px;
+    left: 900px;
+    filter: drop-shadow(0px 3px 101px rgba(112, 0, 255, 0.72));
+}
+.signup-btn{
+    position: relative;
+    width: 170px;
+    height: 56px;
+    left: 212px;
+    top: 80px;
+    border-style: none;
+    background: #7000FF;
+    box-shadow: 0px 4px 44px -7px rgba(112, 0, 255, 0.67), inset 0px 0px 16px 13px #7E1AFF;
+    border-radius: 30px;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 900px){
+    .nav-box{
+        position: sticky;
+        margin-top: -40px;
+        transform: translateY(-120%);
+        transition: transform 0.6s;
+    }
+    .display{
+        transform: translateY(15%);
+    }
+    .home-bar{
+        position: sticky;
+        top: 0px;
+        background-color: #24164B;
+
+    }
+    nav{
+        position: sticky;
+        z-index: 2;
+        background: rgba(217, 217, 217, 0.04);
+        border: 0.1px solid #FFFFFF;
+        backdrop-filter: blur(25.5px);
+        border-radius: 5px;
+        width: auto ;
+        height: auto;
+        
+    }
+    nav ul{
+        padding-left: 20px;
+        padding-right: 30px;
+        padding-bottom: 40px;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        
+    }
+    nav ul li{
+        font-size: 24px;
+        letter-spacing: 1px;
+        color: #ffffff;
+        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        font-weight: 500;
+        
+     
+    }
+    li:hover{
+        font-size: 30px;
+    }
+    
+    .logo{
+        margin: 20px;
+        font-size: 27px;
+        letter-spacing: 4px;
+    }
+    .logo-img{
+        
+        margin: 18px;
+        width: 100px;
+        margin-left: 140px;
+    }
+    .menu-icon{
+        position: absolute;
+        display: block;
+        width: 30px;
+        margin-top: 26px;
+        right: 50px;
+       
+    }
+    .container{
+        z-index: -1;
+
+    }
+    .slogan{
+        top: 10px;
+        z-index: -1;
+        position: absolute;
+        max-width: 300px;
+        font-size: 35px;
+        line-height: 50px;
+        margin-left: 16px;
+    }
+    .signup-btn{
+        position: relative;
+        top: -120px;
+        left: 18px;
+        z-index: -1;
+        height: 45px;
+        width: 150px;
+    }
+    .chat-img{
+        position: absolute;
+        width: 300px;
+        top: 350px;
+        left: 28px;
+        z-index: -1;
+    }
+
+}
