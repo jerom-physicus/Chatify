@@ -8,7 +8,7 @@
 
 }
 body{
-    background-color: #24164B;;
+    background-color: #1e133e;;
 }
 .home-bar{
     position: sticky;
@@ -90,6 +90,7 @@ li:hover{
         margin-top: -40px;
         transform: translateY(-120%);
         transition: transform 0.6s;
+        z-index: 1;
     }
     .display{
         transform: translateY(15%);
@@ -154,33 +155,31 @@ li:hover{
         right: 50px;
        
     }
-    .container{
-        z-index: -1;
-
-    }
+   
     .slogan{
         top: 10px;
-        z-index: -1;
+        
         position: absolute;
-        max-width: 300px;
+        margin-right: 20px;
         font-size: 35px;
         line-height: 50px;
         margin-left: 16px;
     }
     .signup-btn{
-        position: relative;
-        top: -120px;
+        position: absolute;
+        top: 350px;
+        margin-bottom: 200px;
         left: 18px;
-        z-index: -1;
+        
         height: 45px;
         width: 150px;
     }
     .chat-img{
         position: absolute;
         width: 300px;
-        top: 350px;
+        top: 390px;
         left: 28px;
-        z-index: -1;
+        
     }
 
 }
