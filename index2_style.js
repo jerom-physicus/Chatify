@@ -18,20 +18,22 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 
 var email = localStorage.getItem('email');
+const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
 user_name.innerHTML = email
 
+
 document.getElementById('create-room-int').addEventListener('click',function(){
-    var room_name = document.getElementById('room-name-int').value
+    let room_name = document.getElementById('room-name-int').value
     var room_key = document.getElementById('room-key-int').value
     onValue(data,function(snapshot){  
         let values = Object.keys(snapshot.val('room_name'))
-        for (let i=0 ; i <values.length; i++){
-          let rooms = values[i]
-          console.log(rooms)
-          if(room_name.includes(rooms)){
-            alert("room name already used")
+        console.log(values)
+       
+          if(values.indexOf(room_name) !== -1){
+            alert("room name already exist")
+            
           }
           else{
             if (room_key == ''){  
@@ -51,22 +53,28 @@ document.getElementById('create-room-int').addEventListener('click',function(){
             }
           }
 
-        }  
+          
     })
 })
     
-    
+ 
   
-onValue(data,function(snapshot){  
+onValue(data,function(snapshot){ 
+   
+    add.innerHTML = "" 
     let values = Object.keys(snapshot.val('room_name'))
+    
     let setdata = Object.entries(snapshot.val())
     for (let i=0 ; i <values.length; i++){
       let itemsarray = setdata[i]
       let room_key =itemsarray[0]
-      let room_name =itemsarray[1]  
+      let room_name =itemsarray[1] 
+       
       appendListElement(values[i],room_name)
+      
     }  
 })
+ 
 
 onValue(data2,function(snapshot){  
     let values = Object.values(snapshot.val())
@@ -84,28 +92,44 @@ function appendListElement(values,room_name){
     newEl.textContent =values
     add.append(newEl)
     newEl.addEventListener('click',function(){
+    
+      document.getElementById('join-delete-alert').style.display = 'block'
+      document.getElementById('join-icon').addEventListener('click',function(){
         let data = ref(db,"rooms/"+values)
         let data2 =( db,"rooms/"+values)
         localStorage.setItem('room_data', data2);
         localStorage.setItem('room_name', values);
         window.location.href ='chat.html'
 
+      })
+      document.getElementById('trash-icon').addEventListener('click',function(){
+        
+        onValue(ref(db,"rooms/"+values),function(snapshot){
+          let dbemail = Object.values(snapshot.val('email'))
+          if(dbemail[0]==email){
+            remove(ref(db,"rooms/"+values))
+
+          }
+          else{
+            alert("you are not allowed to delete this room")
+          }
+
+
+        })
+       
+        
+      })
+      
+
 
       
-        onValue(data,function(snapshot){  
-            let values = Object.values(snapshot.val())
-            let setdata = Object.entries(snapshot.val())
-            
-            for (let i=0 ; i <values.length; i++){
-              let itemsarray = setdata[i]
-              let room_name =itemsarray[1]  
-              appendListChatElement(values[i])
-            }  
-        })
+      
     })
 }
 
-
+function removeItemsBykey(keys,username){
+  remove(ref(database,username+`/${keys}`))
+}
 function appendListElement2(values){
     let newEl = document.createElement("li")
 
@@ -147,7 +171,10 @@ function appendListChatElement(values){
 
 
 
+document.getElementById('close_icon').addEventListener('click',function(){
+  document.getElementById('join-delete-alert').style.display = 'none'
 
+})
 
 
 

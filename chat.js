@@ -23,11 +23,14 @@ const room_name = localStorage.getItem('room_name');
 document.getElementById("room_title").innerHTML = room_name
 user_name.innerHTML = email
 
-onValue(ref(db,"rooms/"+room_name),function(snapshot){  
+onValue(ref(db,"rooms/"+room_name),function(snapshot){ 
+    chat.innerHTML = ""
     let values = Object.values(snapshot.val())
     let setdata = Object.entries(snapshot.val())
+    let values_length = values.length
+    let sorted_value = values_length-2
     
-    for (let i=0 ; i <values.length; i++){
+    for (let i=0 ; i <sorted_value; i++){
       let itemsarray = setdata[i]
       let room_name =itemsarray[1]  
       appendListChatElement(values[i])
@@ -41,7 +44,8 @@ function appendListChatElement(values){
     
 }
 document.getElementById('send-btn').addEventListener('click',function(){
-    const message_chat = document.getElementById('chat-int').value
+    const message_chat = document.getElementById('chat_int').value
+    chat_int.value = ""
     push(ref(db,"rooms/"+room_name),message_chat)
-    location.reload();
+   
 })

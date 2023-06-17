@@ -91,7 +91,7 @@ body{
 }
 .profile-head{
     display: flex;
-    position: fixed;
+    position: absolute;
   
 }
 .profile-img{

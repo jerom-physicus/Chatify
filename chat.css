@@ -15,6 +15,9 @@ body{
 .chat-interface{
     left: 550px;
 }
+.room_title{
+    font-weight: lighter;
+}
 @media only screen and (max-width: 900px){
     .chat-interface{
         left: 15px;
