@@ -106,7 +106,12 @@ function appendListElement(values,room_name){
         
         onValue(ref(db,"rooms/"+values),function(snapshot){
           let dbemail = Object.values(snapshot.val('email'))
-          if(dbemail[0]==email){
+          let sorted = dbemail.length
+          let emailindex = sorted-2
+
+          console.log(dbemail[emailindex])
+          if(dbemail[emailindex]==email){
+            console.log("reoved")
             remove(ref(db,"rooms/"+values))
 
           }
