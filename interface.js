@@ -16,10 +16,10 @@ const firebaseConfig = {
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
-const room_name = document.getElementById('room-name').value
+
 const data = ref(db,"rooms/"+room_name)
 var value = localStorage.getItem('email');
-document.getElementById('user_name').innerHTML = 'value'
+
 
 
 

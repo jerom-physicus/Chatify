@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+    box-sizing: border-box;
+   
+
+}
+
+body{
+    background-color: #130c28;
+    color: aliceblue;
+}
+.chat-interface{
+    left: 550px;
+}
+@media only screen and (max-width: 900px){
+    .chat-interface{
+        left: 15px;
+        width: 330px;
+        height: 530px;
+    }
+    .room_title{
+        font-size: 24px;
+    }
+    .chat-input{
+        width: 290px;
+        height: 40px;
+    }
+    .send-icon{
+        width: 20px;
+    }
+    .chat-interface-content{
+        height: 370px;
+    }
+}

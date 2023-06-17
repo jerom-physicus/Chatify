@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="interface.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <div class="home-bar">
+        <h2 class="logo">Chatify</h2>
+        <img class="logo-img" src="chatifi-logo.png" alt="">
+        <div class="profile-head">
+            <img src="profile.png" class="profile-img-mobile" alt="">
+            <h3 class="user-name-mobile" id="user_name">user-name</h3>
+
+        </div>
+
+        <img class="menu-icon" id="menu-btn" src="whitemenu.png" alt="">
+
+    </div>
+    <div class="nav-box" id="nav-box">
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"> Home</li>
+                <li class="li">About</li>
+                <li class="li">Features</li>
+                <li class="li">Contact</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="chat-interface">
+        <h3 id="room_title"class="room_title">room_name</h3>
+        <div class="chat-interface-content">
+            <ul id="chat" class="chat">
+
+            </ul>
+        </div>
+        <img src="send.png" class="send-icon" id="send-btn">
+        <input placeholder="Message" type="text" class="chat-input" id="chat-int">
+
+    </div>
+    <script type="module" src="chat.js"></script>
+    
+</body>
+</html>
