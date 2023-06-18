@@ -43,7 +43,7 @@ body{
     margin-left: 220px;
     width: 150px;
 }
-.menu-icon{
+.menu2-icon{
     display: none;
 }
 .nav{
@@ -264,6 +264,13 @@ border-radius: 16px;
         transform: translateX(-200%);
         transition: transform 0.6s;
         z-index: 1;
+    }
+    .menu2-icon{
+        width: 30px;
+        right: -60px;
+        top: 25px;
+        position: absolute;
+        display: block;
     }
     .display{
         transform: translateX(-0%);

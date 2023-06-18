@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,700;1,900&family=Roboto:ital,wght@0,300;1,400;1,500&display=swap');
 *{
     margin: 0;
     padding: 0;
-    font-family: 'poppins', sans-serif;
+    font-family: 'poppins';
     box-sizing: border-box;
    
 
@@ -12,11 +12,14 @@ body{
     background-color: #130c28;
     color: aliceblue;
 }
+.menu3-icon{
+    display: none;
+}
 .chat-interface{
     left: 550px;
 }
 .room_title{
-    font-weight: lighter;
+    font-weight: 500;
 }
 @media only screen and (max-width: 900px){
     .chat-interface{
@@ -36,5 +39,12 @@ body{
     }
     .chat-interface-content{
         height: 370px;
+    }
+    .menu3-icon{
+        width: 30px;
+        right: -60px;
+        display: block;
+        top: 25px;
+        position: absolute;
     }
 }
