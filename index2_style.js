@@ -206,7 +206,7 @@ document.getElementById('open-room-btn2').addEventListener('click',function(){
     
 })
 
-let button = document.querySelector(".menu-icon"),
+let button = document.querySelector(".menu2-icon"),
     links = document.querySelector(".nav-box");
 
     button.addEventListener("click",()=>{
@@ -226,6 +226,8 @@ document.getElementById('create-room-btn').addEventListener('click',function(){
 
 
 })
+
+
 document.getElementById('create-room-int').addEventListener('click',function(){
     document.getElementById('open-close-display').style.display ="block"
     document.getElementById('room-btns').style.display ="block"

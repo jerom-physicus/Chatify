@@ -11,8 +11,10 @@
 body{
     background-color: #130c28;
     color: aliceblue;
+    overflow-y: scroll;
+    overflow-x: scroll;
 }
-.menu3-icon{
+.menu4-icon{
     display: none;
 }
 .chat-interface{
@@ -22,6 +24,13 @@ body{
     font-weight: 500;
 }
 @media only screen and (max-width: 900px){
+    .menu4-icon{
+        top: 25px;
+        display: block;
+        position: absolute;
+        width: 30px;
+        right: 40px;
+    }
     .chat-interface{
         left: 15px;
         width: 330px;

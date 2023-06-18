@@ -235,7 +235,7 @@ font-weight: 400;
      
      }
      body{
-        height: 100%;
+        
         overflow-y: hidden;
         position: fixed;
      }

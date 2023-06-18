@@ -241,7 +241,7 @@ body{
     left: 270px;
 }
 .create-room-btn{
-    position: absolute;
+  position: absolute;  
 width: 223px;
 height: 51px;
 left: 100px;
@@ -254,6 +254,7 @@ background: #34224B;
 border: 1px solid #FFFFFF;
 text-align: left;
 border-radius: 16px;
+
 }
 
 
@@ -267,7 +268,7 @@ border-radius: 16px;
     }
     .menu2-icon{
         width: 30px;
-        right: -60px;
+        right: 40px;
         top: 25px;
         position: absolute;
         display: block;
@@ -287,7 +288,7 @@ border-radius: 16px;
         border: 0.1px solid #FFFFFF;
         backdrop-filter: blur(25.5px);
         border-radius: 5px;
-        width: auto ;
+        width: 300px ;
         height: auto;
         
     }

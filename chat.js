@@ -49,3 +49,23 @@ document.getElementById('send-btn').addEventListener('click',function(){
     push(ref(db,"rooms/"+room_name),message_chat)
    
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+let button = document.querySelector(".menu4-icon"),
+    links = document.querySelector(".nav-box");
+
+    button.addEventListener("click",()=>{
+        links.classList.toggle("display")
+})
