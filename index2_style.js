@@ -27,34 +27,42 @@ user_name.innerHTML = email
 document.getElementById('create-room-int').addEventListener('click',function(){
     let room_name = document.getElementById('room-name-int').value
     var room_key = document.getElementById('room-key-int').value
+    onValue(data2,function(snapshot){  
+      globalThis.values2 = Object.keys(snapshot.val('room_name'))})
     onValue(data,function(snapshot){  
-        let values = Object.keys(snapshot.val('room_name'))
-        console.log(values)
-       
-          if(values.indexOf(room_name) !== -1){
-            alert("room name already exist")
-            
-          }
-          else{
-            if (room_key == ''){  
-                set(ref(db,"rooms/"+room_name), {
-                    email:email,
-                    room_name:room_name                 
-                  });
-        
-            }
-            else{
-                set(ref(db,"rooms2/"+room_name), {
-                    email:email,
-                    room_name:room_name,
-                    room_key:room_key
-                   
-                  });
-            }
-          }
-
+      globalThis.values = Object.keys(snapshot.val('room_name'))
           
     })
+    let totalroom = values.concat(values2)
+    console.log(totalroom)
+    let room_name2 = room_name.replace(' ','')
+    if (room_name2 == ''){
+      alert("room name can't be 'null'")
+
+    }
+    else{
+      if(totalroom.includes(room_name)) {
+        alert("room name already exist")
+
+      }
+      else{
+        if (room_key == ''){  
+          set(ref(db,"rooms/"+room_name), {
+              email:email,
+              room_name:room_name                 
+            });
+  
+      }
+      else{
+          set(ref(db,"rooms2/"+room_name), {
+              email:email,
+              room_name:room_name,
+              room_key:room_key
+             
+            });
+      }
+      }
+    }
 })
     
  
@@ -76,7 +84,8 @@ onValue(data,function(snapshot){
 })
  
 
-onValue(data2,function(snapshot){  
+onValue(data2,function(snapshot){ 
+  add2.innerHTML = ""  
     let values = Object.values(snapshot.val())
     let setdata = Object.entries(snapshot.val())
     for (let i=0 ; i <values.length; i++){
@@ -97,8 +106,10 @@ function appendListElement(values,room_name){
       document.getElementById('join-icon').addEventListener('click',function(){
         let data = ref(db,"rooms/"+values)
         let data2 =( db,"rooms/"+values)
+        let room = 'room'
         localStorage.setItem('room_data', data2);
         localStorage.setItem('room_name', values);
+        localStorage.setItem('room_type', room);
         window.location.href ='chat.html'
 
       })
@@ -109,7 +120,6 @@ function appendListElement(values,room_name){
           let sorted = dbemail.length
           let emailindex = sorted-2
 
-          console.log(dbemail[emailindex])
           if(dbemail[emailindex]==email){
             console.log("reoved")
             remove(ref(db,"rooms/"+values))
@@ -132,20 +142,74 @@ function appendListElement(values,room_name){
     })
 }
 
-function removeItemsBykey(keys,username){
-  remove(ref(database,username+`/${keys}`))
-}
-function appendListElement2(values){
-    let newEl = document.createElement("li")
 
+function appendListElement2(values){
+  
+    let newEl = document.createElement("li")
     newEl.textContent =values
     add2.append(newEl)
+    newEl.addEventListener('click',function(){
+      document.getElementById('trash-icon2').addEventListener('click',function(){
+        onValue(ref(db,"rooms2/"+values),function(snapshot){
+          let dbemail = Object.values(snapshot.val('email'))
+          let sorted = dbemail.length
+          let emailindex = sorted-3  
+          if(dbemail[emailindex]==email){
+            console.log("reoved")
+            remove(ref(db,"rooms2/"+values))
+          }
+          else{
+            alert("you are not allowed to delete this room")
+          }
+        })
+      })
+
+      
+      onValue(ref(db,"rooms2/"+values),function(snapshot){  
+        let dbemail = Object.values(snapshot.val('room_key'))
+       // console.log(values[1])
+       // let dbemail = Object.values(snapshot.val('email'))
+        let sorted = dbemail.length
+        let emailindex = sorted-2
+        let dbkey = dbemail[emailindex] 
+        document.getElementById('join-delete-alert2').style.display = 'block'
+        document.getElementById('join-icon2').addEventListener('click',function(){
+          var key = document.getElementById('key-input2').value
+          let data = ref(db,"rooms/"+values)
+          let data2 =( db,"rooms2/"+values)
+          console.log(key)
+          if (key == dbkey){
+            console.log("hello")
+            localStorage.setItem('room_data', data2);
+            localStorage.setItem('room_name', values);
+            localStorage.setItem('room_type', 'room2');
+            window.location.href ='chat.html'
+          }
+          else{
+            alert("wrong password try again")
+          }
+          
+        
+        //localStorage.setItem('room_data', data2);
+        //localStorage.setItem('room_name', values);
+        //window.location.href ='chat.html'
+
+
+      })
+      })
+      
+
+    })  
+    
 }
 function appendListChatElement(values){
     let chat_li = document.createElement("li")
     chat_li.textContent =values
     chat.append(chat_li)
     room_title.innerHTML = values
+}
+function removeItemsBykey(keys,username){
+  remove(ref(database,username+`/${keys}`))
 }
 //document.getElementById('create').addEventListener('click',function(){
  // const name = document.getElementById('room-name').value
@@ -181,7 +245,10 @@ document.getElementById('close_icon').addEventListener('click',function(){
 
 })
 
+document.getElementById('close_icon2').addEventListener('click',function(){
+  document.getElementById('join-delete-alert2').style.display = 'none'
 
+})
 
 
 

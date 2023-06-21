@@ -1,4 +1,4 @@
-let items = [1,3,5,2,45]
-let sorted = items.length
-
-console.log(sorted-2)
+const nums = ['email', 'room_name', 'make room', 'moto2 closed room', 'sample closed room', 'summa2'];
+const tryit = 'room_name';
+console.log(nums.includes(tryit));
+// true
