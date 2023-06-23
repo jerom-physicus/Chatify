@@ -153,9 +153,9 @@ function appendListElement2(values){
         onValue(ref(db,"rooms2/"+values),function(snapshot){
           let dbemail = Object.values(snapshot.val('email'))
           let sorted = dbemail.length
-          let emailindex = sorted-3  
+          let emailindex = sorted-3 
+          console.log(dbemail[emailindex]) 
           if(dbemail[emailindex]==email){
-            console.log("reoved")
             remove(ref(db,"rooms2/"+values))
           }
           else{
@@ -177,9 +177,7 @@ function appendListElement2(values){
           var key = document.getElementById('key-input2').value
           let data = ref(db,"rooms/"+values)
           let data2 =( db,"rooms2/"+values)
-          console.log(key)
           if (key == dbkey){
-            console.log("hello")
             localStorage.setItem('room_data', data2);
             localStorage.setItem('room_name', values);
             localStorage.setItem('room_type', 'room2');
@@ -188,6 +186,10 @@ function appendListElement2(values){
           else{
             alert("wrong password try again")
           }
+          
+           
+            
+          
           
         
         //localStorage.setItem('room_data', data2);

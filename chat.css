@@ -14,46 +14,130 @@ body{
     overflow-y: scroll;
     overflow-x: scroll;
 }
-.menu4-icon{
-    display: none;
-}
+
 .chat-interface{
     left: 550px;
+}
+.chat-interface{
+    position: absolute;
+    width: 418px;
+    height: 630px;
+    left: 758px;
+    top: 94px;
+    border-radius: 7px;
 }
 .room_title{
     font-weight: 500;
 }
 @media only screen and (max-width: 900px){
-    .menu4-icon{
-        top: 25px;
-        display: block;
+    .profile-head{
+        display: flex;
+        flex-direction: column;
+        width: 360px;
+        height: 50px;
+        flex-shrink: 0;
+        border-radius: 0px 0px 16px 16px;
+        background: #24164B;
+    }
+    .profile-img-mobile-chat{
         position: absolute;
+        top: 10px;
+        left: 60px;
         width: 30px;
-        right: 40px;
+        height: 30px;
     }
-    .chat-interface{
-        left: 15px;
-        width: 330px;
-        height: 530px;
-    }
-    .room_title{
-        font-size: 24px;
+    .arrow{
+        position: relative;
+        width: 30px;
+        top: 10px;
+        left: 10px;
     }
     .chat-input{
-        width: 290px;
-        height: 40px;
+        position: absolute;
+        bottom: -10px;
+        width: 320px;
+        height: 45px;
+        left: 5px;
+        color: #FFFFFF;
+        border-style: none;
+        font-size: 17px;
+        padding-left: 20px;
+        background: #46386C;
+        opacity: 0.86;
+        backdrop-filter: blur(39px);
+    
+        border-radius: 8px;
     }
-    .send-icon{
-        width: 20px;
+    .chat{
+        list-style: none;
     }
     .chat-interface-content{
-        height: 370px;
-    }
-    .menu3-icon{
-        width: 30px;
-        right: -60px;
-        display: block;
-        top: 25px;
         position: absolute;
+        top: 10px;
+        left: 0px;
+        overflow-y: auto;
+        width: 330px;
+        height: 520px;
+       
     }
+    
+    .chat{
+        display: flex;
+        flex-direction: column;
+       
+      
+    }
+       
+    .chat li{
+        margin-top: 17px;
+        width: fit-content;
+        height: fit-content;
+        position: relative;
+        list-style: none;
+        background-color: rgb(115, 37, 251);
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        border-radius: 6px;
+        text-align: center;
+        user-select: none;
+        font-weight: 400;
+        font-size: 15px;
+        row-gap: 20px;
+       
+       
+    }
+    .chat li:hover{
+        font-size: 15px;
+    }
+    .send-icon{
+        position: absolute;
+        width: 25px;
+        right: 40px;
+        bottom: 0px;
+        z-index: 1;
+    }
+    .user-name-mobile-chat{
+        position: absolute;
+        left: 130px;
+        top: 10px;
+        font-size: 20px;
+        font-weight: 400;
+
+    }
+    .chat-interface{
+        position: absolute;
+        top: 50px;
+        left: 15px;
+        width: 330px;
+        height: 570px;
+    }
+    
+ 
+    .send-icon{
+        width: 23px;
+    }
+   
+    
 }

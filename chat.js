@@ -22,7 +22,6 @@ const roomtype = localStorage.getItem('room_type');
 var email = localStorage.getItem('email');
 const room_name = localStorage.getItem('room_name');
 document.getElementById("room_title").innerHTML = room_name
-user_name.innerHTML = email
 
 if(roomtype =='room'){
   onValue(ref(db,'rooms/'+room_name),function(snapshot){ 
@@ -93,9 +92,6 @@ else{
 
 
 
-let button = document.querySelector(".menu4-icon"),
-    links = document.querySelector(".nav-box");
-
-    button.addEventListener("click",()=>{
-        links.classList.toggle("display")
+document.getElementById("back-btn").addEventListener('click',function(){
+  window.location.href = 'index2.html'
 })

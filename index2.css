@@ -79,16 +79,7 @@ body{
     background: #24164B;
     border-radius: 7px;
 }
-.chat-interface{
-    position: absolute;
-    width: 418px;
-    height: 630px;
-    left: 758px;
-    top: 94px;
-    
-    background: #24164B;
-    border-radius: 7px;
-}
+
 .profile-head{
     display: flex;
     position: absolute;

@@ -186,15 +186,7 @@ body{
 .chat{
     list-style: none;
 }
-.chat-interface-content{
-    position: relative;
-    top: 20px;
-    left: 20px;
-    overflow-y: auto;
-    width: 400px;
-    height: 470px;
-   
-}
+
 
 .chat{
     display: flex;
@@ -239,7 +231,7 @@ body{
     position: absolute;
     width: 240px;
     height: 180px;
-    left: 85px;
+    left: 105px;
     top: 240px;
     background: rgba(115, 0, 255, 0.41);
     border: 1px solid #FFFFFF;
@@ -284,7 +276,7 @@ body{
     position: absolute;
     width: 240px;
     height: 180px;
-    left: 35px;
+    left: 70px;
     top: 30px;
     background: #24164B;
     box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
