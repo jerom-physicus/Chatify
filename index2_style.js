@@ -286,8 +286,19 @@ document.getElementById('create-room-btn').addEventListener('click',function(){
     document.getElementById('open-close-display').style.display ="none"
     document.getElementById('room-btns').style.display ="none"
     document.getElementById('create-interface').style.display ="block"
-    document.getElementById('create-room-btn').style.display ="none"
     document.getElementById('add-img').style.display ="none"
+})
+document.getElementById('home-btn').addEventListener('click',function(){
+  window.location.href = 'index.html'
+
+})
+document.getElementById('room-btn').addEventListener('click',function(){
+  document.getElementById('open-close-display').style.display ="block"
+  document.getElementById('room-btns').style.display ="block"
+  document.getElementById('create-interface').style.display ="none"
+  document.getElementById('add-img').style.display ="block"
+  document.getElementById('rooms-page').style.display ="block"
+
 
 
 

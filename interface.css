@@ -16,9 +16,37 @@ body{
 .add_room{
 
     position: relative;
-    top: 20px;
+    top: 50px;
 
 }
+.btm-nav{
+    position: absolute;
+    bottom: 10px;
+    left: 40px;
+    display: flex;
+    height: 48px;
+    padding: 9px 58px 9px 66px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 78px;
+    flex-shrink: 0;
+    border-radius: 98px;
+    background: #0F091D;
+    box-shadow: 0px 4px 24px 3px rgba(15, 9, 29, 0.74);
+ }
+ .room-icon{
+    width: 20px;
+ }
+ .home-icon{
+    width: 20px;
+ }
+ .plus-icon{
+    width: 20px;
+ }
+ .add_room {
+    position: absolute;
+    top: 60px;
+ }
 
 .add_room li{
     flex-grow: 1;
@@ -28,8 +56,32 @@ body{
     left: 16px;
     top: 103px;
     padding: 10px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 40px;
+    width: fit-content;
+    padding-right: 40px;
+    background: #4E3F78;
+    list-style: none;
+    border-radius: 6px;
+    text-align: center;
+    user-select: none;
+ 
+
+}
+.add_room2{
+    position: absolute;
+    top: 70px;
+}
+.add_room2 li{
+    flex-grow: 1;
+    list-style: none;
+    padding-top: 7px;
+    margin: 20px; 
+    left: 16px;
+    top: 103px;
+    padding: 10px;
+    padding-left: 40px;
+    width: fit-content;
+    padding-right: 40px;
     background: #4E3F78;
     list-style: none;
     border-radius: 6px;
@@ -43,12 +95,12 @@ body{
 }
 .create-interface{
     border-radius: 5px;
-    border-style:  solid;
+    border-style:  none;
     border-width: 1px;
     position: absolute;
     height: 400px;
     width: 300px;
-    top: 150px;
+    top: 120px;
     left: 60px;
     
 }
@@ -165,8 +217,7 @@ body{
     border-radius: 6px;
     text-align: center;
     user-select: none;
- 
-font-weight: 400;
+    font-weight: 400;
     font-size: 15px;
     row-gap: 20px;
    
@@ -236,8 +287,8 @@ font-weight: 400;
     left: 35px;
     top: 30px;
     background: #24164B;
-box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
-border-radius: 14px;
+    box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
+    border-radius: 14px;
 }
 .join-delete-alert-h2{
     text-align: center;
@@ -287,6 +338,7 @@ border-radius: 14px;
         list-style: none;
         margin-top: 20px;
         margin-left: 10px;
+       
      
      }
      body{
@@ -294,50 +346,45 @@ border-radius: 14px;
         overflow-y: hidden;
         position: fixed;
      }
-     
-     .room-names ul li{
-         
-         
-         flex-grow: 1;
-         list-style: none;
-         margin-top: 20px;
-         padding-top: 7px;
-         width: 246px;
-         height: 41px;
-         left: 16px;
-         top: 103px;
-         padding-left: 20px;
-         background: #4E3F78;
-         border-radius: 8px;
-      
-     
+    
+     .btm-nav{
+        position: fixed;
+        bottom: 10px;
+        left: 7px;
+        display: flex;
+        height: 48px;
+        padding: 9px 58px 9px 66px;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 78px;
+        flex-shrink: 0;
+        border-radius: 98px;
+        background: #0F091D;
+        box-shadow: 0px 4px 24px 3px rgba(15, 9, 29, 0.74);
      }
-     .room-names ul li:hover{
-         font-size: 18px;
+     .room-icon{
+        width: 25px;
      }
-     .closed-room-names{
-        position: relative;
+     .home-icon{
+        width: 20px;
+     }
+     .plus-icon{
+        width: 20px;
+     }
+     .add_room {
+        position: absolute;
+        top: -60px;
+     }
+     .add_room2 {
+        position: absolute;
         top: 20px;
-        left: 10px;
-        
+        left: -20px;
      }
-     .closed-room-names ul li{
-        flex-grow: 1;
-         list-style: none;
-         margin-top: 20px;
-         padding-top: 7px;
-         width: 246px;
-         height: 41px;
-         left: 16px;
-         top: 103px;
-         padding-left: 20px;
-         background: #4E3F78;
-         border-radius: 8px;
-
-     }
+     
+     
      .create-interface{
         top: 0;
-        left: 0;
+        left: 30px;
      }
      .join-delete-alert{
         top: 70px;
