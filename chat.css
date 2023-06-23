@@ -52,22 +52,7 @@ body{
         top: 10px;
         left: 10px;
     }
-    .chat-input{
-        position: absolute;
-        bottom: -10px;
-        width: 320px;
-        height: 45px;
-        left: 5px;
-        color: #FFFFFF;
-        border-style: none;
-        font-size: 17px;
-        padding-left: 20px;
-        background: #46386C;
-        opacity: 0.86;
-        backdrop-filter: blur(39px);
     
-        border-radius: 8px;
-    }
     .chat{
         list-style: none;
     }
@@ -134,9 +119,29 @@ body{
         height: 570px;
     }
     
- 
+    .chat-input{
+        position: absolute;
+        bottom: -10px;
+        width: 320px;
+        height: 45px;
+        left: 5px;
+        color: #FFFFFF;
+        border-style: none;
+        font-size: 17px;
+        padding-left: 20px;
+        background: #46386C;
+        opacity: 0.86;
+        backdrop-filter: blur(39px);
+    
+        border-radius: 8px;
+    }
     .send-icon{
         width: 23px;
+    
+    }
+    .message-box{
+        position: relative;
+        top: 640px;
     }
    
     
