@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Roboto:wght@100&display=swap');
-*{
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500;1,700;1,900&family=Roboto:ital,wght@0,300;1,400;1,500&display=swap');*{
     margin: 0;
     padding: 0;
     font-family: 'poppins', sans-serif;
@@ -58,10 +57,10 @@ li:hover{
 .slogan{
     position: absolute;
     color: #FFFFFF;
-    font-weight: 100;
-    font-size: 57px;
+    font-size: 60px;
     max-width: 1000px;
     margin-top: 100px;
+    font-style: italic;
     left: 650px;
     line-height: 90px;
 }
@@ -76,16 +75,14 @@ li:hover{
     position: relative;
     width: 170px;
     height: 56px;
-    left: 890px;
+    left: 750px;
     top: 360px;
     border-style: none;
-    background: #7000FF;
-    box-shadow: 0px 4px 44px -7px rgba(112, 0, 255, 0.67);
+    background: #6600ff;
     border-radius: 15px;
     color: #ffffff;
     font-size: 20px;
-    text-align: left;
-    padding-left: 25px;
+    text-align: center;
 }
 .arrow{
     position: relative;
@@ -93,17 +90,75 @@ li:hover{
     left: 845px;
     top: 367px;
 }
+.continue-btn{
+    position: absolute;
+    left: 1000px;
+    top: 468px;
+    width: 170px;
+    height: 56px;
+    border-radius: 8px;
+    border: 1px solid #6f00ff;
+    background: #170D2D;
+    color: #FFFFFF;
+    font-size:16px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: row;
+}
+.continue-p{
+    margin-top: 10px;
+    margin-left: 17px;
+    user-select: none;
+    font-size: 20px;
+}
+.arrow{
+    position: relative;
+    width: 20px;
+    height: 20px;
+    left: 25px;
+    top: 15px;
+}
+.chat-img{
+    position: absolute;
+    width: 650px;
+    top: 100px;
+    left: -25px;
+    
+}
+.explore{
+    color: #dcdcdc;
+    font-weight: 400;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 3px;
+    margin-top: 130px;
+    
+}
+.exp-arrow{
+    position: relative;
+    width: 49px;
+    top: 20px;
+    left: 150px;
+    height: 55.391px;
+    transform: rotate(90deg);
+    flex-shrink: 0;
+}
 
 @media only screen and (max-width: 900px){
+    body{
+        user-zoom: 100px;
+        overflow-x:scroll;
+    }
     .nav-box{
         position: sticky;
+        top: 80px;
         margin-top: -40px;
-        transform: translateY(-120%);
+        transform: translateX(-100%);
         transition: transform 0.6s;
         z-index: 1;
     }
     .display{
-        transform: translateY(15%);
+        transform: translateX(0%);
     }
     .home-bar{
         position: sticky;
@@ -160,10 +215,10 @@ li:hover{
     }
     .menu-icon{
         position: absolute;
-        display: block;
-        width: 30px;
+        display: inline;
+        width: 28px;
         margin-top: 26px;
-        right: 50px;
+        right: 20px;
        
     }
    
@@ -172,32 +227,73 @@ li:hover{
         left: 0;
         position: absolute;
         margin-right: 20px;
-        font-size: 35px;
+        font-size: 38px;
         line-height: 50px;
         margin-left: 16px;
     }
     .signup-btn{
         position: absolute;
-        top: 320px;
+        top: 520px;
         margin-bottom: 200px;
-        left: 20px;
+        left: 30px;
         font-size:16px;
         height: 40px;
         width: 130px;
         border-radius: 9px;
+        padding-left: 38px;
+    }
+    
+    .continue-btn{
+        position: absolute;
+        top: 520px;
+        left: 200px;
+        height: 40px;
+        width: 130px;
+        border-radius: 8px;
+        border: 1px solid #7000FF;
+        background: #170D2D;
+        color: #FFFFFF;
+        font-size:16px;
+        padding-right: 20px;
+        display: flex;
+        flex-direction: row;
+    }
+    .continue-p{
+        margin-top: 7px;
+        margin-left: 14px;
+        user-select: none;
     }
     .arrow{
-        position: absolute;
+        position: relative;
         width: 20px;
-        left: 116px;
-        top: 330px;
+        height: 20px;
+        left: 15px;
+        top: 10px;
     }
     .chat-img{
         position: absolute;
-        width: 300px;
-        top: 360px;
-        left: 28px;
+        width: 420px;
+        top: 130px;
+        left: -25px;
         
+    }
+    .explore{
+        color: #dcdcdc;
+        font-weight: 400;
+        font-size: 30px;
+        text-align: center;
+        letter-spacing: 3px;
+        margin-top: 130px;
+        
+    }
+    .exp-arrow{
+        position: relative;
+        width: 49px;
+        top: 20px;
+        left: 150px;
+        height: 55.391px;
+        transform: rotate(90deg);
+        flex-shrink: 0;
     }
 
 }

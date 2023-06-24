@@ -19,8 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
-
-
+const email = localStorage.getItem('email')
 
 
 document.getElementById('sign').addEventListener('click',function(){
@@ -56,9 +55,15 @@ document.getElementById('sign').addEventListener('click',function(){
     });
 })
 
+
+
+
 let button = document.querySelector(".menu-icon"),
     links = document.querySelector(".nav-box");
 
     button.addEventListener("click",()=>{
         links.classList.toggle("display")
+})
+document.getElementById('continue-btn').addEventListener('click',function(){
+    window.location.href = 'index2.html'
 })

@@ -13,6 +13,18 @@
     <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
+    
+    <div class="nav-box" id="nav-box">
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"> Home</li>
+                <li class="li">About</li>
+                <li class="li">Features</li>
+                <li class="li">Contact</li>
+            </ul>
+        </nav>
+    </div>
+   <div class="chat-page">
     <div class="home-bar">
         <h2 class="logo">Chatify</h2>
         <img class="logo-img" src="chatifi-logo.png" alt="">
@@ -25,32 +37,24 @@
 
 
     </div>
-    <div class="nav-box" id="nav-box">
-        <nav class="nav">
-            <ul class="ul">
-                <li class="li"> Home</li>
-                <li class="li">About</li>
-                <li class="li">Features</li>
-                <li class="li">Contact</li>
-            </ul>
-        </nav>
-    </div>
-    <div class="chat-interface">
-        
-        <div class="chat-interface-content">
-            <ul id="chat" class="chat">
-
-            </ul>
+        <div class="chat-interface">
             
+            <div class="chat-interface-content">
+                <ul id="chat" class="chat">
+
+                </ul>
+                
+            </div>
+        
+            
+
         </div>
         <div class="message-box">
-        <input placeholder="Message" type="text" class="chat-input" id="chat_int">
-        <img src="send.png" class="send-icon" id="send-btn">
+            <input placeholder="Message" type="text" class="chat-input" id="chat_int">
+            <img src="send.png" class="send-icon" id="send-btn">
 
         </div>
-        
-
-    </div>
+   </div>
     <script type="module" src="chat.js"></script>
     
 </body>
