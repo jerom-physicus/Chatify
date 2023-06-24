@@ -17,7 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 
-var email = localStorage.getItem('email');
+var email1 = localStorage.getItem('email');
+var email = email1.replace('@gmail.com','')
 const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")

@@ -19,7 +19,8 @@ var db = getDatabase(app);
 const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
 
-var email = localStorage.getItem('email');
+var email1 = localStorage.getItem('email');
+var email = email1.replace('@gmail.com','')
 const room_name = localStorage.getItem('room_name');
 document.getElementById("room_title").innerHTML = room_name
 

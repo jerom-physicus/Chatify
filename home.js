@@ -35,8 +35,9 @@ document.getElementById('sign').addEventListener('click',function(){
         // The signed-in user info.
         const user = result.user;
         //localStorage.clear();
-        localStorage.setItem('email',user.displayName );
-        alert("Successfuly login'd as"+ user.displayName)
+       
+        localStorage.setItem('email',user.email );
+        alert("Successfuly login'd as"+ user.email)
         window.location.href ='index2.html'
         
         // IdP data available using getAdditionalUserInfo(result)
