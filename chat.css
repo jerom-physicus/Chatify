@@ -66,33 +66,7 @@ body{
        
     }
     
-    .chat{
-        display: flex;
-        flex-direction: column;
-       
-      
-    }
-       
-    .chat li{
-        margin-top: 17px;
-        width: fit-content;
-        height: fit-content;
-        position: relative;
-        list-style: none;
-        background-color: rgb(115, 37, 251);
-        padding-left: 10px;
-        padding-right: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        border-radius: 6px;
-        text-align: center;
-        user-select: none;
-        font-weight: 400;
-        font-size: 15px;
-        row-gap: 20px;
-       
-       
-    }
+    
     .chat li:hover{
         font-size: 15px;
     }
@@ -142,6 +116,45 @@ body{
     .message-box{
         position: relative;
         top: 640px;
+    }
+    .chat div{
+        display: flex;
+        flex-direction: column;
+        width: fit-content;
+        height: fit-content;
+        padding-right: 20px;
+       
+        border-radius: 10px;
+        background: #7000FF;margin-top: 20px;
+        box-shadow: 0px 12px 21px 6px rgba(112, 0, 255, 0.17);
+    }
+    .chat{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .chat p{
+        font-weight: 300;
+        padding-left: 10px;
+        font-size: 15px;
+        padding-top: 7px;
+        color: #ccaef3;
+    }
+       
+    .chat li{
+
+        list-style: none;
+        position: relative;
+        margin-top: 5px;
+        padding-left: 10px;
+        margin-bottom: 5px;
+        padding-bottom: 10px;
+        user-select: none;
+        font-weight: 400;
+        font-size: 15px;
+     
+       
+       
     }
    
     

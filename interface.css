@@ -188,36 +188,7 @@ body{
 }
 
 
-.chat{
-    display: flex;
-    flex-direction: column;
-   
-  
-}
-   
-.chat li{
-    margin-top: 17px;
-    width: fit-content;
-    height: fit-content;
-    position: relative;
-    list-style: none;
-    background-color: rgb(93, 0, 255);
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    border-radius: 6px;
-    text-align: center;
-    user-select: none;
-    font-weight: 400;
-    font-size: 15px;
-    row-gap: 20px;
-   
-   
-}
-.chat li:hover{
-    font-size: 15px;
-}
+
 .send-icon{
     position: absolute;
     width: 25px;
