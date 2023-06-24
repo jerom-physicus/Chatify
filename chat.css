@@ -213,10 +213,11 @@ body{
     }
     .user-name-mobile-chat{
         position: absolute;
-        left: 130px;
-        top: 10px;
+        left: 100px;
+        top: 13px;
         font-size: 20px;
         font-weight: 400;
+        max-width: 300px;
 
     }
     .chat-interface{
