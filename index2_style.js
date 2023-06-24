@@ -18,11 +18,12 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 
 var email1 = localStorage.getItem('email');
-var email = email1.replace('@gmail.com','')
+const email = email1.replace('@gmail.com',' ')
+user_name.innerHTML = email
 const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
-user_name.innerHTML = email
+
 
 
 document.getElementById('create-room-int').addEventListener('click',function(){

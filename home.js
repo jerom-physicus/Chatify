@@ -37,6 +37,7 @@ document.getElementById('sign').addEventListener('click',function(){
         //localStorage.clear();
        
         localStorage.setItem('email',user.email );
+        localStorage.setItem('username',user.displayName );
         alert("Successfuly login'd as"+ user.email)
         window.location.href ='index2.html'
         

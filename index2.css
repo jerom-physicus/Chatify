@@ -299,22 +299,22 @@ border-radius: 16px;
     }
     .profile-img-mobile{
         position: absolute;
-        width: 40px;
-        height: 40px;
+        width: 35px;
+        height: 35px;
         left: 20px;
-        top: 20px;
+        top: 10px;
         display: block;
     }
     .user-name-mobile{
         position: absolute;
         width: 390px;
         height: 57px;
-        padding-left: 60px;
-        top: 25px;        
+        padding-left: 40px;
+        top: 15px;        
         font-style: normal;
         left: 30px;
         font-weight: 400;
-        font-size: 25px;
+        font-size: 17px;
         display: block;
     }
     
