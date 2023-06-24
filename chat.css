@@ -114,8 +114,9 @@ body{
     
     }
     .message-box{
-        position: relative;
-        top: 640px;
+        position: fixed;
+        bottom: 20px;
+        left: 15px;
     }
     .chat div{
         display: flex;
