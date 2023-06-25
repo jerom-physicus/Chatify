@@ -32,7 +32,9 @@ body{
 .profile-head{
     display: flex;
     flex-direction: column;
-    width: 100%;
+    top: 100px;
+    left: 500px;
+    width: 30%;
     height: 55px;
     flex-shrink: 0;
     border-radius: 10px 10px 10px 10px;
@@ -58,11 +60,16 @@ body{
 
 .chat-interface-content{
     position: fixed;
-    top: 10px;
-    left: 0px;
-    overflow-y: auto;
-    width: 330px;
-    height:100% ;
+    top: 160px;
+    left: 500px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 460px;
+    height:70% ;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
    
 }
 
@@ -90,9 +97,9 @@ body{
 .chat-input{
     position: absolute;
     bottom: -10px;
-    width: 100%;
+    width: 28%;
     height: 45px;
-    left: 5px;
+    left: 500px;
     color: #FFFFFF;
     border-style: none;
     font-size: 17px;
@@ -108,6 +115,7 @@ body{
     z-index: 1;
     width: 23px;
     bottom: 20px;
+    left: 900px;
 
 }
 .message-box{
@@ -162,6 +170,8 @@ body{
     .profile-head{
         position: fixed;
         display: flex;
+        top: 0;
+        left: 0;
         flex-direction: column;
         height: 55px;
         width: 100%;
@@ -218,6 +228,7 @@ body{
         width: 300px;
         height:80vh;
         margin-bottom: 10px;
+        border-style: none;
       
         
        
@@ -230,6 +241,7 @@ body{
         width: 89%;
         height: 45px;
         left: 5px;
+        
         color: #FFFFFF;
         border-style: none;
         font-size: 17px;
@@ -245,6 +257,7 @@ body{
         z-index: 1;
         width: 23px;
         bottom: 20px;
+        left: 80%;
     
     }
     .message-box{

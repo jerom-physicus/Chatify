@@ -20,11 +20,10 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 const email = localStorage.getItem('email')
+localStorage.setItem('email','null' );
 
 
-document.getElementById('sign').addEventListener('click',function(){
-    console.log("hello");
-    
+document.getElementById('sign').addEventListener('click',function(){    
     const auth = getAuth();
     signInWithPopup(auth, provider)
     .then((result) => {
