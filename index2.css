@@ -72,7 +72,7 @@ body{
 }
 .rooms-page{
     position: absolute;
-    width: 418px;
+    width: 100%;
     height: 630px;
     left: 311px;
     top: 94px;
@@ -246,7 +246,7 @@ border-radius: 16px;
     display: none;
 }
 
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 600px){
     .nav-box{
         position: sticky;
         margin-top: 130px;
@@ -274,12 +274,12 @@ border-radius: 16px;
     
     .rooms-page{
         position: absolute;
-        width: 300px;
-        height: 560px;
-        left: 10px;
+        width:360px;
+        height: 95vh;
+        left: 0px;
         top: 120px;
         background: #24164B;
-        border-radius: 7px;
+        border-radius: 30px;
     }
  
     .profile-head{
@@ -318,13 +318,7 @@ border-radius: 16px;
         display: block;
     }
     
-    .rooms-page{
-        height: 630px;
-        width: 360px ;
-        left: 0px;
-        top: 130px; 
-        border-radius: 30px 30px 0px 0px;
-    }
+   
     .openroom-btn2{
         width: 130px;
         font-size: 12px;
@@ -333,9 +327,12 @@ border-radius: 16px;
         top: -70px;
     }
     .room-btns{
-        position: relative;
+        position: absolute;
         top: 15px;
         left: 30px;
+        width: 90%;
+        height: fit-content;
+        padding-right: 10px;
     }
     .openroom-btn{
         width: 130px;
@@ -353,6 +350,7 @@ border-radius: 16px;
         top: -70px;
     }
     .closedroom-btn2{
+      
         width: 130px;
         font-size: 12px;
         left: 170px;
@@ -363,7 +361,7 @@ border-radius: 16px;
         top: 0px;
         left:0px;
         width: 100%;
-        height: 530px;
+        height: 75vh;
         border-style: none;
         overflow-x:hidden;
         
@@ -394,22 +392,23 @@ border-radius: 16px;
        
     }
     .open-room-img{
-        left: 25px;
+        left: 35px;
     }
     .openroom-head{
+        font-weight: 400;
         font-size: 18px;
         left: 100px;
         
     }
     .close-room-content{
         top: 0px;
-        left: 18px;
-        width: 325px;
-        height: 400px;
+        left: 0px;
+        width:100%;
+        height: 75vh;
         border-style: none;
     }
     .close-room-img{
-        left: 15px;
+        left: 35px;
     }
    
     .create-room-btn{
@@ -429,15 +428,15 @@ border-radius: 16px;
         
      }
      .closed-room-names ul li{
-        
-        flex-grow: 1;
+         position: relative;
+         flex-grow: 1;
          list-style: none;
          margin-top: 20px;
          padding-top: 7px;
          width: 305px;
          height: 41px;
-         left: 16px;
-         top: 103px;
+         left: 20px;
+         top: 0px;
          background: #4E3F78;
          border-radius: 8px;
          text-align: center;

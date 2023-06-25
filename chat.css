@@ -216,8 +216,8 @@ body{
         display: flex;
         flex-direction: column-reverse;
         width: 300px;
-        height:auto;
-        max-height: 550px;
+        height:82vh;
+        
        
     }
     

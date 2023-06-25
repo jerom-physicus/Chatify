@@ -295,7 +295,7 @@ body{
     right: 10px;
     width: 15px;
 }
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 600px){
     .room-names ul {
 
         list-style: none;
