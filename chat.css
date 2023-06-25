@@ -216,8 +216,10 @@ body{
         display: flex;
         flex-direction: column-reverse;
         width: 300px;
-        height:79vh;
+        height:80vh;
+        margin-bottom: 10px;
         border-style: solid;
+      
         
        
     }
@@ -272,7 +274,7 @@ body{
         font-weight: 300;
         padding-left: 10px;
         font-size: 15px;
-        padding-top: 7px;
+        padding-top: 5px;
         color: #ccaef3;
         user-select: none;
     }
@@ -281,7 +283,7 @@ body{
 
         list-style: none;
         position: relative;
-        margin-top: 5px;
+        margin-top: 1px;
         padding-left: 10px;
         padding-bottom: 5px;
         user-select: none;
@@ -294,4 +296,10 @@ body{
     }
    
     
+}
+@media only screen and (max-height: 600px){
+    .chat-interface-content{
+        height: 75vh;
+    }
+
 }
