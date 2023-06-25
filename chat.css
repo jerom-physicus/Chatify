@@ -213,11 +213,11 @@ body{
         top: 60px;
         left: 20px;
         overflow: auto;
-  display: flex;
-  flex-direction: column-reverse;
+        display: flex;
+        flex-direction: column-reverse;
         width: 300px;
         height:auto;
-        max-height: 700px;
+        max-height: 550px;
        
     }
     
