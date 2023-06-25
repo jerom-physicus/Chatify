@@ -288,8 +288,8 @@ body{
     .chat p{
         font-weight: 300;
         padding-left: 10px;
-        font-size: 15px;
-        padding-top: 5px;
+        font-size: 12px;
+        padding-top: 3px;
         color: #ccaef3;
         user-select: none;
     }
@@ -298,9 +298,9 @@ body{
 
         list-style: none;
         position: relative;
-        margin-top: 1px;
+        margin-top: 0px;
         padding-left: 10px;
-        padding-bottom: 5px;
+        padding-bottom: 3px;
         user-select: none;
         font-weight: 400;
         font-size: 15px;
