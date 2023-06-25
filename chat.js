@@ -18,8 +18,8 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
-const username = localStorage.getItem('username');
-var email = username.replace(' ','')
+const email = localStorage.getItem('username');
+
 
 
 var email1 = localStorage.getItem('email');
