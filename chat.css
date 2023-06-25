@@ -317,7 +317,7 @@ body{
 }
 @media only screen and (max-height: 800px){
     .chat-interface-content{
-        height: 70vh;
+        height: 73vh;
     }
 
 }
