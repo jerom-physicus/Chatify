@@ -19,8 +19,6 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
-const email = localStorage.getItem('email')
-localStorage.setItem('email','null' );
 
 
 document.getElementById('sign').addEventListener('click',function(){    

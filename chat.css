@@ -229,7 +229,7 @@ body{
         display: flex;
         flex-direction: column-reverse;
         width: 300px;
-        height:80vh;
+        height:76vh;
         margin-bottom: 10px;
         border-style: none;
       
@@ -314,6 +314,12 @@ body{
       }
    
     
+}
+@media only screen and (max-height: 800px){
+    .chat-interface-content{
+        height: 70vh;
+    }
+
 }
 @media only screen and (max-height: 600px){
     .chat-interface-content{

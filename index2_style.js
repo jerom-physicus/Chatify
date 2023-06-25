@@ -25,7 +25,8 @@ const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
 
-if(email == 'null'){
+
+if(email == null){
   console.log("null")
   const auth = getAuth();
     signInWithPopup(auth, provider)
