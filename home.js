@@ -37,7 +37,8 @@ document.getElementById('sign').addEventListener('click',function(){
        
         localStorage.setItem('email',user.email );
         let username= user.displayName
-        let accountname = username.replace(' ','')
+        let accountname1 = username.replace(' ','')
+        let accountname = accountname1.replace(' ','')
         console.log(accountname)
         localStorage.setItem('username',accountname );
         alert("Successfuly login'd as"+` ${user.email}`)
