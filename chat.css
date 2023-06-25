@@ -180,7 +180,7 @@ body{
         width: 100%;
         flex-shrink: 0;
         border-radius: 0px 0px 10px 10px;
-        background: #602eb2;
+        background: #2a0f56;
     }
     .profile-img-mobile-chat{
         position: absolute;
@@ -275,7 +275,7 @@ body{
         height: fit-content;
         padding-right: 20px;  
         border-radius: 0px 10px 10px 10px ;
-        background: #812eed;margin-top: 20px;
+        background: #9e54ff;margin-top: 20px;
         box-shadow: 0px 12px 21px 6px rgba(112, 0, 255, 0.17);
     }
     .chat{
