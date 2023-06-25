@@ -204,10 +204,11 @@ body{
     height: 180px;
     left: 105px;
     top: 240px;
-    background: rgba(115, 0, 255, 0.41);
+    background: rgb(35, 0, 62);
     border: 1px solid #FFFFFF;
-    backdrop-filter: blur(5px);
     border-radius: 14px;
+    box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
+
 }
 .join-delete-alert-h{
     text-align: center;
@@ -350,8 +351,14 @@ body{
         left: 30px;
      }
      .join-delete-alert{
-        top: 70px;
-        left: 30px;
+        position: relative;
+        top: 100px;
+        left: 16%;
+     }
+     .join-delete-alert2{
+        position: relative;
+        top: 100px;
+        left: 16%;
      }
 }
 
