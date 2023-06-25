@@ -167,6 +167,9 @@ body{
    
 }
 @media only screen and (max-width: 600px){
+    body{
+        overflow: hidden;
+    }
     .profile-head{
         position: fixed;
         display: flex;
@@ -271,7 +274,7 @@ body{
         width: fit-content;
         height: fit-content;
         padding-right: 20px;  
-        border-radius: 10px;
+        border-radius: 0px 10px 10px 10px ;
         background: #812eed;margin-top: 20px;
         box-shadow: 0px 12px 21px 6px rgba(112, 0, 255, 0.17);
     }
@@ -306,6 +309,9 @@ body{
        
        
     }
+    ::-webkit-scrollbar {
+        display: none;
+      }
    
     
 }
@@ -315,9 +321,16 @@ body{
     }
 
 }
-@media only screen and (max-height: 600px){
+@media only screen and (max-height: 500px){
     .chat-interface-content{
         height: 65vh;
+        overflow-y: scroll;
+    }
+
+}
+@media only screen and (max-height: 530px){
+    .chat-interface-content{
+        height: 60vh;
     }
 
 }
