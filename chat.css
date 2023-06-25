@@ -218,7 +218,6 @@ body{
         width: 300px;
         height:80vh;
         margin-bottom: 10px;
-        border-style: solid;
       
         
        
@@ -300,6 +299,12 @@ body{
 @media only screen and (max-height: 600px){
     .chat-interface-content{
         height: 75vh;
+    }
+
+}
+@media only screen and (max-height: 600px){
+    .chat-interface-content{
+        height: 65vh;
     }
 
 }
