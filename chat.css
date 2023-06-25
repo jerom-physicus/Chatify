@@ -217,6 +217,7 @@ body{
         flex-direction: column-reverse;
         width: 300px;
         height:79vh;
+        border-style: solid;
         
        
     }
