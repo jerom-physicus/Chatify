@@ -8,6 +8,7 @@
 }
 body{
     background-color: #170f30;
+    overflow-x: hidden;
 }
 .home-bar{
     position: sticky;
@@ -143,7 +144,165 @@ li:hover{
     transform: rotate(90deg);
     flex-shrink: 0;
 }
+.fea-h{
+    position: relative;
+    color: #FFFFFF;
+    font-size: 60px;
+    font-weight: 500;
+    top: 400px;
+    left: 42%;
+}
+.fea-p{
+    position:relative;
+    top: 400px;
+    color: white;
+    left: 43.5%;
+    font-size: 20px;
+    font-weight: 300;
+}
+.fea-1{
+    display: flex;
+    flex: auto;
+    position: relative;
+    width: 666px;
+    height: 373.211px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(112, 0, 255, 0.44);
+    top: 500px;
+    left: 50px;
+}
+.fea1-img{
+    position: relative;
+    margin: 20px;
+}
+.fea2-img{
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.fea3-img{
+    position: relative;
+    margin: 20px;
+    width: 312px;   
+    border-radius: 10px;
+    box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
 
+.fea-1 h3{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 400;
+    top: 20px;
+    left: 60%;
+}
+.fea-1 p{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 90px;
+    color: white;
+    padding: 30px;
+}
+.fea-2{
+    display: flex;
+    flex: auto;
+    position: relative;
+    width: 666px;
+    height: 373.211px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(112, 0, 255, 0.44);
+    top: 128px;
+    left: 800px;
+}
+.fea-2 h3{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 400;
+    top: 20px;
+    left: 60%;
+}
+.fea-2 p{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 90px;
+    color: white;
+    padding: 30px;
+}
+.fea-3{
+    display: flex;
+    flex: auto;
+    position: relative;
+    width: 666px;
+    height: 373.211px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(112, 0, 255, 0.44);
+    top: 200px;
+    left: 50px;
+}
+.fea3-img{
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.fea-3 h3{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 400;
+    top: 20px;
+    left: 60%;
+}
+.fea-3 p{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 90px;
+    color: white;
+    padding: 30px;
+}
+
+.fea-4{
+    display: flex;
+    flex: auto;
+    position: relative;
+    width: 666px;
+    height: 373.211px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: rgba(112, 0, 255, 0.44);
+    top: -173px;
+    left: 800px;
+}
+.fea4-img{
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 4px 10px 2px rgba(0, 0, 0, 0.25);
+}
+.fea-4 h3{
+    position: absolute;
+    color: #FFFFFF;
+    font-size: 30px;
+    font-weight: 400;
+    top: 20px;
+    left: 60%;
+}
+.fea-4 p{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 90px;
+    color: white;
+    padding: 30px;
+}
 @media only screen and (max-width: 900px){
     body{
         user-zoom: 100px;
@@ -205,10 +364,11 @@ li:hover{
     .logo{
         margin: 20px;
         font-size: 27px;
+        z-index: 1;
         letter-spacing: 4px;
     }
     .logo-img{
-        
+        z-index: 1;
         margin: 18px;
         width: 100px;
         margin-left: 140px;
@@ -291,10 +451,102 @@ li:hover{
         position: relative;
         width: 49px;
         top: 20px;
-        left: 150px;
+        left: 160px;
         height: 55.391px;
         transform: rotate(90deg);
         flex-shrink: 0;
+    }
+    .fea-h{
+        font-size: 30px;
+        left: 35%;
+        top: 90px;
+    }
+    .fea-p{
+        font-size: 15px;
+        left: 32%;
+        top: 90px;
+        font-weight: 100;
+    }
+    .fea-1{
+        width: 100%;
+        height: 177px;
+        left: 10px;
+        top: 150px;
+    }
+    .fea-1 h3{
+        font-size: 15px;
+        left: 170px;
+    }
+    .fea-1 p{
+        position: relative;
+        top: 20px;
+        width: 500px;
+        left: -30px;
+        font-size: 12px;
+        margin-right: -50px;
+        
+    }
+    .fea-2{
+        width: 100%;
+        height: 177px;
+        left: 10px;
+        top: 170px;
+    }
+    .fea-2 h3{
+        font-size: 15px;
+        left: 170px;
+    }
+    .fea-2 p{
+        position: relative;
+        top: 20px;
+        width: 500px;
+        left: -30px;
+        font-size: 12px;
+        margin-right: -50px;
+        
+    }
+    .fea-3{
+        width: 100%;
+        height: 200px;
+        left: 10px;
+        top: 190px;
+    }
+    .fea-3 h3{
+        font-size: 15px;
+        left: 170px;
+    }
+    .fea3-img{
+        width: 140px;
+        height: 140px;
+    }
+    .fea-3 p{
+        position: relative;
+        top: 40px;
+        width: 500px;
+        left: -30px;
+        font-size: 12px;
+        margin-right: -50px;
+        
+    }
+    .fea-4{
+        width: 100%;
+
+        height: 200px;
+        left: 10px;
+        top: 210px;
+    }
+    .fea-4 h3{
+        font-size: 15px;
+        left: 170px;
+    }
+    .fea-4 p{
+        position: relative;
+        top: 20px;
+        width: 500px;
+        left: -30px;
+        font-size: 12px;
+        margin-right: -50px;
+        
     }
 
 }
