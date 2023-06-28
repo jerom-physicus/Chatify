@@ -370,8 +370,21 @@ li:hover{
     border-radius: 8px;
     color: white;
     font-size: 20px;
-    margin-bottom: 1000px;
     border-style: none;
+    margin-bottom: 30px;
+}
+.socials img{
+    position: relative;
+    top: 100px;
+    width: 40px;
+    margin: 30px;
+    left: 40%;
+}
+.summa{
+    color: #858585;
+    position: relative;
+    top: 400px;
+    left: 30%;
 }
 @media only screen and (max-width: 900px){
     body{
@@ -676,6 +689,17 @@ li:hover{
         width: 140px;
         height: 50px;
         font-size: 17px;
+    }
+    .socials img{
+        position: relative;
+        top: 400px;
+        width: 40px;
+        margin: 15px;
+        left: 23%;
+    }
+    .summa{
+        margin-top: 80px;
+        left: 10px;
     }
   
 }
