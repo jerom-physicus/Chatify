@@ -308,7 +308,7 @@ li:hover{
     color: #FFFFFF;
     font-size: 50px;
     font-weight: 400;
-    left: 43%;
+    left: 33%;
 }
 .name{
     display: flex;
@@ -647,9 +647,35 @@ li:hover{
         
     }
     .contact h2{
-        font-size: 30px;
+        font-size: 25px;
         top: 350px;
-        left: 35%;
+        left: 15%;
+    }
+    .input-box{
+        top: 400px;
+        left: 30px;
+        width: 100%;
+    }
+    .name{
+        padding: 0;
+        left: 20px;
+        width: 85%;
+ 
+    }
+    .email{
+        padding: 0;
+        left: 20px;
+        width: 85%; 
+    }
+    .message{
+        padding: 0;
+        left: 20px;
+        width: 85%; 
+    }
+    .send-btn{
+        width: 140px;
+        height: 50px;
+        font-size: 17px;
     }
   
 }
