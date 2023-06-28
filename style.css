@@ -303,6 +303,76 @@ li:hover{
     color: white;
     padding: 30px;
 }
+.contact h2{
+    position: relative;
+    color: #FFFFFF;
+    font-size: 50px;
+    font-weight: 400;
+    left: 43%;
+}
+.name{
+    display: flex;
+    width: 447px;
+    padding: 14px 283px 23px 17px;
+    align-items: center;
+    border-radius: 7px;
+    background: #4C2C75;
+    font-size: 20px;
+    text-align: center;
+    border-style: none;
+    padding-top: 30px;
+    height: 55px;
+    color: white;
+}
+.email{
+    margin-top: 30px;
+    display: flex;
+    width: 447px;
+    padding: 14px 283px 23px 17px;
+    align-items: center;
+    border-radius: 7px;
+    background: #4C2C75;
+    font-size: 20px;
+    text-align: center;
+    border-style: none;
+    padding-top: 30px;
+    height: 55px;
+    color: white;
+}
+.message{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    width: 447px;
+    padding: 14px 283px 23px 17px;
+    align-items: center;
+    border-radius: 7px;
+    background: #4C2C75;
+    font-size: 20px;
+    text-align: center;
+    border-style: none;
+    padding-top: 30px;
+    height: 155px;
+    color: white;
+}
+.input-box{
+    position: relative;
+    top: 100px;
+    left: 35%;
+    display: flex;
+    flex-direction: column;
+}
+.send-btn{
+    width: 188px;
+    height: 56.4px;
+    background: #7000FF;
+    box-shadow: 0px 4px 17px 0px rgba(112, 0, 255, 0.29);
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 1000px;
+    border-style: none;
+}
 @media only screen and (max-width: 900px){
     body{
         user-zoom: 100px;
@@ -323,6 +393,7 @@ li:hover{
         position: sticky;
         top: 0px;
         background-color: #170f30;
+        z-index: 1;
         
 
     }
@@ -468,84 +539,117 @@ li:hover{
         font-weight: 100;
     }
     .fea-1{
+        display: flex;
+        flex-direction: column;
         width: 92.5%;
-        height: 177px;
+        height: 447px;
         left: 10px;
         top: 150px;
     }
+    .fea1-img{
+        position: relative;
+        top: 60px;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        left: 11%;
+    }
     .fea-1 h3{
-        font-size: 15px;
-        left: 170px;
+        font-size: 20px;
+        left: 120px;
     }
     .fea-1 p{
-        position: relative;
-        top: 20px;
-        width: 500px;
-        left: -30px;
-        font-size: 12px;
-        margin-right: -50px;
+        top: 30px;
+        width: 300px;
+        left: 16px;
+        font-size: 15px;
         
     }
     .fea-2{
+        display: flex;
+        flex-direction: column;
         width: 92.5%;
-        height: 177px;
-        left: 10px;
-        top: 170px;
-    }
-    .fea-2 h3{
-        font-size: 15px;
-        left: 170px;
-    }
-    .fea-2 p{
-        position: relative;
-        top: 20px;
-        width: 500px;
-        left: -30px;
-        font-size: 12px;
-        margin-right: -50px;
-        
-    }
-    .fea-3{
-        width: 92.5%;
-        height: 200px;
+        height: 447px;
         left: 10px;
         top: 190px;
     }
-    .fea-3 h3{
+    .fea2-img{
+        position: relative;
+        top: 60px;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        left: 13%;
+    }
+    .fea-2 h3{
+        font-size: 20px;
+        left: 60px;
+    }
+    .fea-2 p{
+        top: 30px;
+        width: 300px;
+        left: 26px;
         font-size: 15px;
-        left: 170px;
+        
+    }
+    .fea-3{
+        display: flex;
+        flex-direction: column;
+        width: 92.5%;
+        height: 447px;
+        left: 10px;
+        top: 220px;
     }
     .fea3-img{
-        width: 140px;
-        height: 140px;
+        position: relative;
+        top: 60px;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        left: 13%;
+    }
+    .fea-3 h3{
+        font-size: 20px;
+        left: 40px;
     }
     .fea-3 p{
-        position: relative;
-        top: 40px;
-        width: 500px;
-        left: -30px;
-        font-size: 12px;
-        margin-right: -50px;
+        top: 30px;
+        width: 300px;
+        left: 26px;
+        font-size: 15px;
         
     }
     .fea-4{
+        display: flex;
+        flex-direction: column;
         width: 92.5%;
-        height: 200px;
+        height: 500px;
         left: 10px;
-        top: 210px;
+        top: 240px;
+    }
+    .fea4-img{
+        position: relative;
+        top: 60px;
+        width: 250px;
+        height: 250px;
+        margin: 5px;
+        left: 13%;
     }
     .fea-4 h3{
-        font-size: 15px;
-        left: 170px;
+        font-size: 20px;
+        left: 60px;
     }
     .fea-4 p{
-        position: relative;
-        top: 20px;
-        width: 500px;
-        left: -30px;
-        font-size: 12px;
-        margin-right: -50px;
+        top: 30px;
+        width: 300px;
+        left: 26px;
+        font-size: 15px;
         
     }
-
+    .contact h2{
+        font-size: 30px;
+        top: 350px;
+        left: 35%;
+    }
+  
 }
