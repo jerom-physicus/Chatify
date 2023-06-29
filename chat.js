@@ -75,6 +75,9 @@ if(roomtype =='room'){
       
       appendListChatElement(str,username,keys[i])
     }
+
+    users_list.innerHTML = ""
+
   getusername(funList) 
 })
 }
@@ -110,11 +113,14 @@ else{
       
       
     }
+    users_list.innerHTML = ""
+
   getusername(funList)   
 })
 
 }
 function getusername(username){
+
   let users = [...new Set(username)];
   let usersnbr = users.length
   count.innerHTML = usersnbr

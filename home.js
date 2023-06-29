@@ -43,7 +43,6 @@ document.getElementById('sign').addEventListener('click',function(){
         let username= user.displayName
         let accountname1 = username.replace(' ','')
         let accountname = accountname1.replace(' ','')
-        console.log(accountname)
         localStorage.setItem('username',accountname );
         alert("Successfuly login'd as"+` ${user.email}`)
         window.location.href ='index2.html'
