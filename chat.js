@@ -50,8 +50,7 @@ if(roomtype =='room'){
       let username = filter[j]
       
       
-     // str = lastIndex.substring(0, lastIndex);
- 
+      getusername(username)
       appendListChatElement(str,username,keys[i])
     }
 })
@@ -80,6 +79,7 @@ else{
       let username = filter[j]
       
       
+      
      // str = lastIndex.substring(0, lastIndex);
  
       appendListChatElement2(str,username,keys[i])
@@ -87,6 +87,20 @@ else{
       
     }
 })
+
+}
+function getusername(username){
+  //let arr1 = []
+  let users = username.split(' ');
+  let names  = [users]
+ 
+  //arr1.push(username);
+  //console.log(arr1)
+  //console.log(ga)
+ // let ka = arr1.concat(users,ga);
+  //let usernam = username
+  //console.log(names)
+
 
 }
 

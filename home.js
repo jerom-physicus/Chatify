@@ -20,6 +20,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const provider = new GoogleAuthProvider();
 
+let email = localStorage.getItem('email')
+
+if(email == null){
+    document.getElementById('continue-btn').style.display ='none'
+
+}
+
 
 document.getElementById('sign').addEventListener('click',function(){    
     const auth = getAuth();
@@ -63,7 +70,17 @@ let button = document.querySelector(".menu-icon"),
     links = document.querySelector(".nav-box");
 
     button.addEventListener("click",()=>{
-        links.classList.toggle("display")
+        document.getElementById('nav-box').style.transform = 'translateX(0%)'
+        
+        document.getElementById('menu-btn').style.display ='none'
+        document.getElementById('close-btn').style.display ='block'
+
+        document.getElementById('close-btn').addEventListener('click',function(){
+            document.getElementById('menu-btn').style.display ='block'
+            document.getElementById('close-btn').style.display ='none'
+            document.getElementById('nav-box').style.transform = 'translateX(-100%)'
+        })
+        //links.classList.toggle("display")
 })
 document.getElementById('continue-btn').addEventListener('click',function(){
     window.location.href = 'index2.html'

@@ -31,6 +31,9 @@ body{
 .menu-icon{
     display: none;
 }
+.close-icon{
+    display: none;
+}
 nav{
     margin-top: -66px;
     position: absolute;
@@ -402,6 +405,10 @@ li:hover{
     .display{
         transform: translateX(0%);
     }
+    .display2{
+        transform: translateX(0%);
+    }
+    
     .home-bar{
         position: sticky;
         top: 0px;
@@ -465,6 +472,16 @@ li:hover{
         right: 20px;
        
     }
+    .close-icon{
+
+        position: absolute;
+        display: none;
+        width: 28px;
+        margin-top: 26px;
+        right: 20px;
+       
+    }
+
    
     .slogan{
         top: -10px;

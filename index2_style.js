@@ -26,45 +26,6 @@ const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
 
 
-if(email == null){
-  console.log("null")
-  const auth = getAuth();
-    signInWithPopup(auth, provider)
-    .then((result) => {
-        // This gives you a Google Access Token. You can use it to access the Google API.
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        // The signed-in user info.
-        const user = result.user;
-        //localStorage.clear();
-       
-        localStorage.setItem('email',user.email );
-        let username= user.displayName
-        let accountname1 = username.replace(' ','')
-        let accountname = accountname1.replace(' ','')
-        console.log(accountname)
-        localStorage.setItem('username',accountname );
-        alert("Successfuly login'd as"+` ${user.email}`)
-        window.location.href ='index2.html'
-        
-        // IdP data available using getAdditionalUserInfo(result)
-        // ...
-    }).catch((error) => {
-        // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        alert(errorMessage)
-        // The email of the user's account used.
-        const email = error.customData.email;
-        // The AuthCredential type that was used.
-        const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
-    });
-
-}
-else{
-  console.log("no")
-}
 
 
 document.getElementById('create-room-int').addEventListener('click',function(){
