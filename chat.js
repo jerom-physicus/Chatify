@@ -117,19 +117,24 @@ else{
 function getusername(username){
   let users = [...new Set(username)];
   let usersnbr = users.length
-  console.log(users)
   count.innerHTML = usersnbr
+  for (let i = 0; i < users.length; i++) {
+    globalThis.element = users[i];
+    console.log(element)
+    getmembers(element)
+
+    
+  }
+
+  
 
 
-  //let arr1 = []
+}
 
-  //arr1.push(username);
-  //console.log(arr1)
-  //console.log(ga)
- // let ka = arr1.concat(users,ga);
-  //let usernam = username
- // console.log(users)
-
+function getmembers(member){
+  let user_li = document.createElement("li")
+  user_li.textContent =member
+  document.getElementById('users_list').append(user_li)
 
 }
 

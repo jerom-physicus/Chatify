@@ -360,7 +360,37 @@ background: #5f44abfc;
         right: 15px;
         width: 18px;
     }
+    .member{
+        position: absolute;
+        overflow-y: scroll;
+        top: 80px;
+        left: 30px;
+        width: 83%;
+        height: 446px;
+        flex-shrink: 0;
+        border-radius: 9px;
+        border: 1px solid #FFF;
+    }
+    .member h3{
+        position: absolute;
+        top: 10px;
+    }
+  
     
+    .member  li{
+        position: relative;
+        top: 40px;
+        margin-top: 20px;
+        list-style: none;
+        background-color: rgb(136, 114, 194);
+        padding: 10px;
+        border-radius: 6px;
+        text-align: center;
+        user-select: none;
+        width: 80%;
+        left: 35px;
+
+    }
    
     
 }

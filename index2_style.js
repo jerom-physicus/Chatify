@@ -153,6 +153,8 @@ function appendListElement2(values){
     newEl.textContent =values
     add2.append(newEl)
     newEl.addEventListener('click',function(){
+      
+      
       document.getElementById('trash-icon2').addEventListener('click',function(){
         onValue(ref(db,"rooms2/"+values),function(snapshot){
           let dbemail = Object.values(snapshot.val('email'))
@@ -173,14 +175,40 @@ function appendListElement2(values){
         let dbemail = Object.values(snapshot.val('room_key'))
        // console.log(values[1])
        // let dbemail = Object.values(snapshot.val('email'))
+       
+       
         let sorted = dbemail.length
         let emailindex = sorted-2
         let dbkey = dbemail[emailindex] 
-        document.getElementById('join-delete-alert2').style.display = 'block'
+        let localkey = localStorage.getItem(values)
+       
+       if(localkey == dbkey){
+        document.getElementById('trash-icon2').style.top = '65px'
+        document.getElementById('join-icon2').style.top = '65px'
+        console.log(localkey)
+        document.getElementById('key-input2').style.display = 'none'
+        document.getElementById('join-icon2').addEventListener('click',function(){
+          let data2 =( db,"rooms2/"+values)
+
+          localStorage.setItem('room_data', data2);
+            localStorage.setItem('room_name', values);
+            localStorage.setItem('room_type', 'room2');
+            window.location.href ='chat.html'
+
+        })
+
+
+       }
+       else{
         document.getElementById('join-icon2').addEventListener('click',function(){
           var key = document.getElementById('key-input2').value
+          localStorage.setItem(values, key);
+
+          
           let data = ref(db,"rooms/"+values)
           let data2 =( db,"rooms2/"+values)
+         
+          
           if (key == dbkey){
             localStorage.setItem('room_data', data2);
             localStorage.setItem('room_name', values);
@@ -195,13 +223,13 @@ function appendListElement2(values){
             
           
           
+   
+
+
+        })
+       }
+        document.getElementById('join-delete-alert2').style.display = 'block'
         
-        //localStorage.setItem('room_data', data2);
-        //localStorage.setItem('room_name', values);
-        //window.location.href ='chat.html'
-
-
-      })
       })
       
 
