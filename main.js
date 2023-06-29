@@ -1,8 +1,13 @@
 const string = 'split by space';
 
+let usingSplit2 = string.split(' ');
+let funList = [];
+for (let i = 0; i < 3; i++) {
+  const fun = usingSplit2[i];
+  funList.push(fun);
+}
 
-const usingSplit2 = string.split(' ');
-const i =usingSplit2.length-1
+console.log(funList);
 
-console.log(usingSplit2[i])
+//console.log(usingSplit2[1])
 

@@ -26,6 +26,7 @@ var email1 = localStorage.getItem('email');
 //var email = email1.replace('@gmail.com','')
 const room_name = localStorage.getItem('room_name');
 document.getElementById("room_title").innerHTML = room_name
+document.getElementById("room_title2").innerHTML = room_name
 
 if(roomtype =='room'){
   onValue(ref(db,'rooms/'+room_name),function(snapshot){ 
@@ -35,7 +36,7 @@ if(roomtype =='room'){
     let setdata = Object.entries(snapshot.val())
     let values_length = values.length
     let sorted_value = values_length-2
-    
+    let funList = [];
     for (let i=0 ; i <sorted_value; i++){
       let itemsarray = setdata[i]
       let room_name =itemsarray[1]
@@ -48,11 +49,16 @@ if(roomtype =='room'){
       const filter = string.split(' ');
       const j =filter.length-1
       let username = filter[j]
+      funList.push(username);
+      
+
       
       
-      getusername(username)
+      
+      
       appendListChatElement(str,username,keys[i])
     }
+  getusername(funList) 
 })
 }
 else{
@@ -64,7 +70,7 @@ else{
     let values_length = values.length
     let sorted_value = values_length-3
   
-    
+    let funList = [];
     for (let i=0 ; i <sorted_value; i++){
       let itemsarray = setdata[i]
       let room_name =itemsarray[1]
@@ -76,7 +82,8 @@ else{
 
       const filter = string.split(' ');
       const j =filter.length-1
-      let username = filter[j]
+      let username = filter[j]    
+      funList.push(username);
       
       
       
@@ -86,20 +93,25 @@ else{
       
       
     }
+  getusername(funList)   
 })
 
 }
 function getusername(username){
+  let users = [...new Set(username)];
+  let usersnbr = users.length
+  console.log(users)
+  count.innerHTML = usersnbr
+
+
   //let arr1 = []
-  let users = username.split(' ');
-  let names  = [users]
- 
+
   //arr1.push(username);
   //console.log(arr1)
   //console.log(ga)
  // let ka = arr1.concat(users,ga);
   //let usernam = username
-  //console.log(names)
+ // console.log(users)
 
 
 }
@@ -151,6 +163,14 @@ else{
    
 })
 }
+document.getElementById('group').addEventListener('click',function(){
+  document.getElementById('more').style.transform = 'translateY(0%)';
+})
+
+document.getElementById('close').addEventListener('click',function(){
+  document.getElementById('more').style.transform = 'translateY(100%)';
+})
+
 
 
 
