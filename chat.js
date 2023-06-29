@@ -18,7 +18,24 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
-const email = localStorage.getItem('username');
+fix()
+function fix(){
+  const email = localStorage.getItem('username');
+  if(email ==null){
+    globalThis.email = localStorage.getItem('email')
+
+  }
+  else if(email ==''){
+    globalThis.email = localStorage.getItem('email')
+
+  }
+  else{
+    globalThis.email = localStorage.getItem('username')
+  }
+
+}
+
+
 
 
 
