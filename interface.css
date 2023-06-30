@@ -206,7 +206,6 @@ body{
     top: 240px;
     background: rgb(35, 0, 62);
     border-radius: 14px;
-    box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
 
 }
 .join-delete-alert-h{
@@ -220,7 +219,7 @@ body{
 .trash-icon{
     position: relative;
     top: 60px;
-    width: 40px;
+    width: 32px;
     left: 50px;
 }
 .trash-icon:hover{
@@ -228,9 +227,9 @@ body{
 }
 .join-icon{
     position: relative;
-    width: 40px;
+    width: 32px;
     top: 60px;
-    left: 90px;
+    left: 120px;
 }
 .join-icon:hover{
     width: 45px;
@@ -239,7 +238,7 @@ body{
     position: absolute;
     top: 10px;
     right: 10px;
-    width: 15px;
+    width: 12px;
 }
 .join-delete-alert2{
     box-sizing: border-box;
@@ -250,7 +249,6 @@ body{
     left: 70px;
     top: 30px;
     background: #24164B;
-    box-shadow: 0px 4px 4px 531px rgba(0, 0, 0, 0.71);
     border-radius: 14px;
 }
 .join-delete-alert-h2{
@@ -295,6 +293,36 @@ body{
     right: 10px;
     width: 15px;
 }
+.alter{
+    position: fixed;
+    bottom: 80px;
+    display: flex;
+    flex-direction: row;   
+    left: 10px;
+    width: 94%;
+    height: fit-content;
+    border-radius: 6px;
+    background: #4C2C75;
+    transform: translateY(500%);
+    transition: 0.8s;
+    box-shadow: 0px 9px 48px 0px rgba(0, 0, 0, 0.25);
+ }
+ .alter img{
+    position: relative;
+    width: 25px;
+    height: 25px;
+    left: 20px;
+    top: 10px;
+ }
+ #alterp{
+    position: relative;
+    text-align: center;
+    margin-left: 40px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    top: 10px;
+    
+ }
 @media only screen and (max-width: 600px){
     .room-names ul {
 
@@ -359,5 +387,36 @@ body{
         top: 100px;
         left: 16%;
      }
+     .alter{
+        position: fixed;
+        bottom: 80px;
+        display: flex;
+        flex-direction: row;   
+        left: 10px;
+        width: 94%;
+        height: fit-content;
+        border-radius: 6px;
+        background: #4C2C75;
+        transform: translateY(500%);
+        transition: 0.8s;
+        box-shadow: 0px 9px 48px 0px rgba(0, 0, 0, 0.25);
+     }
+     .alter img{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        top: 10px;
+     }
+     #alterp{
+        position: relative;
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        top: 10px;
+        
+     }
+    
 }
 

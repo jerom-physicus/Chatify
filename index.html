@@ -11,7 +11,7 @@
     <link rel="manifest" href="/site.webmanifest">
     </head>
 <body>
-    <div class="home-bar">
+    <div class="home-bar" id="home">
         <h2 class="logo">Chatify</h2>
         <img class="logo-img" src="chatifi-logo.png" alt="">
 
@@ -22,29 +22,34 @@
     <div class="nav-box" id="nav-box">
         <nav>
             <ul>
-                <li>Home</li>
-                <li>About</li>
-                <li>Features</li>
-                <li>Contact</li>
+                <li > <a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#about">Features</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </div>
     <div class="container">
         <p class="slogan">Hi welcome to chatify</p>
         <img class="chat-img" src="Texting-bro.png" alt="">
-        <button class="signup-btn" id="sign" >SignUp</button>
+        <div class="btns">
+            <button class="signup-btn" id="sign" >SignUp</button>
+
+        </div>
 
         <div class="continue-btn" id="continue-btn">
             <p class="continue-p">Continue</p>
             <img src="right-arrow.png" class="arrow">
         </div>
+        
+    </div>
+    <div class="fea-content">
         <h3 class="explore">Explore More</h3>
         <img src="right-arrow.png" class="exp-arrow">
-    </div>
-    <h1 class="fea-h">Features</h1>
-    <p class="fea-p">How to get started?</p>
+        <h1 class="fea-h" >Features</h1>
+       <p class="fea-p">How to get started?</p>
 
-        <div class="fea-1">
+        <div class="fea-1"id="about">
             <img src="fea1.png" class="fea1-img">
             <h3>Get started.</h3>
 
@@ -69,22 +74,30 @@
 
             <p>Enter the room name and skip room key to create an open room. <br><br>To create closed room enter the room name and your private room key. </p>
         </div>
+    </div>
   
-    <div class="contact">
+    <div class="contact" id="contact">
         <h2>Contact & Feed back</h2>
-        <div class="input-box">
-            <input class="name" type="text" placeholder="Name:">
-            <input class="email" type="text" placeholder="Email:">
-            <input class="message" type="text" placeholder="Message:">
-            <button class="send-btn">Send</button>
+        
+            <div class="input-box">
+                <form action="https://formspree.io/f/mknebwov" method="post">
+                    <input class="name" name="name" type="text" placeholder="Name:">
+                <input class="email" name="email" type="text" placeholder="Email:">
+                <input class="message" name="text" type="text" placeholder="Message:">
+                <button class="send-btn" type="submit">Send</button>
 
-        </div>
+                </form>
+                
+
+            </div>
+        
         <div class="socials">
             <img src="linkedin.png" alt="" onclick="window.location.href ='https://www.linkedin.com/in/jeremiah-coherent';">
             <img src="whatsapp.png" alt="" onclick="window.location.href ='https://wa.me/+919283152492' ;">
             <img src="instagram.png" alt="" onclick="window.location.href ='https://www.instagram.com/jerom_physicus/' ;">
         </div>
     </div>
+    
     <p class="summa">No copyright products are used created by JEREMIAH F</p>
 
     

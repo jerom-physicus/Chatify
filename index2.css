@@ -74,7 +74,7 @@ body{
     position: absolute;
     width: 420px;
     height: 630px;
-    left: 311px;
+    left: 511px;
     top: 94px;
     background: #24164B;
     border-radius: 7px;
@@ -279,7 +279,7 @@ border-radius: 16px;
         left: 0px;
         top: 120px;
         background: #24164B;
-        border-radius: 30px;
+        border-radius: 30px 37px;
     }
  
     .profile-head{

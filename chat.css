@@ -32,7 +32,7 @@ body{
 .profile-head{
     display: flex;
     flex-direction: column;
-    top: 100px;
+    top: 70px;
     left: 500px;
     width: 30%;
     height: 55px;
@@ -43,7 +43,7 @@ body{
 .profile-img-mobile-chat{
     position: absolute;
     top: 10px;
-    left: 60px;
+    left: 400px;
     width: 30px;
     height: 30px;
 }
@@ -57,16 +57,29 @@ body{
 .chat{
     list-style: none;
 }
+.count{
+    position: absolute;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    top: 9px;
+    left:94%;
+    border-radius: 17px;
+    background: #ffffff5c;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+}
 
 .chat-interface-content{
     position: fixed;
-    top: 160px;
+    top: 130px;
     left: 500px;
     overflow: auto;
     display: flex;
     flex-direction: column-reverse;
     width: 460px;
-    height:70% ;
+    height:30px ;
     border-radius: 10px;
     border-style: solid;
     border-width: 1px;
@@ -86,7 +99,7 @@ body{
 }
 .user-name-mobile-chat{
     position: absolute;
-    left: 130px;
+    left: 60px;
     top: 10px;
     font-size: 20px;
     font-weight: 400;
@@ -166,6 +179,70 @@ body{
    
    
 }
+.more{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    height: 549px;
+    border-radius: 24px 24px 0px 0px;
+    z-index: 1;
+    transform: translateY(100%);
+    transition: 0.4s;
+
+    background: #5e25a7;;
+
+}
+.more h2{
+    position: relative;
+    top: 30px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 400;
+} 
+.more h3{
+    position: relative;
+    left: 30px;
+    top: 60px;
+    font-weight: 400;
+}
+.close{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 18px;
+}
+.member{
+    position: absolute;
+    overflow-y: scroll;
+    top: 80px;
+    left: 30px;
+    width: 83%;
+    height: 446px;
+    flex-shrink: 0;
+    border-radius: 9px;
+    border: 1px solid #FFF;
+}
+.member h3{
+    position: absolute;
+    top: 10px;
+}
+
+
+.member  li{
+    position: relative;
+    top: 40px;
+    margin-top: 20px;
+    list-style: none;
+    background-color: rgb(139, 106, 198);
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    user-select: none;
+    width: 80%;
+    left: 35px;
+
+}
+
 @media only screen and (max-width: 600px){
     body{
         overflow: hidden;
@@ -265,6 +342,7 @@ body{
         border-style: none;
         font-size: 17px;
         padding-left: 20px;
+        padding-right: 60px;
         background: #46386C;
         opacity: 0.86;
         backdrop-filter: blur(39px);
@@ -332,13 +410,13 @@ body{
         position: fixed;
         width: 100%;
         bottom: 0;
-height: 549px;
-border-radius: 24px 24px 0px 0px;
-z-index: 1;
-transform: translateY(100%);
-transition: 0.4s;
+        height: 549px;
+        border-radius: 24px 24px 0px 0px;
+        z-index: 1;
+        transform: translateY(100%);
+        transition: 0.4s;
 
-background: #5f44abfc;
+        background: #5e25a7;;
 
     }
     .more h2{
@@ -382,7 +460,7 @@ background: #5f44abfc;
         top: 40px;
         margin-top: 20px;
         list-style: none;
-        background-color: rgb(136, 114, 194);
+        background-color: rgb(139, 106, 198);
         padding: 10px;
         border-radius: 6px;
         text-align: center;

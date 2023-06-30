@@ -38,15 +38,17 @@ document.getElementById('create-room-int').addEventListener('click',function(){
           
     })
     let totalroom = values.concat(values2)
-    console.log(totalroom)
     let room_name2 = room_name.replace(' ','')
     if (room_name2 == ''){
-      alert("room name can't be 'null'")
+      
+      let error = "room name can't be 'null'"
+      alerterror(error)
 
     }
     else{
       if(totalroom.includes(room_name)) {
-        alert("room name already exist")
+        let error = "room name already exist"           
+        alerterror(error)
 
       }
       else{
@@ -105,6 +107,7 @@ function appendListElement(values,room_name){
     newEl.textContent =values
     add.append(newEl)
     newEl.addEventListener('click',function(){
+      
     
       document.getElementById('join-delete-alert').style.display = 'block'
       document.getElementById('join-icon').addEventListener('click',function(){
@@ -125,12 +128,15 @@ function appendListElement(values,room_name){
           let emailindex = sorted-2
 
           if(dbemail[emailindex]==email){
-            console.log("reoved")
             remove(ref(db,"rooms/"+values))
+            let error = `Room "${values}" deleted`
+            document.getElementById('join-delete-alert').style.display = 'none'
+            alerterror(error)
 
           }
           else{
-            alert("you are not allowed to delete this room")
+            let error = "you are not allowed to delete this room"
+            alerterror(error)
           }
 
 
@@ -163,9 +169,13 @@ function appendListElement2(values){
           console.log(dbemail[emailindex]) 
           if(dbemail[emailindex]==email){
             remove(ref(db,"rooms2/"+values))
+            let error = `Room "${values}" deleted`
+            document.getElementById('join-delete-alert2').style.display = 'none'
+            alerterror(error)
           }
           else{
-            alert("you are not allowed to delete this room")
+            let error = "you are not allowed to delete this room"
+            alerterror(error)
           }
         })
       })
@@ -216,7 +226,8 @@ function appendListElement2(values){
             window.location.href ='chat.html'
           }
           else{
-            alert("wrong password try again")
+            let error = "wrong password try again"           
+            alerterror(error)
           }
           
            
@@ -256,6 +267,14 @@ function removeItemsBykey(keys,username){
 //})
 
 
+
+function alerterror(error){
+  document.getElementById('alter').style.transform = 'translateY(0%)';
+  alterp.innerHTML = error
+  setTimeout(() => {
+    alter.style.transform = 'translateY(500%)';
+  }, 4000);
+}
 
 
 
