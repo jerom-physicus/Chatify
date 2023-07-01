@@ -28,7 +28,8 @@ if(email == null){
 }
 
 
-document.getElementById('sign').addEventListener('click',function(){    
+document.getElementById('sign').addEventListener('click',function(){   
+    localStorage.clear() 
     const auth = getAuth();
     signInWithPopup(auth, provider)
     .then((result) => {

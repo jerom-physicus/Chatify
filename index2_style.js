@@ -159,6 +159,8 @@ function appendListElement2(values){
     newEl.textContent =values
     add2.append(newEl)
     newEl.addEventListener('click',function(){
+
+      
       
       
       document.getElementById('trash-icon2').addEventListener('click',function(){
@@ -183,7 +185,7 @@ function appendListElement2(values){
       
       onValue(ref(db,"rooms2/"+values),function(snapshot){  
         let dbemail = Object.values(snapshot.val('room_key'))
-       // console.log(values[1])
+        //console.log(values)
        // let dbemail = Object.values(snapshot.val('email'))
        
        
@@ -191,12 +193,14 @@ function appendListElement2(values){
         let emailindex = sorted-2
         let dbkey = dbemail[emailindex] 
         let localkey = localStorage.getItem(values)
+        //console.log(localkey)
+        //console.log(dbkey)
        
        if(localkey == dbkey){
-        document.getElementById('trash-icon2').style.top = '65px'
-        document.getElementById('join-icon2').style.top = '65px'
-        console.log(localkey)
-        document.getElementById('key-input2').style.display = 'none'
+        //document.getElementById('trash-icon2').style.top = '65px'
+        //document.getElementById('join-icon2').style.top = '65px'
+        //console.log(localkey)
+        document.getElementById('key-inputs').style.display = 'none'
         document.getElementById('join-icon2').addEventListener('click',function(){
           let data2 =( db,"rooms2/"+values)
 
@@ -206,12 +210,15 @@ function appendListElement2(values){
             window.location.href ='chat.html'
 
         })
+       
+    
 
 
        }
-       else{
+       else if (localkey == ''){
+        document.getElementById('key-inputs').style.display = 'block'
         document.getElementById('join-icon2').addEventListener('click',function(){
-          var key = document.getElementById('key-input2').value
+          var key = document.getElementById('key-inputs').value
           localStorage.setItem(values, key);
 
           
@@ -229,19 +236,67 @@ function appendListElement2(values){
             let error = "wrong password try again"           
             alerterror(error)
           }
-          
-           
-            
-          
-          
-   
 
+        })
+
+        
+
+     
+        
+       }
+       else if (localkey == null){
+        document.getElementById('key-inputs').style.display = 'block'
+        document.getElementById('join-icon2').addEventListener('click',function(){
+          var key = document.getElementById('key-inputs').value
+          localStorage.setItem(values, key);
+
+          
+          let data = ref(db,"rooms/"+values)
+          let data2 =( db,"rooms2/"+values)
+         
+          
+          if (key == dbkey){
+            localStorage.setItem('room_data', data2);
+            localStorage.setItem('room_name', values);
+            localStorage.setItem('room_type', 'room2');
+            window.location.href ='chat.html'
+          }
+          else{
+            let error = "wrong password try again"           
+            alerterror(error)
+          }
+
+        })
+      } 
+
+
+       else{
+        document.getElementById('join-icon2').addEventListener('click',function(){
+          var key = document.getElementById('key-inputs').value
+          localStorage.setItem(values, key);
+
+          
+          let data = ref(db,"rooms/"+values)
+          let data2 =( db,"rooms2/"+values)
+         
+          
+          if (key == dbkey){
+            localStorage.setItem('room_data', data2);
+            localStorage.setItem('room_name', values);
+            localStorage.setItem('room_type', 'room2');
+            window.location.href ='chat.html'
+          }
+          else{
+            let error = "wrong password try again"           
+            alerterror(error)
+          }
 
         })
        }
-        document.getElementById('join-delete-alert2').style.display = 'block'
         
       })
+      document.getElementById('join-delete-alert2').style.display = 'block'
+
       
 
     })  

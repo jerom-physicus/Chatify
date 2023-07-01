@@ -469,6 +469,36 @@ body{
         left: 35px;
 
     }
+    .alter2{
+        position: fixed;
+        top: 20px;
+        display: flex;
+        flex-direction: row;   
+        left: 10px;
+        width: 94%;
+        height: fit-content;
+        border-radius: 6px;
+        background: #4C2C75;
+        transform: translateY(-600%);
+        transition: 0.8s;
+        box-shadow: 0px 9px 48px 0px rgba(0, 0, 0, 0.25);
+     }
+     .alter2 img{
+        position: relative;
+        width: 25px;
+        height: 25px;
+        left: 20px;
+        top: 10px;
+     }
+     #alterp2{
+        position: relative;
+        text-align: center;
+        margin-left: 40px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        top: 10px;
+        
+     }
    
     
 }

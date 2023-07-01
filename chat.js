@@ -154,8 +154,10 @@ function appendListChatElement(values,username,keys){
     chat_li.textContent =values
     chat.append(chatdiv)
     chatdiv.append(chat_li)
-    chat_li.addEventListener('dblclick',function(){
+    chat_li.addEventListener('click',function(){
       remove(ref(db,'rooms/'+`${room_name}/`+keys))
+      let error = 'Message deleted'
+      alerterror(error)
     })
     
 }
@@ -169,7 +171,7 @@ function appendListChatElement2(values,username,keys){
   chat_li.textContent =values
   chat.append(chatdiv)
   chatdiv.append(chat_li)
-  chat_li.addEventListener('dblclick',function(){
+  chat_li.addEventListener('click',function(){
     remove(ref(db,'rooms2/'+`${room_name}/`+keys))
   })
   
@@ -191,6 +193,18 @@ else{
    
 })
 }
+
+function alerterror(error){
+  document.getElementById('alter2').style.transform = 'translateY(100%)';
+  alterp2.innerHTML = error
+  setTimeout(() => {
+    alter2.style.transform = 'translateY(-500%)';
+  }, 4000);
+}
+
+
+
+
 document.getElementById('group').addEventListener('click',function(){
   document.getElementById('more').style.transform = 'translateY(0%)';
 })
