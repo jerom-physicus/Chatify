@@ -30,7 +30,7 @@ const data2 = ref(db,"rooms2/")
 
 document.getElementById('create-room-int').addEventListener('click',function(){
     let room_name = document.getElementById('room-name-int').value
-    var room_key = document.getElementById('room-key-int').value
+    let room_key = document.getElementById('room-key-int').value
     onValue(data2,function(snapshot){  
       globalThis.values2 = Object.keys(snapshot.val('room_name'))})
     onValue(data,function(snapshot){  
