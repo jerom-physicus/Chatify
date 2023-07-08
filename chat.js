@@ -18,6 +18,7 @@ const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
+const usernamedb = localStorage.getItem('username');
 fix()
 function fix(){
   const email = localStorage.getItem('username');
@@ -126,7 +127,7 @@ function getusername(username){
   count.innerHTML = usersnbr
   for (let i = 0; i < users.length; i++) {
     globalThis.element = users[i];
-    console.log(element)
+    //console.log(element)
     getmembers(element)
 
     
@@ -145,20 +146,35 @@ function getmembers(member){
 }
 
 function appendListChatElement(values,username,keys){
+  
     let chat_li = document.createElement("li")
     let chatdiv = document.createElement("div")
     let chatname = document.createElement("p")
     chatname.textContent = username
     chatdiv.append(chatname)
+    //console.log('hello')
+    //alerterror('new message')
+    //var audio = new Audio('notify2.wav');
+    //audio.play();
+   
+
+    if(usernamedb == username) {
+      
+      chatdiv.style.background = '#7b00ff'
+      chatdiv.style.marginLeft = 'auto'
+      chatdiv.style.borderRadius = '10px 0px 10px 10px '
+      chat_li.addEventListener('dblclick',function(){
+        remove(ref(db,'rooms/'+`${room_name}/`+keys))
+        let error = 'Message deleted'
+        alerterror(error)
+      })
+    
+    }
 
     chat_li.textContent =values
     chat.append(chatdiv)
     chatdiv.append(chat_li)
-    chat_li.addEventListener('dblclick',function(){
-      remove(ref(db,'rooms/'+`${room_name}/`+keys))
-      let error = 'Message deleted'
-      alerterror(error)
-    })
+    
     
 }
 function appendListChatElement2(values,username,keys){
@@ -178,6 +194,7 @@ function appendListChatElement2(values,username,keys){
 }
 if(roomtype =='room'){
   document.getElementById('send-btn').addEventListener('click',function(){
+    audio.play();
     const message_chat = document.getElementById('chat_int').value
     chat_int.value = ""
     push(ref(db,"rooms/"+room_name),message_chat+' '+email)
@@ -187,6 +204,7 @@ if(roomtype =='room'){
 }
 else{
   document.getElementById('send-btn').addEventListener('click',function(){
+    audio.play();
     const message_chat = document.getElementById('chat_int').value
     chat_int.value = ""
     push(ref(db,"rooms2/"+room_name),message_chat+' '+email)
