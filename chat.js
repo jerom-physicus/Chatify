@@ -187,9 +187,18 @@ function appendListChatElement2(values,username,keys){
   chat_li.textContent =values
   chat.append(chatdiv)
   chatdiv.append(chat_li)
-  chat_li.addEventListener('dblclick',function(){
-    remove(ref(db,'rooms2/'+`${room_name}/`+keys))
-  })
+  if(usernamedb == username) {
+      
+    chatdiv.style.background = '#7b00ff'
+    chatdiv.style.marginLeft = 'auto'
+    chatdiv.style.borderRadius = '10px 0px 10px 10px '
+    chat_li.addEventListener('dblclick',function(){
+      remove(ref(db,'rooms2/'+`${room_name}/`+keys))
+      let error = 'Message deleted'
+      alerterror(error)
+    })
+  
+  }
   
 }
 if(roomtype =='room'){
