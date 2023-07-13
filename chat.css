@@ -331,7 +331,7 @@ body{
         height: fit-content;
         padding-right: 14px;
         border-radius: 0px 10px 10px 10px ;
-        background: hsl(269, 97%, 24%);
+        background: linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;
         margin-top: 20px;
         box-shadow: 0px 12px 21px 6px rgba(111, 0, 255, 0.09);
     }

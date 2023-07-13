@@ -160,7 +160,7 @@ function appendListChatElement(values,username,keys){
 
     if(usernamedb == username) {
       
-      chatdiv.style.background = '#7b00ff'
+      chatdiv.style.background = 'linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;'
       chatdiv.style.marginLeft = 'auto'
       chatdiv.style.borderRadius = '10px 0px 10px 10px '
       chat_li.addEventListener('dblclick',function(){
@@ -189,7 +189,7 @@ function appendListChatElement2(values,username,keys){
   chatdiv.append(chat_li)
   if(usernamedb == username) {
       
-    chatdiv.style.background = '#7b00ff'
+    chatdiv.style.background = 'linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;'
     chatdiv.style.marginLeft = 'auto'
     chatdiv.style.borderRadius = '10px 0px 10px 10px '
     chat_li.addEventListener('dblclick',function(){
