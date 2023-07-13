@@ -163,12 +163,16 @@ function appendListChatElement(values,username,keys){
       chatdiv.style.background = '#3e1278'
     chatdiv.style.marginLeft = '0'
     chatdiv.style.borderRadius = '0px 10px 10px 10px'
+      
+    
+    }
+    else{
       chat_li.addEventListener('dblclick',function(){
         remove(ref(db,'rooms/'+`${room_name}/`+keys))
         let error = 'Message deleted'
         alerterror(error)
       })
-    
+
     }
 
     chat_li.textContent =values
@@ -192,12 +196,16 @@ function appendListChatElement2(values,username,keys){
     chatdiv.style.background = '#3e1278'
     chatdiv.style.marginLeft = '0'
     chatdiv.style.borderRadius = '0px 10px 10px 10px'
+   
+  
+  }
+  else{
     chat_li.addEventListener('dblclick',function(){
       remove(ref(db,'rooms2/'+`${room_name}/`+keys))
       let error = 'Message deleted'
       alerterror(error)
     })
-  
+
   }
   
 }
