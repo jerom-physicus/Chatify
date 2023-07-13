@@ -158,11 +158,11 @@ function appendListChatElement(values,username,keys){
     //audio.play();
    
 
-    if(usernamedb == username) {
+    if(usernamedb !== username) {
       
-      chatdiv.style.background = 'linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;'
-      chatdiv.style.marginLeft = 'auto'
-      chatdiv.style.borderRadius = '10px 0px 10px 10px '
+      chatdiv.style.background = '#3e1278'
+    chatdiv.style.marginLeft = '0'
+    chatdiv.style.borderRadius = '0px 10px 10px 10px'
       chat_li.addEventListener('dblclick',function(){
         remove(ref(db,'rooms/'+`${room_name}/`+keys))
         let error = 'Message deleted'
@@ -187,11 +187,11 @@ function appendListChatElement2(values,username,keys){
   chat_li.textContent =values
   chat.append(chatdiv)
   chatdiv.append(chat_li)
-  if(usernamedb == username) {
+  if(usernamedb !== username) {
       
-    chatdiv.style.background = 'linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;'
-    chatdiv.style.marginLeft = 'auto'
-    chatdiv.style.borderRadius = '10px 0px 10px 10px '
+    chatdiv.style.background = '#3e1278'
+    chatdiv.style.marginLeft = '0'
+    chatdiv.style.borderRadius = '0px 10px 10px 10px'
     chat_li.addEventListener('dblclick',function(){
       remove(ref(db,'rooms2/'+`${room_name}/`+keys))
       let error = 'Message deleted'

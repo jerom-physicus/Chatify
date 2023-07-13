@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: #130c28;
+    background-color: #110e1b;
     color: aliceblue;
     overflow-y: scroll;
     overflow-x: scroll;
@@ -217,7 +217,7 @@ body{
         width: 100%;
         flex-shrink: 0;
         border-radius: 0px 0px 10px 10px;
-        background: #2a0f56;
+        background: #5510c5;
     }
     .profile-img-mobile-chat{
         position: fixed;
@@ -303,7 +303,7 @@ body{
         font-size: 17px;
         padding-left: 20px;
         padding-right: 60px;
-        background: #46386C;
+        background: #2c154e;
         opacity: 0.86;
         backdrop-filter: blur(39px);
     
@@ -324,14 +324,14 @@ body{
     }
     .chat div{
         position: relative;
-     
+        margin-left: auto;
         display: flex;
         flex-direction: column;
         width: fit-content;
         height: fit-content;
         padding-right: 14px;
-        border-radius: 0px 10px 10px 10px ;
-        background: linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;
+        border-radius: 10px 0px 10px 10px ;
+        background: linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;;
         margin-top: 20px;
         box-shadow: 0px 12px 21px 6px rgba(111, 0, 255, 0.09);
     }
