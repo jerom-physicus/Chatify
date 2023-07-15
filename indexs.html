@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="index2.css">
+    <link rel="stylesheet" href="interface.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <title>Chatify</title>
+   
+</head>
+<body id="body">
+    
+    <div>
+        <div class="top-bar">
+            <h2 class="logo">Chatify</h2>
+            <img class="logo-img" src="chatifi-logo.png" >
+            <div >
+                <img src="profile.png" class="profile-img-mobile" alt="">
+                <h3 class="user-name-mobile" id="user_name">user-name</h3>
+            </div>
+        </div>
+    </div>
+    <div class="home-bar">
+        
+        
+
+
+    </div>
+    <div class="nav-box" id="nav-box">
+        <nav class="nav">
+            <ul class="ul">
+                <li class="li"> Home</li>
+                <li class="li">About</li>
+                <li class="li">Features</li>
+                <li class="li">Contact</li>
+            </ul>
+        </nav>
+    </div>
+    <div class="rooms-page">
+        <div class="top-box">
+            <div class="profile-head">
+            <img src="profile.png" class="profile-img" alt="">
+            <h3 class="user-name" id="user_name">user-name</h3>
+
+        </div>
+        </div>
+        
+        
+
+        <div class="room-btns" id="room-btns">
+            <button id="open-room-btn2" class="openroom-btn2">Opened room's</button>
+            <button id="open-room-btn" class="openroom-btn">Opened room's</button>
+            <button id="close-room-btn" class="closedroom-btn">Closed room's</button>
+            <button id="close-room-btn2" class="closedroom-btn2">Closed room's</button>
+        </div>
+
+        <div class="open-close-display" id="open-close-display">
+            <div class="open-room-content" id="open-room-content">
+                <img src="open-room.png" class="open-room-img">
+                <h4 class="openroom-head">Select a room to join.</h4>
+                <div class="room-names">
+                    <ul  id="add" class="add_room"  >
+                    </ul>
+                </div>
+    
+            </div>
+            <div class="close-room-content" id="close-room-content">
+                <img src="close-room.png" class="close-room-img">
+                <h4 class="openroom-head">join room with key.</h4>
+                <div class="closed-room-names">
+                    <ul  id="add2" class="add_room2" >
+                    </ul>
+                </div>
+    
+            </div>
+        </div>
+        
+        
+        
+
+        <div class="create-interface" id="create-interface">
+            <h4 class="create-room-h">Create a room</h4>
+            <input type="text" placeholder="Room name" class="name-int" id="room-name-int">
+            <input type="text" placeholder="Room key" class="key-int" id="room-key-int">
+            <button class="create-room-int" id="create-room-int">Create</button>
+            <p class="alert">*To create a opened room skip the room key session else enter a rememberable room key </p>
+        </div>
+
+        
+        <div class="join-delete-alerts" id="join-delete-alert">
+            <h3>Are you sure to ?</h3>
+            <p class="join-1" id="join-icon">Join room</p>
+            <div class="line1"></div>
+            <p class="delete-1" id="trash-icon">Delete room</p>
+            <div class="line2"></div>
+            <p class="close-1" id="close_icon">Close</p>
+
+        </div>
+        
+        <div class="join-delete-alerts2" id="join-delete-alert2">
+            <h3>Are you sure to ?</h3>
+            <input type="text" placeholder="Room key" class="key-inputs"  id="key-inputs">
+            <p class="join-1" id="join-icon2">Join room</p>
+            <div class="line1"></div>
+            <p class="delete-1" id="trash-icon2">Delete room</p>
+            <div class="line2"></div>
+            <p class="close-1" id="close_icon2">Close</p>
+        
+
+
+        </div>
+
+
+
+        <div class="btm-nav">
+            <img src="home.png" class="home-icon" id="home-btn">
+            <img src="room.png" class="room-icon" id="room-btn">
+            <img src="plus.png" class="plus-icon" id="create-room-btn">
+            
+            
+    
+    
+        </div>
+
+    </div>
+    <div class="create-room-page">
+
+    </div>
+    <div class="alter" id="alter">
+        <img src="exclamation.png" alt="">
+        <p id="alterp">Error notification</p>
+    </div>
+    <input type="search" placeholder="search" id="search-input">
+    
+    
+    <script src="index2_style.js" type="module"></script>
+   
+    
+</body>
+</html>

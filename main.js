@@ -11,3 +11,15 @@ console.log(funList);
 
 //console.log(usingSplit2[1])
 
+
+let list = ['apple','mango','banana','orange']
+for (let i = 0; i < list.length; i++) {
+  if(list[i].includes('m')){
+    console.log('found')
+    console.log(i)
+  }else{
+    console.log("not found")
+  }
+  
+}
+
