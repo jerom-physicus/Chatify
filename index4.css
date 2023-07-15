@@ -212,7 +212,6 @@ body{
     top: 205px;
     width: 100%;
     border-top: 1px solid #5B3886;
-border-bottom: 1px solid #5B3886;
     bottom: 70px;
     overflow-y: scroll;
    }
@@ -237,7 +236,6 @@ border-bottom: 1px solid #5B3886;
     top: 205px;
     width: 100%;
     border-top: 1px solid #5B3886;
-border-bottom: 1px solid #5B3886;
     bottom: 70px;
     overflow-y: scroll;
    }
