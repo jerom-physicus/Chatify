@@ -366,10 +366,19 @@ margin-right: 40px;
 
 
 @media only screen and (max-width: 600px){
-  
+     .cover{
+        z-index: 1;
+        position: fixed;
+        background-color: #00000049;
+        width: 100%;
+        height: 100%;
+        backdrop-filter: blur(1px);
+        display: none;
+       
+     }
     .top-bar{
         position: fixed;
-        background: #270257;
+        background: #36245f;
         height: 110px;
         width: 95.2%;
         display: flex;
@@ -629,6 +638,7 @@ margin-right: 40px;
 
 
     .bottom-nav{
+        z-index: 1;
         position:fixed;
         bottom: 35px;
         display: flex;
