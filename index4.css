@@ -76,19 +76,316 @@ body{
 
 
 }
+.top-bar{
+    position: fixed;
+    background: #270257;
+    height: 110px;
+    width: 95.2%;
+    display: flex;
+    flex-direction: row;
+    border-radius: 9px;
+}
+.bar{
+    position: absolute;
+    bottom: 2px;
+    width: 40%;
+    left: 5%;
+    height: 2px;
+    border-radius: 31px;
+    background: #9A4DFF;
+    box-shadow: 0px -4px 17px 5px rgba(112, 0, 255, 0.34);
+    transition: 0.4s;
+}
+.logo{
+    margin: 20px;
+    font-size: 27px;
+    letter-spacing: 4px;
+    display: none;
+}
+.logo-img{
+    
+    margin: 18px;
+    width: 100px;
+    margin-left: 140px;
+    display: none;
+}
+.openroom-btn-txt{
+   
+    position: absolute;
+    top: 12px;
+    left: 10%;
+}
+.closeroom-btn-txt{
+    color: #9d8fc5;
+    position: absolute;
+    top: 12px;
+    right: 10%;
+}
+.profile-img{
+    position: absolute;
+    width: 20px;
+    height: 42px;
+    left: 20px;
+    top: -65px;
+    display: none;
+}
+.user-name{
+    display: none;
+    font-size: 25px;
+}
+.profile-img-mobile{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    left: 20px;
+    top: 10px;
+    display: block;
+}
+.user-name-mobile{
+    position: absolute;
+    width: 390px;
+    height: 57px;
+    padding-left: 40px;
+    top: 15px;        
+    font-style: normal;
+    left: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    display: block;
+}
+
+.room-btns{
+    
+    position:absolute;
+    top: 55%;
+    left: 0%;
+    width: 100%;
+   
+  
+
+}
+.openroom-btn{
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.31));
+    width: 130px;
+    font-size: 12px;
+    position: relative;
+    left: 8%;
+    height: 35px;
+    top: 0;
+}
+.closedroom-btn{
+    position: absolute;
+    width: 130px;
+    font-size: 12px;
+    margin-right: auto;
+    right: 8%;
+    height: 35px;
+    top: 0;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.31));
+}
+.input-field{
+    position: relative;
+    top: 130px;
+    left: 5%;
+}
+.search-icon{
+    z-index: 1;
+    position:absolute;
+    top: 20px;
+    left: 17%;
+    width: 27px;
+}
+
+.input-field input{
+    position: absolute;
+    left: 15%;
+    top: 14px;
+    border-radius: 6px;
+    background: #34275B;
+    border-style: none;
+    height: 40px;
+    width: 75%;
+    padding-left: 14%;
+    color: #FFF;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+.open-room-img{
+    position: absolute;
+    width: 50px;
+    top: 9px;
+    left: -7px;
+}
+.close-room-img{
+position: absolute;
+top: 13px;
+width: 44px;
+left: 0;
+display: none;
+}
+
+.open-room-content{
+position: absolute;
+top: 205px;
+width: 100%;
+border-top: 1px solid #5B3886;
+bottom: 70px;
+overflow-y: scroll;
+}
+
+.open-room-content ul li{
+position: relative;
+flex-grow: 1;
+list-style: none;
+margin-top: 20px;
+padding-top: 7px;
+width: 80%;
+height: 41px;
+left: 35px;
+background: #642abb;
+border-radius: 8px;
+text-align: center;
+
+
+}
+.close-room-content{
+position: absolute;
+top: 205px;
+width: 100%;
+border-top: 1px solid #5B3886;
+bottom: 70px;
+overflow-y: scroll;
+}
+
+.close-room-content ul li{
+position: relative;
+flex-grow: 1;
+list-style: none;
+margin-top: 20px;
+padding-top: 7px;
+width: 80%;
+height: 41px;
+left: 35px;
+background: #642abb;
+border-radius: 8px;
+text-align: center;
+
+
+}
+.create-interface{
+position: fixed;
+bottom: 90px;
+height: 400px;
+width: 95%;
+background-color: #24164B;
+border-radius:16px 16px 0px 0px;
+display: flex;
+flex-direction: column;
+transition: 0.8s;
+transform: translateY(180%);
+
+}
+
+
+.create-room-h{
+position: relative;
+text-align: center;
+margin-bottom: 40px;
+top: 20px;
+font-size: 25px;
+font-weight: 200;
+
+}
+.create-interface input{
+position: relative;
+background-color: #412c7c;
+height: 45px;
+width: 70%;
+left: 15%;
+border: 1px solid #FFFFFF;
+border-radius: 8px;
+margin-bottom: 20px;
+color: white;
+padding-left: 20px;
+font-size: 18px;
+}
+.create-interface button{
+position: relative;
+background-color: #7003ff;
+height: 45px;
+width: 70%;
+left: 15%;
+border-style: none;
+border-radius: 8px;
+margin-top: 10px;
+color: white;
+font-size: 18px;
+}
+
+.create-interface p{
+text-align: center;
+margin-top: 20px;
+margin-left: 40px;
+margin-right: 40px;
+}
+
+
+
+
+
+
+
+.bottom-nav{
+    position:fixed;
+    bottom: 35px;
+    display: flex;
+    height: 58px;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10%;
+    background: #1e1732;
+    box-shadow: 0px 4px 13px 1px rgba(255, 255, 255, 0.04) inset;
+    width: 95.3%;
+  
+}
+.bottom-nav img{
+
+   position: relative;
+   width: 25px;
+   margin-right: 8%; 
+ 
+}
+
+.plus-icon2{
+    display: none;
+   
+  
+    
+}
+
 
 @media only screen and (max-width: 600px){
   
     .top-bar{
         position: fixed;
-        background: linear-gradient(180deg, #5A00CC 0%, #3B0086 100%);
-
-
-        height: 120px;
+        background: #270257;
+        height: 110px;
         width: 95.2%;
         display: flex;
         flex-direction: row;
         border-radius: 9px;
+    }
+    .bar{
+        position: absolute;
+        bottom: 2px;
+        width: 40%;
+        left: 5%;
+        height: 2px;
+        border-radius: 31px;
+        background: #9A4DFF;
+        box-shadow: 0px -4px 17px 5px rgba(112, 0, 255, 0.34);
+        transition: 0.4s;
     }
     .logo{
         margin: 20px;
@@ -102,6 +399,19 @@ body{
         width: 100px;
         margin-left: 140px;
         display: none;
+    }
+    .openroom-btn-txt{
+       
+        position: absolute;
+        top: 12px;
+        left: 10%;
+    }
+    .closeroom-btn-txt{
+        color: #9d8fc5;
+        position: absolute;
+        top: 12px;
+        right: 10%;
+        font-weight: 300;
     }
     .profile-img{
         position: absolute;
@@ -190,7 +500,7 @@ body{
         padding-left: 14%;
         color: #FFF;
         font-size: 18px;
-        font-weight: 100;
+        font-weight: 300;
     }
 
     .open-room-img{
@@ -225,7 +535,7 @@ body{
     width: 80%;
     height: 41px;
     left: 35px;
-    background: #642abb;
+    background: #47039f;
     border-radius: 8px;
     text-align: center;
  
@@ -249,7 +559,7 @@ body{
     width: 80%;
     height: 41px;
     left: 35px;
-    background: #642abb;
+    background: #47039f;
     border-radius: 8px;
     text-align: center;
  

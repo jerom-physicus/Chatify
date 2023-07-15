@@ -518,39 +518,34 @@ function alerterror(error){
 
 
 
-
-
-
-
-
-
-
-document.getElementById('open-room-btn').addEventListener('click',function(){
-    let open_btn = document.getElementById('open-room-btn')
-    let close_btn = document.getElementById('close-room-btn')
-    close_btn.style.backgroundColor = '#6200f5'
-    close_btn.style.border = '1px solid #FFF'
-    open_btn.style.border = 'none'
-    open_btn.style.backgroundColor = '#15121F'
-    document.getElementById('open-room-img').style.display = 'block'
+document.getElementById('open-room-btn-txt').addEventListener('click',function(){
+  document.getElementById('bar').style.left = '20px'
+  document.getElementById('open-room-img').style.display = 'block'
     document.getElementById('close-room-img').style.display = 'none'
     document.getElementById('close-room-content').style.display = 'none'
     document.getElementById('open-room-content').style.display = 'block'
-
+    document.getElementById('open-room-btn-txt').style.color = 'white'
+    document.getElementById('close-room-btn-txt').style.color = '#9d8fc5'
 })
-document.getElementById('close-room-btn').addEventListener('click',function(){
-    let open_btn = document.getElementById('open-room-btn')
-    let close_btn = document.getElementById('close-room-btn')
-    open_btn.style.backgroundColor = '#6200f5'
-    open_btn.style.border = '1px solid #FFF'
-    close_btn.style.border = 'none'
-    close_btn.style.backgroundColor = '#15121F'
-    document.getElementById('open-room-img').style.display = 'none'
+document.getElementById('close-room-btn-txt').addEventListener('click',function(){
+  document.getElementById('bar').style.left = '55%'
+  document.getElementById('open-room-img').style.display = 'none'
     document.getElementById('close-room-img').style.display = 'block'
     document.getElementById('close-room-content').style.display = 'block'
     document.getElementById('open-room-content').style.display = 'none'
+    document.getElementById('close-room-btn-txt').style.color = 'white'
+    document.getElementById('open-room-btn-txt').style.color = '#9d8fc5'
 
 })
+
+
+
+
+
+
+
+
+
 document.getElementById('create-room-btn').addEventListener('click',function(){
     document.getElementById('create-interface').style.transform = 'translateY(0%)'
     document.getElementById('create-close-room-btn').style.display = 'block'
