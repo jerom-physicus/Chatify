@@ -111,7 +111,6 @@ document.getElementById('create-room-int').addEventListener('click',function(){
  
 onValue(data,function(snapshot){ 
    
-    add.innerHTML = "" 
     let values = Object.keys(snapshot.val('room_name'))
    
     let setdata = Object.entries(snapshot.val())
@@ -127,8 +126,8 @@ onValue(data,function(snapshot){
 })
  
 function appendListElement(room_list,room_name){
-  
     for (let k = 0; k < room_list.length; k++) {
+      //add.innerHTML = ''
       getDownloadURL(Sref(storage, room_list[k]))
       .then((url) => {
 
@@ -313,6 +312,7 @@ function appendListElement(room_list,room_name){
     
     
           } else {
+            
             globalThis. newEl = document.createElement("li")
             newEl.textContent =room_list[i]
             add.append(newEl)
@@ -328,12 +328,11 @@ function appendListElement(room_list,room_name){
      
       })
       
-  
   }
 
 
   onValue(data2,function(snapshot){ 
-    add2.innerHTML = ""  
+    add2.innerHTML = '' 
       let values = Object.keys(snapshot.val('room_name'))
       console.log(values)
       let setdata = Object.entries(snapshot.val())
@@ -612,7 +611,10 @@ function alerterror(error){
   }
 
 
-document.getElementById('open-room-content').addEventListener('touchmove',function(){
+
+
+
+document.getElementById('open-room-content').addEventListener('swiped-left',function(){
   document.getElementById('bar').style.left = '55%'
   document.getElementById('open-room-img').style.display = 'none'
     document.getElementById('close-room-img').style.display = 'block'
@@ -623,7 +625,7 @@ document.getElementById('open-room-content').addEventListener('touchmove',functi
 
     console.log("swiped")
 })
-document.getElementById('close-room-content').addEventListener('touchmove',function(){
+document.getElementById('close-room-content').addEventListener('swiped-right',function(){
   document.getElementById('bar').style.left = '20px'
   document.getElementById('open-room-img').style.display = 'block'
     document.getElementById('close-room-img').style.display = 'none'
