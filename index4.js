@@ -612,7 +612,28 @@ function alerterror(error){
   }
 
 
+document.getElementById('open-room-content').addEventListener('touchmove',function(){
+  document.getElementById('bar').style.left = '55%'
+  document.getElementById('open-room-img').style.display = 'none'
+    document.getElementById('close-room-img').style.display = 'block'
+    document.getElementById('close-room-content').style.display = 'block'
+    document.getElementById('open-room-content').style.display = 'none'
+    document.getElementById('close-room-btn-txt').style.color = 'white'
+    document.getElementById('open-room-btn-txt').style.color = '#9d8fc5'
 
+    console.log("swiped")
+})
+document.getElementById('close-room-content').addEventListener('touchmove',function(){
+  document.getElementById('bar').style.left = '20px'
+  document.getElementById('open-room-img').style.display = 'block'
+    document.getElementById('close-room-img').style.display = 'none'
+    document.getElementById('close-room-content').style.display = 'none'
+    document.getElementById('open-room-content').style.display = 'block'
+    document.getElementById('open-room-btn-txt').style.color = 'white'
+    document.getElementById('close-room-btn-txt').style.color = '#9d8fc5'
+
+    console.log("swiped")
+})
 
 
 document.getElementById('open-room-btn-txt').addEventListener('click',function(){
