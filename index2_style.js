@@ -117,6 +117,7 @@ function appendListElement(room_list,room_name){
   add.append(newEl)
  
   newEl.addEventListener('click',function(){
+    
     let values = room_list[k]
     console.log(values)
 

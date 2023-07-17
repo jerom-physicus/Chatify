@@ -208,6 +208,7 @@
 
 
 @media only screen and (max-width: 600px){
+    
     .join-delete-alerts{
         position: absolute;
         width: 100%;
@@ -270,6 +271,7 @@
         bottom: 93px;
         transform: translateY(200%);
         transition: 0.7s;
+        z-index: 1;
         
     }
     .join-alerts h3{

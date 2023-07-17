@@ -16,12 +16,13 @@
     
     <div class="main">
         <div class="top-bar">
+          
             <h2 class="logo">Chatify</h2>
             <img class="logo-img" src="chatifi-logo.png" >
             
             <img src="profile.png" class="profile-img-mobile" alt="">
             <h3 class="user-name-mobile" id="user_name">user-name</h3>
-            
+            <img id="img">
 
             <div class="room-btns" id="room-btns">
                 <p id="open-room-btn-txt" class="openroom-btn-txt">Opened room</p>
@@ -37,7 +38,8 @@
             <img src="open-room.png" class="open-room-img" id="open-room-img">
             <img src="close-room.png" class="close-room-img" id="close-room-img">
             <img src="search.png" class="search-icon">
-            <input type="search" placeholder="search" id="search-input" >
+            <input class="search-int" type="search" placeholder="search" id="search-input" >
+
 
 
         </div>
@@ -58,6 +60,7 @@
         </div>
         
     </div>
+    <div class="cover" id="cover"></div>
     <div class="join-alerts" id="join-alert">
         <h3>Are you sure to join this room?</h3>
         <p class="join-12" id="join-icon">Join room</p>
@@ -91,6 +94,7 @@
         <input type="text" placeholder="Room name" class="name-int" id="room-name-int">
         <input type="text" placeholder="Room key" class="key-int" id="room-key-int">
         <button class="create-room-int" id="create-room-int">Create</button>
+        <input type="file" id="img-input">
         <p class="alert">* To create a opened room skip the room key session else enter a rememberable room key </p>
     </div>
     <div class="bottom-nav">

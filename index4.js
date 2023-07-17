@@ -1,6 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 import { getDatabase, ref,push,onValue, remove,set, } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-auth.js";
+import { getStorage, ref as Sref ,  uploadBytesResumable,getDownloadURL,deleteObject} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js";
 
 
 const firebaseConfig = {
@@ -18,6 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
 const provider = new GoogleAuthProvider();
+const storage = getStorage();
 
 var email = localStorage.getItem('email');
 user_name.innerHTML = email
@@ -52,31 +54,55 @@ document.getElementById('create-room-int').addEventListener('click',function(){
 
       }
       else{
-        if (room_key == ''){  
-          set(ref(db,"rooms/"+room_name), {
+        if (room_key == ''){
+          let file = document.getElementById('img-input').files[0]
+          if (file != null){
+            set(ref(db,"rooms/"+room_name), {
               email:email,
               room_name:room_name                 
             });
+            
+            const refl  = Sref(storage,room_name)
+            const metadata = {
+                contentType : file.type
+              }
+            const task = uploadBytesResumable(refl,file)
             document.getElementById('create-interface').style.transform = 'translateY(180%)'
             document.getElementById('create-close-room-btn').style.display = 'none'
             document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
             document.getElementById('create-room-btn').style.display = 'block'
             let error = "Successfuly created a room"           
             alerterror(error) 
+
+          } 
+          else{
+            let error = "Room profile must be uploded"
+            alerterror(error)
+          } 
+          
       }
       else{
+        let file = document.getElementById('img-input').files[0]
+        if (file != null){
           set(ref(db,"rooms2/"+room_name), {
-              email:email,
-              room_name:room_name,
-              room_key:room_key
-             
-            });
-            document.getElementById('create-interface').style.transform = 'translateY(180%)'
-            document.getElementById('create-close-room-btn').style.display = 'none'
-            document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
-            document.getElementById('create-room-btn').style.display = 'block'
-            let error = "Successfuly created a closed room"           
-            alerterror(error)
+            email:email,
+            room_name:room_name,
+            room_key:room_key
+           
+          });
+          document.getElementById('create-interface').style.transform = 'translateY(180%)'
+          document.getElementById('create-close-room-btn').style.display = 'none'
+          document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
+          document.getElementById('create-room-btn').style.display = 'block'
+          let error = "Successfuly created a closed room"           
+          alerterror(error)
+
+        }
+        else{
+          let error = "Room profile must be uploded"
+          alerterror(error)
+        }
+          
       }
       }
     }
@@ -103,76 +129,102 @@ onValue(data,function(snapshot){
 function appendListElement(room_list,room_name){
   
     for (let k = 0; k < room_list.length; k++) {
-      globalThis. newEl = document.createElement("li")
-      newEl.textContent =room_list[k]
-      add.append(newEl)
-   
-    newEl.addEventListener('click',function(){
-      let values = room_list[k]
-      onValue(ref(db,"rooms/"+values),function(snapshot){
-        let dbemail = Object.values(snapshot.val('email'))
-        let sorted = dbemail.length
-        let emailindex = sorted-2
+      getDownloadURL(Sref(storage, room_list[k]))
+      .then((url) => {
 
-        if(dbemail[emailindex]==email){
-          
-          let error = `Room "${values}" deleted`
-          document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
-          document.getElementById('close_icon2').addEventListener('click',function(){
-                
-            document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
-        })
-            document.getElementById('join-icon2').addEventListener('click',function(){
-                let data = ref(db,"rooms/"+values)
-                let data2 =( db,"rooms/"+values)
-                let room = 'room'
-                localStorage.setItem('room_data', data2);
-                localStorage.setItem('room_name', values);
-                localStorage.setItem('room_type', room);
-                window.location.href ='chat.html'
+        globalThis.newEl = document.createElement("div")
+        globalThis.newImg = document.createElement("img")
+        globalThis.newTxt = document.createElement("p")
+        newImg.src = url
+
         
+        newTxt.textContent =room_list[k]
+        add.append(newEl)
+        newEl.append(newImg)
+        newEl.append(newTxt)
+        newEl.addEventListener('click',function(){
+          //cover.style.display = 'flex'
+          let values = room_list[k]
+          onValue(ref(db,"rooms/"+values),function(snapshot){
+            let dbemail = Object.values(snapshot.val('email'))
+            let sorted = dbemail.length
+            let emailindex = sorted-2
+    
+            if(dbemail[emailindex]==email){
+              
+              let error = `Room "${values}" deleted`
+              document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
+              document.getElementById('close_icon2').addEventListener('click',function(){
+                    
+                document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
             })
-               document.getElementById('trash-icon2').addEventListener('click',function(){
-                    remove(ref(db,"rooms/"+values))
-                    document.getElementById('join-delete-alert').style.transform = ' translateY(200%)'
-
-                    alerterror(error)
-                })
-                
-
-        }
-        else{
+                document.getElementById('join-icon2').addEventListener('click',function(){
+                    let data = ref(db,"rooms/"+values)
+                    let data2 =( db,"rooms/"+values)
+                    let room = 'room'
+                    localStorage.setItem('room_data', data2);
+                    localStorage.setItem('room_name', values);
+                    localStorage.setItem('room_type', room);
+                    window.location.href ='chat.html'
             
-            document.getElementById('join-alert').style.transform =' translateY(22%)'
-            document.getElementById('close_icon').addEventListener('click',function(){
+                })
+                   document.getElementById('trash-icon2').addEventListener('click',function(){
+                    deleteObject(Sref(storage,values)).then(() => {
+                      // File deleted successfully
+                    }).catch((error) => {
+                      console.log(error)
+                      // Uh-oh, an error occurred!
+                    });
+                        remove(ref(db,"rooms/"+values))
+                        document.getElementById('join-delete-alert').style.transform = ' translateY(200%)'
+    
+                        alerterror(error)
+                    })
+                    
+    
+            }
+            else{
                 
-                document.getElementById('join-alert').style.transform =' translateY(200%)'
-            })
-            document.getElementById('join-icon').addEventListener('click',function(){
-                let data = ref(db,"rooms/"+values)
-                let data2 =( db,"rooms/"+values)
-                let room = 'room'
-                localStorage.setItem('room_data', data2);
-                localStorage.setItem('room_name', values);
-                localStorage.setItem('room_type', room);
-                window.location.href ='chat.html'
-        
-            })
-        }
-
-
+                document.getElementById('join-alert').style.transform =' translateY(22%)'
+                document.getElementById('close_icon').addEventListener('click',function(){
+                    
+                    document.getElementById('join-alert').style.transform =' translateY(200%)'
+                })
+                document.getElementById('join-icon').addEventListener('click',function(){
+                    let data = ref(db,"rooms/"+values)
+                    let data2 =( db,"rooms/"+values)
+                    let room = 'room'
+                    localStorage.setItem('room_data', data2);
+                    localStorage.setItem('room_name', values);
+                    localStorage.setItem('room_type', room);
+                    window.location.href ='chat.html'
+            
+                })
+            }
+    
+    
+          })
+          
+      
+      
+          
+          
+          
+      
+      
+          
+          
       })
+      })
+      .catch((error) => {
+        console.log(error)
+        alerterror(error)
+        
+      });
+
       
-  
-  
-      
-      
-      
-  
-  
-      
-      
-  })
+   
+    
     }
     
     
@@ -182,81 +234,91 @@ function appendListElement(room_list,room_name){
       let filter = e.target.value
       add.innerHTML = ''
       for (let i = 0; i < room_list.length; i++) {
+        
         let values = room_list[i]
         if (room_list[i].toLowerCase().includes(filter.toLowerCase())) {
-          
-          globalThis. newEl = document.createElement("li")
-          newEl.textContent =room_list[i]
-          add.append(newEl)
-          newEl.style.display = "block";
-          newEl.addEventListener('click',function(){
-            let values = room_list[i]
-            onValue(ref(db,"rooms/"+values),function(snapshot){
-              let dbemail = Object.values(snapshot.val('email'))
-              let sorted = dbemail.length
-              let emailindex = sorted-2
-      
-              if(dbemail[emailindex]==email){
-                
-                let error = `Room "${values}" deleted`
-                document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
-                document.getElementById('close_icon2').addEventListener('click',function(){
-                      
-                  document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
-              })
-                  document.getElementById('join-icon2').addEventListener('click',function(){
-                      let data = ref(db,"rooms/"+values)
-                      let data2 =( db,"rooms/"+values)
-                      let room = 'room'
-                      localStorage.setItem('room_data', data2);
-                      localStorage.setItem('room_name', values);
-                      localStorage.setItem('room_type', room);
-                      window.location.href ='chat.html'
-              
-                  })
-                     document.getElementById('trash-icon2').addEventListener('click',function(){
-                          remove(ref(db,"rooms/"+values))
-                          document.getElementById('join-delete-alert').style.transform = ' translateY(200%)'
-      
-                          alerterror(error)
-                      })
-                      
-      
-              }
-              else{
+          getDownloadURL(Sref(storage, values))
+          .then((url) => {
+              globalThis.newEl = document.createElement("div")
+            globalThis.newImg = document.createElement("img")
+            globalThis.newTxt = document.createElement("p")
+            newImg.src = url
+    
+            
+            newTxt.textContent =values
+            add.append(newEl)
+            newEl.append(newImg)
+            newEl.append(newTxt)
+            newEl.style.display = "flex";
+            newEl.addEventListener('click',function(){
+              let values = room_list[i]
+              onValue(ref(db,"rooms/"+values),function(snapshot){
+                let dbemail = Object.values(snapshot.val('email'))
+                let sorted = dbemail.length
+                let emailindex = sorted-2
+        
+                if(dbemail[emailindex]==email){
                   
-                  document.getElementById('join-alert').style.transform =' translateY(22%)'
-                  document.getElementById('close_icon').addEventListener('click',function(){
-                      
-                      document.getElementById('join-alert').style.transform =' translateY(200%)'
-                  })
-                  document.getElementById('join-icon').addEventListener('click',function(){
-                      let data = ref(db,"rooms/"+values)
-                      let data2 =( db,"rooms/"+values)
-                      let room = 'room'
-                      localStorage.setItem('room_data', data2);
-                      localStorage.setItem('room_name', values);
-                      localStorage.setItem('room_type', room);
-                      window.location.href ='chat.html'
+                  let error = `Room "${values}" deleted`
+                  document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
+                  document.getElementById('close_icon2').addEventListener('click',function(){
+                        
+                    document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
+                })
+                    document.getElementById('join-icon2').addEventListener('click',function(){
+                        let data = ref(db,"rooms/"+values)
+                        let data2 =( db,"rooms/"+values)
+                        let room = 'room'
+                        localStorage.setItem('room_data', data2);
+                        localStorage.setItem('room_name', values);
+                        localStorage.setItem('room_type', room);
+                        window.location.href ='chat.html'
+                
+                    })
+                      document.getElementById('trash-icon2').addEventListener('click',function(){
+                            remove(ref(db,"rooms/"+values))
+                            document.getElementById('join-delete-alert').style.transform = ' translateY(200%)'
+        
+                            alerterror(error)
+                        })
+                        
+        
+                }
+                else{
+                    
+                    document.getElementById('join-alert').style.transform =' translateY(22%)'
+                    document.getElementById('close_icon').addEventListener('click',function(){
+                        
+                        document.getElementById('join-alert').style.transform =' translateY(200%)'
+                    })
+                    document.getElementById('join-icon').addEventListener('click',function(){
+                        let data = ref(db,"rooms/"+values)
+                        let data2 =( db,"rooms/"+values)
+                        let room = 'room'
+                        localStorage.setItem('room_data', data2);
+                        localStorage.setItem('room_name', values);
+                        localStorage.setItem('room_type', room);
+                        window.location.href ='chat.html'
+                
+                    })
+                              }
+        
+        
+              })
               
-                  })
-                             }
-      
-      
+              
+          })
             })
             
+    
+    
+          } else {
+            globalThis. newEl = document.createElement("li")
+            newEl.textContent =room_list[i]
+            add.append(newEl)
+            newEl.style.display = "none";
+          }
             
-        })
-  
-  
-        } else {
-          globalThis. newEl = document.createElement("li")
-          newEl.textContent =room_list[i]
-          add.append(newEl)
-          newEl.style.display = "block";
-          newEl.style.display = "none";
-        }
-          
         
        
         
@@ -291,11 +353,28 @@ function appendListElement(room_list,room_name){
 function appendListElement2(room_list){
     for (let k = 0; k < room_list.length; k++) {
       let values = room_list[k]
-      console.log(room_list)
-      globalThis. newEl = document.createElement("li")
-      newEl.textContent =room_list[k]
-      add2.append(newEl)
-      functions(values)
+      getDownloadURL(Sref(storage, values))
+  .then((url) => {
+    
+    globalThis.newEl = document.createElement("div")
+    globalThis.newImg = document.createElement("img")
+    globalThis.newTxt = document.createElement("p")
+    newImg.src = url
+    console.log(url)
+    
+    
+    newTxt.textContent =room_list[k]
+    add2.append(newEl)
+    newEl.append(newImg)
+    newEl.append(newTxt)
+    functions(values)
+  })
+  .catch((error) => {
+    alerterror(error)
+    console.log(error)
+    
+  });
+      
     }
     document.getElementById('search-input').addEventListener('input',e=>{
   
@@ -304,23 +383,36 @@ function appendListElement2(room_list){
       
       for (let i = 0; i < room_list.length; i++) {
         let values = room_list[i]
-       
-        if (room_list[i].toLowerCase().includes(filter.toLowerCase())) {
+        getDownloadURL(Sref(storage, values))
+        .then((url) => {
+          if (room_list[i].toLowerCase().includes(filter.toLowerCase())) {
           
-          globalThis. newEl = document.createElement("li")
-          newEl.textContent =room_list[i]
-          add2.append(newEl)
-          newEl.style.display = "";
-          functions(values)
+            globalThis.newEl = document.createElement("div")
+            globalThis.newImg = document.createElement("img")
+            globalThis.newTxt = document.createElement("p")
+            newImg.src = url
+            console.log(url)
+            
+            
+            newTxt.textContent =room_list[i]
+            add2.append(newEl)
+            newEl.append(newImg)
+            newEl.append(newTxt)
+            newEl.style.display = "flex";
+            functions(values)
+          
+    
+          } else {
+            globalThis. newEl = document.createElement("li")
+            newEl.textContent =room_list[i]
+            add2.append(newEl)
+            newEl.style.display = "none";
+            functions(values)
+          }
+
+        })
+       
         
-  
-        } else {
-          globalThis. newEl = document.createElement("li")
-          newEl.textContent =room_list[i]
-          add2.append(newEl)
-          newEl.style.display = "none";
-          functions(values)
-        }
           
         
        
@@ -341,8 +433,8 @@ function appendListElement2(room_list){
             if(dbemail[emailindex]==email){
               document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
               document.getElementById('close_icon2').addEventListener('click',function(){          
-                document.getElementById('join-delete-alert').style.transform =' translateY(200%)'})
-             document.getElementById('join-icon2').addEventListener('click',function(){
+              document.getElementById('join-delete-alert').style.transform =' translateY(200%)'})
+              document.getElementById('join-icon2').addEventListener('click',function(){
                 let data2 =( db,"rooms2/"+values)
         
                 localStorage.setItem('room_data', data2);
@@ -352,10 +444,15 @@ function appendListElement2(room_list){
         
               })
              document.getElementById('trash-icon2').addEventListener('click',function(){
+              deleteObject(Sref(storage,values)).then(() => {
+                // File deleted successfully
+              }).catch((error) => {
+                // Uh-oh, an error occurred!
+              });
                 remove(ref(db,"rooms2/"+values))
                 document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
-              let error = `Room "${values}" deleted`
-              alerterror(error)
+                let error = `Room "${values}" deleted`
+                alerterror(error)
              })
               
             }
