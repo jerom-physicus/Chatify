@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index4.css">
     <link rel="stylesheet" href="interface2.css">
+    <link rel="stylesheet" href="chat1.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -14,7 +15,7 @@
 </head>
 <body>
     
-    <div class="main">
+    <div class="main" id="main-html">
         <div class="top-bar">
           
             <h2 class="logo">Chatify</h2>
@@ -60,6 +61,41 @@
         </div>
         
     </div>
+    <div class="chat" id="chat-html">
+        <div class="header">
+            <img src="left-arrow.png" class="arrow" id="back-btn">
+            <img id="profile-img" class="header-img">
+
+            <h3 class="user-name-chat" id="room_title">room-name</h3>
+            <img src="group.png" class="profile-img-mobile-chat" id="group" >
+            <p class="count" id="count">-</p>
+        </div>
+        <div class="chat-interface-content">
+            <ul id="chat" class="chats">
+              
+            </ul>
+                
+        </div>
+
+        <div class="message-box">
+            <input placeholder="Message" type="text" class="chat-input" id="chat_int">
+            <img src="send.png" class="send-icon" id="send-btn">
+
+        </div>
+        <div class="more" id="more">
+            <h2 id="room_title2">room_title</h2>
+            <img src="close.png" alt="" class="close" id="close">
+            
+            <div class="member">
+                <h3>Room members</h3>
+                <ul id="users_list">
+    
+                </ul>
+    
+            </div>
+            
+       </div>
+    </div>
     <div class="cover" id="cover"></div>
     <div class="join-alerts" id="join-alert">
         <h3>Are you sure to join this room?</h3>
@@ -97,7 +133,7 @@
         <input type="file" id="img-input">
         <p class="alert">* To create a opened room skip the room key session else enter a rememberable room key </p>
     </div>
-    <div class="bottom-nav">
+    <div class="bottom-nav" id="bottom-nav">
         <img src="home.png" class="home-icon" id="home-btn">
         <img src="room.png" class="room-icon" id="room-btn">
         <img src="plus.png" class="plus-icon" id="create-room-btn">
@@ -108,6 +144,12 @@
         <img src="exclamation.png" alt="">
         <p id="alterp">Error notification</p>
     </div>
+    <div class="alter2" id="alter2">
+        <img src="exclamation.png" alt="">
+        <p id="alterp2">Error notification</p>
+    </div>
     <script type="module" src="index4.js"></script>
+    <audio id="audio" src="notification-sound-7062.mp3" autoplay></audio>
+
 </body>
 </html>

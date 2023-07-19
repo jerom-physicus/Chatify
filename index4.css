@@ -25,6 +25,7 @@ body{
     background-color: #15121F;
     color: aliceblue;
     overflow-y: hidden;
+    user-select: none;
 }
 .main{
     display: flex;
@@ -365,6 +366,11 @@ margin-right: 40px;
 
 
 @media only screen and (max-width: 600px){
+    .chat{
+        display: flex;
+        background-color: black;
+        
+    }
     .main{
         display: flex;
     }
@@ -684,7 +690,7 @@ margin-right: 40px;
     .bottom-nav{
         z-index: 1;
         position:fixed;
-        bottom: 0px;
+        bottom: 10px;
         display: flex;
         height: 58px;
         justify-content: flex-end;
