@@ -164,6 +164,7 @@ function appendListElement(room_list,room_name){
                     localStorage.setItem('room_data', data2);
                     localStorage.setItem('room_name', values);
                     localStorage.setItem('room_type', room);
+                    globalThis.room_link = values
                     chatHTML()
             
                 })
@@ -297,6 +298,8 @@ function appendListElement(room_list,room_name){
                         localStorage.setItem('room_data', data2);
                         localStorage.setItem('room_name', values);
                         localStorage.setItem('room_type', room);
+                        globalThis.room_link = values
+
                         chatHTML()
                 
                     })
@@ -439,6 +442,8 @@ function appendListElement2(room_list){
                 localStorage.setItem('room_data', data2);
                   localStorage.setItem('room_name', values);
                   localStorage.setItem('room_type', 'room2');
+                  globalThis.room_link = values
+
                   chatHTML()
         
               })
@@ -482,6 +487,8 @@ function appendListElement2(room_list){
                       localStorage.setItem('room_data', data2);
                         localStorage.setItem('room_name', values);
                         localStorage.setItem('room_type', 'room2');
+                        globalThis.room_link = values
+
                         chatHTML()
               
                     })
@@ -614,6 +621,7 @@ function chatHTML(){
   document.getElementById('main-html').style.display = 'none'
   document.getElementById('chat-html').style.display = 'flex'
   document.getElementById('bottom-nav').style.display = 'none'
+  chat()
 }
 
 
@@ -694,6 +702,7 @@ document.getElementById('chat-btn').addEventListener('click',function(){
   document.getElementById('main-html').style.display = 'none'
   document.getElementById('chat-html').style.display = 'flex'
   document.getElementById('bottom-nav').style.display = 'none'
+  chat()
 })
 document.getElementById('home-btn').addEventListener('click',function(){
     window.location.href = 'index.html'
@@ -709,10 +718,14 @@ document.getElementById("back-btn").addEventListener('click',function(){
 //------------------------- CHAT INTERFACE CONTENT----------------------------------------
 
 
-const roomtype = localStorage.getItem('room_type');
+function chat(){
+  const roomtype = localStorage.getItem('room_type');
 const usernamedb = localStorage.getItem('username');
+let room_name = localStorage.getItem('room_name');
 
-const room_name = localStorage.getItem('room_name');
+
+
+
 document.getElementById("room_title").innerHTML = room_name
 document.getElementById("room_title2").innerHTML = room_name
 
@@ -857,7 +870,7 @@ function appendListChatElement(values,username,keys){
     }
 
     chat_li.textContent =values
-    chat.append(chatdiv)
+    chats.append(chatdiv)
     chatdiv.append(chat_li)
     
     
@@ -870,7 +883,7 @@ function appendListChatElement2(values,username,keys){
   chatdiv.append(chatname)
 
   chat_li.textContent =values
-  chat.append(chatdiv)
+  chats.append(chatdiv)
   chatdiv.append(chat_li)
   if(usernamedb !== username) {
       
@@ -921,3 +934,4 @@ document.getElementById('group').addEventListener('click',function(){
 document.getElementById('close').addEventListener('click',function(){
   document.getElementById('more').style.transform = 'translateY(100%)';
 })
+}
