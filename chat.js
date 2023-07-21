@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
 import { getDatabase, ref,push,onValue, remove,set, } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
+import { getStorage, ref as Sref ,  uploadBytesResumable,getDownloadURL,deleteObject} from "https://www.gstatic.com/firebasejs/9.22.1/firebase-storage.js";
 
 
 const firebaseConfig = {
@@ -16,33 +17,28 @@ const firebaseConfig = {
   // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 var db = getDatabase(app);
+const storage = getStorage();
+//const room_name  = localStorage.getItem(room_name)
 const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
 const usernamedb = localStorage.getItem('username');
-fix()
-function fix(){
-  const email = localStorage.getItem('username');
-  if(email ==null){
-    globalThis.email = localStorage.getItem('email')
-
-  }
-  else if(email ==''){
-    globalThis.email = localStorage.getItem('email')
-
-  }
-  else{
-    globalThis.email = localStorage.getItem('username')
-  }
-
-}
+const room_name = localStorage.getItem('room_name');
 
 
+getDownloadURL(Sref(storage, room_name))
+  .then((url) => {
+    let image = document.getElementById('profile-img')
+    image.src = url
+  })
+  .catch((error) => {
+    console.log(error)
+    // Handle any errors
+  });
 
 
 
 var email1 = localStorage.getItem('email');
 //var email = email1.replace('@gmail.com','')
-const room_name = localStorage.getItem('room_name');
 document.getElementById("room_title").innerHTML = room_name
 document.getElementById("room_title2").innerHTML = room_name
 

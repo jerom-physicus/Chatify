@@ -290,7 +290,16 @@ body{
         
        
     }
-    
+    .header-img{
+        position: relative;
+        top: 7px;
+    left: 2%;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: white;
+    }
     
     .chat-input{
         position: absolute;

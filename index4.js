@@ -195,7 +195,7 @@ function appendListElement(room_list,room_name){
                     localStorage.setItem('room_name', values);
                     localStorage.setItem('room_type', room);
                     globalThis.room_link = values
-                    chatHTML()
+                    window.location.href ='chat.html'
             
                 })
                    document.getElementById('trash-icon2').addEventListener('click',function(){
@@ -215,21 +215,16 @@ function appendListElement(room_list,room_name){
             }
             else{
                 
-                document.getElementById('join-alert').style.transform =' translateY(22%)'
-                document.getElementById('close_icon').addEventListener('click',function(){
-                    
-                    document.getElementById('join-alert').style.transform =' translateY(200%)'
-                })
-                document.getElementById('join-icon').addEventListener('click',function(){
+
                     let data = ref(db,"rooms/"+values)
                     let data2 =( db,"rooms/"+values)
                     let room = 'room'
                     localStorage.setItem('room_data', data2);
                     localStorage.setItem('room_name', values);
                     localStorage.setItem('room_type', room);
-                    chatHTML()
+                    window.location.href = 'chat.html'
             
-                })
+                
             }
     
     
@@ -318,12 +313,7 @@ function appendListElement(room_list,room_name){
                 }
                 else{
                     
-                    document.getElementById('join-alert').style.transform =' translateY(22%)'
-                    document.getElementById('close_icon').addEventListener('click',function(){
-                        
-                        document.getElementById('join-alert').style.transform =' translateY(200%)'
-                    })
-                    document.getElementById('join-icon').addEventListener('click',function(){
+                    
                         let data = ref(db,"rooms/"+values)
                         let data2 =( db,"rooms/"+values)
                         let room = 'room'
@@ -331,10 +321,9 @@ function appendListElement(room_list,room_name){
                         localStorage.setItem('room_name', values);
                         localStorage.setItem('room_type', room);
                         globalThis.room_link = values
-
-                        chatHTML()
+                        window.location.href = 'chat.html'
+                       
                 
-                    })
                               }
         
         
@@ -512,13 +501,8 @@ function appendListElement2(room_list){
                    
                    if(localkey == dbkey){
                    
-                   document.getElementById('join-alert').style.transform =' translateY(22%)'
-                        document.getElementById('close_icon').addEventListener('click',function(){
-                            
-                            document.getElementById('join-alert').style.transform =' translateY(200%)'
-                        })
-                    document.getElementById('join-icon').addEventListener('click',function(){
-                      document.getElementById('join-alert').style.transform =' translateY(200%)'
+                       
+                      
 
                       let data2 =( db,"rooms2/"+values)
               
@@ -527,9 +511,8 @@ function appendListElement2(room_list){
                         localStorage.setItem('room_type', 'room2');
                         globalThis.room_link = values
 
-                        chatHTML()
+                       window.location.href = 'chat.html'
               
-                    })
                    
                 
               
@@ -662,10 +645,10 @@ function alerterror(error){
 }
 
 function chatHTML(){
-  document.getElementById('main-html').style.display = 'none'
+  //document.getElementById('main-html').style.display = 'none'
   document.getElementById('chat-html').style.display = 'flex'
   document.getElementById('bottom-nav').style.display = 'none'
-  chat()
+  window.location.href = 'chat.html'
 }
 
 
@@ -743,240 +726,15 @@ document.getElementById('create-close-room-btn').addEventListener('click',functi
 })
 
 document.getElementById('chat-btn').addEventListener('click',function(){
-  document.getElementById('main-html').style.display = 'none'
-  document.getElementById('chat-html').style.display = 'flex'
-  document.getElementById('bottom-nav').style.display = 'none'
-  chat()
+  window.location.href = 'chat.html'
+  //chat()
 })
 document.getElementById('home-btn').addEventListener('click',function(){
     window.location.href = 'index.html'
 })
-document.getElementById("back-btn").addEventListener('click',function(){
-  document.getElementById('main-html').style.display = 'flex'
-  document.getElementById('chat-html').style.display = 'none'
-  document.getElementById('bottom-nav').style.display = 'flex'
 
-
-})
 
 //------------------------- CHAT INTERFACE CONTENT----------------------------------------
 
 
-function chat(){
-  const roomtype = localStorage.getItem('room_type');
-const usernamedb = localStorage.getItem('username');
-let room_name = localStorage.getItem('room_name');
 
-
-
-
-document.getElementById("room_title").innerHTML = room_name
-document.getElementById("room_title2").innerHTML = room_name
-
-
-getDownloadURL(Sref(storage, room_name))
-  .then((url) => {
-    let image = document.getElementById('profile-img')
-    image.src = url
-  })
-  .catch((error) => {
-    console.log(error)
-    // Handle any errors
-  });
-
-if(roomtype =='room'){
-  onValue(ref(db,'rooms/'+room_name),function(snapshot){ 
-    chatsface.innerHTML = ""
-    let values = Object.values(snapshot.val())
-    let keys = Object.keys(snapshot.val())
-    let setdata = Object.entries(snapshot.val())
-    let values_length = values.length
-    let sorted_value = values_length-2
-    let funList = [];
-    for (let i=0 ; i <sorted_value; i++){
-      let itemsarray = setdata[i]
-      let room_name =itemsarray[1]
-      //let filter = values.length
-      var lastIndex = values.lastIndexOf(" ");
-      let string =  values[i]
-      var lastIndex = string.lastIndexOf(" ");
-      var str = string.substring(0, lastIndex);
-
-      const filter = string.split(' ');
-      const j =filter.length-1
-      let username = filter[j]
-      funList.push(username);
-      
-
-      
-      
-      
-      
-      appendListChatElement(str,username,keys[i])
-    }
-
-    users_list.innerHTML = ""
-
-  getusername(funList) 
-})
-}
-else{
-  onValue(ref(db,'rooms2/'+room_name),function(snapshot){ 
-    chatsface.innerHTML = ""
-    let values = Object.values(snapshot.val())
-    let setdata = Object.entries(snapshot.val())
-    let keys = Object.keys(snapshot.val())
-    let values_length = values.length
-    let sorted_value = values_length-3
-  
-    let funList = [];
-    for (let i=0 ; i <sorted_value; i++){
-      let itemsarray = setdata[i]
-      let room_name =itemsarray[1]
-      //let filter = values.length
-      var lastIndex = values.lastIndexOf(" ");
-      let string =  values[i]
-      var lastIndex = string.lastIndexOf(" ");
-      var str = string.substring(0, lastIndex);
-
-      const filter = string.split(' ');
-      const j =filter.length-1
-      let username = filter[j]    
-      funList.push(username);
-      
-      
-      
-     // str = lastIndex.substring(0, lastIndex);
- 
-      appendListChatElement2(str,username,keys[i])
-      
-      
-    }
-    users_list.innerHTML = ""
-
-  getusername(funList)   
-})
-
-}
-function getusername(username){
-
-  let users = [...new Set(username)];
-  let usersnbr = users.length
-  count.innerHTML = usersnbr
-  for (let i = 0; i < users.length; i++) {
-    globalThis.element = users[i];
-    //console.log(element)
-    getmembers(element)
-
-    
-  }
-
-  
-
-
-}
-
-function getmembers(member){
-  let user_li = document.createElement("li")
-  user_li.textContent =member
-  document.getElementById('users_list').append(user_li)
-
-}
-
-function appendListChatElement(values,username,keys){
-  
-    let chat_li = document.createElement("li")
-    let chatdiv = document.createElement("div")
-    let chatname = document.createElement("p")
-    chatname.textContent = username
-    chatdiv.append(chatname)
-    chat_li.textContent =values
-    chatsface.append(chatdiv)
-    chatdiv.append(chat_li)
-    //console.log('hello')
-    //alerterror('new message')
-    //var audio = new Audio('notify2.wav');
-    //audio.play();
-   
-
-    if(usernamedb !== username) {
-      
-      chatdiv.style.background = '#3e1278'
-    chatdiv.style.marginLeft = '0'
-    chatdiv.style.borderRadius = '0px 10px 10px 10px'
-      
-    
-    }
-    else{
-      chat_li.addEventListener('dblclick',function(){
-        remove(ref(db,'rooms/'+`${room_name}/`+keys))
-        let error = 'Message deleted'
-        alerterror(error)
-      })
-
-    }
-
-    
-    
-    
-}
-function appendListChatElement2(values,username,keys){
-  let chat_li = document.createElement("li")
-  let chatdiv = document.createElement("div")
-  let chatname = document.createElement("p")
-  chatname.textContent = username
-  chatdiv.append(chatname)
-
-  chat_li.textContent =values
-  chatsface.append(chatdiv)
-  chatdiv.append(chat_li)
-  if(usernamedb !== username) {
-      
-    chatdiv.style.background = '#3e1278'
-    chatdiv.style.marginLeft = '0'
-    chatdiv.style.borderRadius = '0px 10px 10px 10px'
-   
-  
-  }
-  else{
-    chat_li.addEventListener('dblclick',function(){
-      remove(ref(db,'rooms2/'+`${room_name}/`+keys))
-      let error = 'Message deleted'
-      alerterror(error)
-    })
-
-  }
-  
-}
-if(roomtype =='room'){
-  document.getElementById('send-btn').addEventListener('click',function(){
-    audio.play();
-    const message_chat = document.getElementById('chat_int').value
-    chat_int.value = ""
-    push(ref(db,"rooms/"+room_name),message_chat+' '+usernamedb)
-   
-})
-
-}
-else{
-  document.getElementById('send-btn').addEventListener('click',function(){
-    audio.play();
-    const message_chat = document.getElementById('chat_int').value
-    chat_int.value = ""
-    push(ref(db,"rooms2/"+room_name),message_chat+' '+usernamedb)
-
-
-
-    
-   
-})
-}
-
-document.getElementById('group').addEventListener('click',function(){
-  document.getElementById('more').style.transform = 'translateY(0%)';
-})
-
-document.getElementById('close').addEventListener('click',function(){
-  document.getElementById('more').style.transform = 'translateY(100%)';
-})
-}
