@@ -786,7 +786,7 @@ getDownloadURL(Sref(storage, room_name))
 
 if(roomtype =='room'){
   onValue(ref(db,'rooms/'+room_name),function(snapshot){ 
-    chat.innerHTML = ""
+    chatsface.innerHTML = ""
     let values = Object.values(snapshot.val())
     let keys = Object.keys(snapshot.val())
     let setdata = Object.entries(snapshot.val())
@@ -822,7 +822,7 @@ if(roomtype =='room'){
 }
 else{
   onValue(ref(db,'rooms2/'+room_name),function(snapshot){ 
-    chat.innerHTML = ""
+    chatsface.innerHTML = ""
     let values = Object.values(snapshot.val())
     let setdata = Object.entries(snapshot.val())
     let keys = Object.keys(snapshot.val())
@@ -890,6 +890,9 @@ function appendListChatElement(values,username,keys){
     let chatname = document.createElement("p")
     chatname.textContent = username
     chatdiv.append(chatname)
+    chat_li.textContent =values
+    chatsface.append(chatdiv)
+    chatdiv.append(chat_li)
     //console.log('hello')
     //alerterror('new message')
     //var audio = new Audio('notify2.wav');
@@ -905,7 +908,7 @@ function appendListChatElement(values,username,keys){
     
     }
     else{
-      chat_li.addEventListener('click',function(){
+      chat_li.addEventListener('dblclick',function(){
         remove(ref(db,'rooms/'+`${room_name}/`+keys))
         let error = 'Message deleted'
         alerterror(error)
@@ -913,9 +916,7 @@ function appendListChatElement(values,username,keys){
 
     }
 
-    chat_li.textContent =values
-    chats.append(chatdiv)
-    chatdiv.append(chat_li)
+    
     
     
 }
@@ -927,7 +928,7 @@ function appendListChatElement2(values,username,keys){
   chatdiv.append(chatname)
 
   chat_li.textContent =values
-  chats.append(chatdiv)
+  chatsface.append(chatdiv)
   chatdiv.append(chat_li)
   if(usernamedb !== username) {
       
