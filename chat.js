@@ -23,6 +23,7 @@ const data = localStorage.getItem('room_data');
 const roomtype = localStorage.getItem('room_type');
 const usernamedb = localStorage.getItem('username');
 const room_name = localStorage.getItem('room_name');
+var email = localStorage.getItem('email');
 
 
 getDownloadURL(Sref(storage, room_name))
