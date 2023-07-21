@@ -364,9 +364,6 @@ body{
         font-weight: 400;
         font-size: 15px;
         user-select: none;
-     
-       
-       
     }
     ::-webkit-scrollbar {
         display: none;

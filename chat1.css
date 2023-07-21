@@ -26,7 +26,6 @@
     .chat{
         background-color: #553b9a;
         display: none;
-        overflow-y: hidden;
         user-select: none;
     }
     .header{
@@ -260,8 +259,6 @@
         top: 10px;
         
      }
-     ::-webkit-scrollbar {
-        display: none;
-      }
+   
    
 }

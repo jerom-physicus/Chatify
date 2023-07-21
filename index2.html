@@ -38,26 +38,30 @@
         <div class="input-field">
             <img src="open-room.png" class="open-room-img" id="open-room-img">
             <img src="close-room.png" class="close-room-img" id="close-room-img">
-            <img src="search.png" class="search-icon">
             <input class="search-int" type="search" placeholder="search" id="search-input" >
+            <img src="search.png" class="search-icon">
+
 
 
 
         </div>
         
         
-        <div class="close-room-content" id="close-room-content">
-            
-            <ul  id="add2" class="add_room"  >
-               
         
-        </div>
-        <div class="open-room-content" id="open-room-content">
+        
+        <div class="room-interface">
+            <div class="close-room-content" id="close-room-content">
             
-            <ul  id="add" class="add_room"  >
-                
-            </ul>
-           
+                <ul  id="add2" class="add_room"  >
+                   
+            
+            </div>
+            <div class="open-room-content" id="open-room-content">           
+                <ul  id="add" class="add_room"  >
+                    
+                </ul>
+    
+            </div>
         </div>
         
     </div>
@@ -127,10 +131,14 @@
 
     <div class="create-interface" id="create-interface">
         <h4 class="create-room-h">Create a room</h4>
-        <input type="text" placeholder="Room name" class="name-int" id="room-name-int">
-        <input type="text" placeholder="Room key" class="key-int" id="room-key-int">
+        <div class="create-img">
+            <img src="user.png" class="create-img-img">
+            <img id="place-img"  class="place-img">
+        </div>
+        <input type="file" id="img-input" class="file-int" placeholder="choose file">
+        <input type="text" placeholder="Room name" class="create-interface-input" id="room-name-int">
+        <input type="text" placeholder="Room key" class="create-interface-input" id="room-key-int">
         <button class="create-room-int" id="create-room-int">Create</button>
-        <input type="file" id="img-input">
         <p class="alert">* To create a opened room skip the room key session else enter a rememberable room key </p>
     </div>
     <div class="bottom-nav" id="bottom-nav">

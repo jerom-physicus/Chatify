@@ -27,6 +27,12 @@ const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
 
+document.getElementById('img-input').addEventListener('input',function(){
+  let file = document.getElementById('img-input').files[0]
+let profile = document.getElementById('place-img')
+profile.src = URL.createObjectURL(file)
+document.getElementById('place-img').style.display = 'inline'
+})
 
 
 
@@ -56,23 +62,33 @@ document.getElementById('create-room-int').addEventListener('click',function(){
       else{
         if (room_key == ''){
           let file = document.getElementById('img-input').files[0]
+          
           if (file != null){
-            set(ref(db,"rooms/"+room_name), {
-              email:email,
-              room_name:room_name                 
-            });
+            
             
             const refl  = Sref(storage,room_name)
             const metadata = {
                 contentType : file.type
               }
             const task = uploadBytesResumable(refl,file)
+            task.on('state-changed',(snapshot)=>{
+              let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
+              if(pro == 100){
+                set(ref(db,"rooms/"+room_name), {
+                  email:email,
+                  room_name:room_name                 
+                });
+
+              }
+            })
             document.getElementById('create-interface').style.transform = 'translateY(180%)'
             document.getElementById('create-close-room-btn').style.display = 'none'
             document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
             document.getElementById('create-room-btn').style.display = 'block'
             let error = "Successfuly created a room"           
             alerterror(error) 
+            
+
 
           } 
           else{
@@ -84,12 +100,24 @@ document.getElementById('create-room-int').addEventListener('click',function(){
       else{
         let file = document.getElementById('img-input').files[0]
         if (file != null){
-          set(ref(db,"rooms2/"+room_name), {
-            email:email,
-            room_name:room_name,
-            room_key:room_key
-           
-          });
+         
+          const refl  = Sref(storage,room_name)
+            const metadata = {
+                contentType : file.type
+              }
+            const task = uploadBytesResumable(refl,file)
+          task.on('state-changed',(snapshot)=>{
+            let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
+            if(pro == 100){
+              set(ref(db,"rooms2/"+room_name), {
+                email:email,
+                room_name:room_name,
+                room_key:room_key
+                 
+              });
+            }
+
+            })
           document.getElementById('create-interface').style.transform = 'translateY(180%)'
           document.getElementById('create-close-room-btn').style.display = 'none'
           document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
@@ -158,6 +186,8 @@ function appendListElement(room_list,room_name){
                 document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
             })
                 document.getElementById('join-icon2').addEventListener('click',function(){
+                  document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
+
                     let data = ref(db,"rooms/"+values)
                     let data2 =( db,"rooms/"+values)
                     let room = 'room'
@@ -266,6 +296,8 @@ function appendListElement(room_list,room_name){
                     document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
                 })
                     document.getElementById('join-icon2').addEventListener('click',function(){
+                      document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
+
                         let data = ref(db,"rooms/"+values)
                         let data2 =( db,"rooms/"+values)
                         let room = 'room'
@@ -437,7 +469,11 @@ function appendListElement2(room_list){
               document.getElementById('close_icon2').addEventListener('click',function(){          
               document.getElementById('join-delete-alert').style.transform =' translateY(200%)'})
               document.getElementById('join-icon2').addEventListener('click',function(){
+                document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
+
                 let data2 =( db,"rooms2/"+values)
+                document.getElementById('join-delete-alert').style.transform =' translateY(200%)'
+
         
                 localStorage.setItem('room_data', data2);
                   localStorage.setItem('room_name', values);
@@ -482,6 +518,8 @@ function appendListElement2(room_list){
                             document.getElementById('join-alert').style.transform =' translateY(200%)'
                         })
                     document.getElementById('join-icon').addEventListener('click',function(){
+                      document.getElementById('join-alert').style.transform =' translateY(200%)'
+
                       let data2 =( db,"rooms2/"+values)
               
                       localStorage.setItem('room_data', data2);
@@ -503,6 +541,8 @@ function appendListElement2(room_list){
                     })
                     document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
                     document.getElementById('join-icon21').addEventListener('click',function(){
+                      document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
+
                       var key = document.getElementById('key-inputs').value
                       localStorage.setItem(values, key);
               
@@ -535,6 +575,8 @@ function appendListElement2(room_list){
                     })
                     document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
                     document.getElementById('join-icon21').addEventListener('click',function(){
+                      document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
+
                       var key = document.getElementById('key-inputs').value
                       localStorage.setItem(values, key);
               
@@ -565,6 +607,9 @@ function appendListElement2(room_list){
                     document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
 
                     document.getElementById('join-icon21').addEventListener('click',function(){
+                      document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
+
+
                       var key = document.getElementById('key-inputs').value
                       localStorage.setItem(values, key);
               
@@ -596,7 +641,6 @@ function appendListElement2(room_list){
   
       
       
-      //document.getElementById('join-delete-alert2').style.display = 'block'
   
       
   
@@ -615,7 +659,7 @@ function alerterror(error){
     setTimeout(() => {
       alter.style.transform = 'translateY(500%)';
     }, 4000);
-  }
+}
 
 function chatHTML(){
   document.getElementById('main-html').style.display = 'none'
