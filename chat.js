@@ -211,7 +211,7 @@ if(roomtype =='room'){
     audio.play();
     const message_chat = document.getElementById('chat_int').value
     chat_int.value = ""
-    push(ref(db,"rooms/"+room_name),message_chat+' '+email)
+    push(ref(db,"rooms/"+room_name),message_chat+' '+usernamedb)
    
 })
 

@@ -139,13 +139,14 @@ document.getElementById('create-room-int').addEventListener('click',function(){
  
 onValue(data,function(snapshot){ 
    add.innerHTML = ''
-    let values = Object.keys(snapshot.val('room_name'))
-   
+    let values = Object.keys(snapshot.val('room'))
+    console.log(values)
     let setdata = Object.entries(snapshot.val())
     for (let i=0 ; i <values.length; i++){
       let itemsarray = setdata[i]
       let room_key =itemsarray[0]
       globalThis.room_name =itemsarray[1] 
+
        
       
       
@@ -175,7 +176,7 @@ function appendListElement(room_list,room_name){
           onValue(ref(db,"rooms/"+values),function(snapshot){
             let dbemail = Object.values(snapshot.val('email'))
             let sorted = dbemail.length
-            let emailindex = sorted-2
+            let emailindex = 'email'
     
             if(dbemail[emailindex]==email){
               
@@ -222,7 +223,8 @@ function appendListElement(room_list,room_name){
                     localStorage.setItem('room_data', data2);
                     localStorage.setItem('room_name', values);
                     localStorage.setItem('room_type', room);
-                    window.location.href = 'chat.html'
+                    //window.location.href = 'chat.html'
+                    chatHTML()
             
                 
             }
@@ -510,8 +512,8 @@ function appendListElement2(room_list){
                         localStorage.setItem('room_name', values);
                         localStorage.setItem('room_type', 'room2');
                         globalThis.room_link = values
-
-                       window.location.href = 'chat.html'
+                        chatHTML()
+                       //indow.location.href = 'chat.html'
               
                    
                 
@@ -645,10 +647,11 @@ function alerterror(error){
 }
 
 function chatHTML(){
-  //document.getElementById('main-html').style.display = 'none'
+  document.getElementById('main-html').style.display = 'none'
   document.getElementById('chat-html').style.display = 'flex'
   document.getElementById('bottom-nav').style.display = 'none'
-  window.location.href = 'chat.html'
+ window.location.href = 'chat.html'
+ 
 }
 
 
@@ -727,7 +730,7 @@ document.getElementById('create-close-room-btn').addEventListener('click',functi
 
 document.getElementById('chat-btn').addEventListener('click',function(){
   window.location.href = 'chat.html'
-  //chat()
+  //chatHTML()
 })
 document.getElementById('home-btn').addEventListener('click',function(){
     window.location.href = 'index.html'
@@ -735,6 +738,3 @@ document.getElementById('home-btn').addEventListener('click',function(){
 
 
 //------------------------- CHAT INTERFACE CONTENT----------------------------------------
-
-
-
