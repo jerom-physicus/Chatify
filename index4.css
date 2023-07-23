@@ -33,11 +33,7 @@ body{
 
 
 @media only screen and (max-width: 600px){
-    .chat{
-        display: flex;
-        background-color: black;
-        
-    }
+    
     .main{
         display: flex;
     }
@@ -351,22 +347,22 @@ body{
     font-weight: 300;
 
 }
+
 .file-int{
-    position: absolute;
-    top: 300px;
-    background-color: #7003ff17;
+    position: relative;
+    height: 45px;
+    padding-top: 10px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    border-radius: 7px;
     height: 45px;
     width: 70%;
     left: 15%;
-    content: 'hello';
-    padding-top: 10px;
-    padding-right: 20%;
-    text-align: left;
-    font-size: 15px;
-    left: 15%;
-    margin-bottom: 20px;
-    border-radius: 7px;
-border: 1px solid #7000FF;
+    padding-left: 20px;
+    text-align: center;
+    border: 1px solid #9000ff;
+
+    
 }
 .place-img{
     position: absolute;
@@ -380,7 +376,7 @@ border: 1px solid #7000FF;
     display: none;
 }
 .file-int::-webkit-file-upload-button {
-    visibility: hidden;
+    display: none;
   }
   
 .create-interface-input{

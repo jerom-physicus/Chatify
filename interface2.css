@@ -109,7 +109,7 @@
     height: 275px;
     border-radius: 23px 23px 0px 0px;
     background-color: #221D2C;
-    bottom: 53px;
+    bottom: 100px;
     transform: translateY(200%);
     transition: 0.7s;
 }

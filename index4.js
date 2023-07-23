@@ -74,10 +74,13 @@ document.getElementById('create-room-int').addEventListener('click',function(){
             task.on('state-changed',(snapshot)=>{
               let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
               if(pro == 100){
-                set(ref(db,"rooms/"+room_name), {
-                  email:email,
-                  room_name:room_name                 
-                });
+                setTimeout(() => {
+                  set(ref(db,"rooms/"+room_name), {
+                    email:email,
+                    room_name:room_name                 
+                  });
+                }, 4000);
+                
 
               }
             })
@@ -109,12 +112,17 @@ document.getElementById('create-room-int').addEventListener('click',function(){
           task.on('state-changed',(snapshot)=>{
             let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
             if(pro == 100){
-              set(ref(db,"rooms2/"+room_name), {
-                email:email,
-                room_name:room_name,
-                room_key:room_key
+              setTimeout(() => {
+                set(ref(db,"rooms2/"+room_name), {
+                  email:email,
+                  room_name:room_name,
+                  room_key:room_key
+                });
+              }, 4000);
+              
+              
                  
-              });
+             
             }
 
             })
@@ -176,7 +184,7 @@ function appendListElement(room_list,room_name){
           onValue(ref(db,"rooms/"+values),function(snapshot){
             let dbemail = Object.values(snapshot.val('email'))
             let sorted = dbemail.length
-            let emailindex = 'email'
+            let emailindex = sorted-2
     
             if(dbemail[emailindex]==email){
               
@@ -196,7 +204,8 @@ function appendListElement(room_list,room_name){
                     localStorage.setItem('room_name', values);
                     localStorage.setItem('room_type', room);
                     globalThis.room_link = values
-                    window.location.href ='chat.html'
+                    //window.location.href ='chat.html'
+                    chatHTML()
             
                 })
                    document.getElementById('trash-icon2').addEventListener('click',function(){
@@ -323,7 +332,8 @@ function appendListElement(room_list,room_name){
                         localStorage.setItem('room_name', values);
                         localStorage.setItem('room_type', room);
                         globalThis.room_link = values
-                        window.location.href = 'chat.html'
+                        //window.location.href = 'chat.html'
+                        chatHTML()
                        
                 
                               }
@@ -524,7 +534,7 @@ function appendListElement2(room_list){
                     document.getElementById('close_icon21').addEventListener('click',function(){
                         document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
                     })
-                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
+                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(-20%)'
                     document.getElementById('join-icon21').addEventListener('click',function(){
                       document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
 
@@ -558,7 +568,7 @@ function appendListElement2(room_list){
                     document.getElementById('close_icon21').addEventListener('click',function(){
                         document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
                     })
-                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
+                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(-20%)'
                     document.getElementById('join-icon21').addEventListener('click',function(){
                       document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
 
@@ -589,7 +599,7 @@ function appendListElement2(room_list){
                     document.getElementById('close_icon21').addEventListener('click',function(){
                         document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
                     })
-                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(0%)'
+                    document.getElementById('enter-join-delete-alert').style.transform =' translateY(-20%)'
 
                     document.getElementById('join-icon21').addEventListener('click',function(){
                       document.getElementById('enter-join-delete-alert').style.transform =' translateY(200%)'
@@ -729,8 +739,8 @@ document.getElementById('create-close-room-btn').addEventListener('click',functi
 })
 
 document.getElementById('chat-btn').addEventListener('click',function(){
-  window.location.href = 'chat.html'
-  //chatHTML()
+ // window.location.href = 'chat.html'
+  chatHTML()
 })
 document.getElementById('home-btn').addEventListener('click',function(){
     window.location.href = 'index.html'
