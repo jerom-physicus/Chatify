@@ -464,6 +464,13 @@ body{
       
         
     }
+    .ploder{
+        position: absolute;
+        top: 40%;
+        left: 40%;
+        transform: translate(-50%,-50%);
+    }
+    
     .loader {
         position: absolute;
         border: 10px solid #2a232f;
@@ -473,17 +480,18 @@ body{
         height: 80px;
         -webkit-animation: spin 2s linear infinite; /* Safari */
         animation: spin 2s linear infinite;
-        top: 30%;
-        left: 37%;
+        align-items: center;
+        top: 50%;
       }
       .load{
         position: absolute;
         text-align: center;
         font-weight: 300;
-        top: 50%;
+        top: 52%;
         font-size: 20px;
-  left: 45%;
-  margin: -50px 0 0 -50px;
+        width: 100%;
+        text-align: center;
+
       }
       
       /* Safari */
@@ -494,7 +502,7 @@ body{
       
       @keyframes spin {
         0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
+        100% { transform: rotate(720deg); }
       }
    
   
