@@ -34,17 +34,18 @@ body{
 
 @media only screen and (max-width: 600px){
     body{
-        background-color: #25232A;
+        background-color: #0E0D0F;
     }
     
     .main{
         display: flex;
-        background-color: #25232A;
+        background-color: #0E0D0F;
     }
     .chat{
-        background-color: #140e27;
+        background-color: #0E0D0F;
         user-select: none;
         display: none;
+       
     }
      .cover{
         z-index: 1;
@@ -188,7 +189,7 @@ body{
         left: 15%;
         height: 45px;
         border-style: none;
-        background-color: rgba(164, 146, 186, 0.40);
+        background-color: rgba(115, 103, 129, 0.4);
         border-radius: 5px;
         font-size: 18px;
         padding-left: 40px;
@@ -456,7 +457,7 @@ body{
         justify-content: flex-end;
         align-items: center;
         gap: 10%;
-        background: #100B15;
+        background: #1b1720;
         width: 100%;
       
     }
