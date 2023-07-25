@@ -157,7 +157,7 @@ function appendListChatElement(values,username,keys){
 
     if(usernamedb !== username) {
       
-      chatdiv.style.background = '#3e1278'
+      chatdiv.style.background = '#534465'
     chatdiv.style.marginLeft = '0'
     chatdiv.style.borderRadius = '0px 10px 10px 10px'
       
@@ -190,7 +190,7 @@ function appendListChatElement2(values,username,keys){
   chatdiv.append(chat_li)
   if(usernamedb !== username) {
       
-    chatdiv.style.background = '#3e1278'
+    chatdiv.style.background = '#534465'
     chatdiv.style.marginLeft = '0'
     chatdiv.style.borderRadius = '0px 10px 10px 10px'
    

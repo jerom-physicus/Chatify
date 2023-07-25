@@ -206,6 +206,7 @@ body{
 @media only screen and (max-width: 600px){
     body{
         overflow: hidden;
+        background: #0F0D11;
     }
     .profile-head{
         position: fixed;
@@ -217,12 +218,12 @@ body{
         width: 100%;
         flex-shrink: 0;
         border-radius: 0px 0px 10px 10px;
-        background: #5510c5;
+        background: #4C3BB3;
     }
     .profile-img-mobile-chat{
         position: fixed;
         top: 14px;
-        left:85%;
+        left:82%;
         width: 35px;
         height: 35px;
     }
@@ -232,7 +233,7 @@ body{
         font-size: 13px;
         font-weight: 400;
         top: 9px;
-        left:94%;
+        left:92%;
         border-radius: 17px;
         background: #ffffff5c;
         width: 18px;
@@ -293,7 +294,7 @@ body{
     }
     .header-img{
         position: relative;
-        top: 7px;
+        top: 6px;
     left: 2%;
     width: 45px;
     height: 45px;
@@ -303,20 +304,17 @@ body{
     }
     
     .chat-input{
-        position: absolute;
+        position: relative;
         bottom: -10px;
-        width: 89%;
+        width: 91%;
         height: 45px;
-        left: 5px; 
+        left: 2px; 
         color: #FFFFFF;
         border-style: none;
         font-size: 17px;
         padding-left: 20px;
         padding-right: 60px;
-        background: #5a3297;
-        opacity: 0.86;
-        backdrop-filter: blur(39px);
-    
+        background: #2E2836;
         border-radius: 8px;
     }
     .send-icon{
@@ -324,7 +322,7 @@ body{
         z-index: 1;
         width: 23px;
         bottom: 20px;
-        left: 80%;
+        left: 85%;
     
     }
     .message-box{
@@ -341,9 +339,8 @@ body{
         height: fit-content;
         padding-right: 14px;
         border-radius: 10px 0px 10px 10px ;
-        background: linear-gradient(92deg, #7000FF 0%, rgba(164, 0, 255, 0.63) 49.41%, rgba(250, 0, 255, 0.38) 100%), #7000FF;;
+        background: #624dd7;
         margin-top: 20px;
-        box-shadow: 0px 12px 21px 6px rgba(111, 0, 255, 0.09);
     }
     .chat{
        
@@ -359,7 +356,7 @@ body{
         padding-left: 10px;
         font-size: 12px;
         padding-top: 3px;
-        color: #ccaef3;
+        color: #bebebe;
         user-select: none;
     }
        

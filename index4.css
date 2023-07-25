@@ -14,15 +14,15 @@
    
 }
 ::-webkit-scrollbar-track{
-    background-color: #24164B;
+    background-color: #1e1d22;
     
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #553b9a;
+    background-color: #5047ca;
     border-radius: 5px;
 }
 body{
-    background-color: #15121F;
+    background-color: #000000;
     color: aliceblue;
     user-select: none;
     overflow-y: hidden;
@@ -33,9 +33,18 @@ body{
 
 
 @media only screen and (max-width: 600px){
+    body{
+        background-color: #25232A;
+    }
     
     .main{
         display: flex;
+        background-color: #25232A;
+    }
+    .chat{
+        background-color: #140e27;
+        user-select: none;
+        display: none;
     }
      .cover{
         z-index: 1;
@@ -49,7 +58,7 @@ body{
      }
     .top-bar{
         position: fixed;
-        background: #36245f;
+         background: #4738A1;
         height: 110px;
         width: 100%;
         display: flex;
@@ -63,7 +72,7 @@ body{
         left: 5%;
         height: 2px;
         border-radius: 31px;
-        background: #9A4DFF;
+        background: #9E54FF;
         box-shadow: 0px -4px 17px 5px rgba(112, 0, 255, 0.34);
         transition: 0.4s;
     }
@@ -179,7 +188,7 @@ body{
         left: 15%;
         height: 45px;
         border-style: none;
-        background-color: #252037;
+        background-color: rgba(164, 146, 186, 0.40);
         border-radius: 5px;
         font-size: 18px;
         padding-left: 40px;
@@ -246,7 +255,8 @@ body{
     width: 89%;
     height: fit-content;
     left: 25px;
-    background: #1f0b3a;
+    background: rgba(60, 52, 70, 0.62);
+
     border-radius: 30px 6px 6px 30px;
     display: flex;
     flex-direction: row;
@@ -281,7 +291,8 @@ body{
     width: 89%;
     height: fit-content;
     left: 25px;
-    background: #1f0b3a;
+    background: rgba(60, 52, 70, 0.62);
+
     border-radius: 30px 6px 6px 30px;
     display: flex;
     flex-direction: row;
@@ -311,7 +322,7 @@ body{
     position: fixed;
     top: 0;
     bottom: 0;
-    height: 90%;
+    height: 93%;
     width: 100%;
     background-color: #171322;
     border-radius:6px;
@@ -360,7 +371,7 @@ body{
     left: 15%;
     padding-left: 20px;
     text-align: center;
-    border: 1px solid #9000ff;
+    border: 1px solid #5F4CD4;
 
     
 }
@@ -382,35 +393,35 @@ body{
 .create-interface-input{
     position: absolute;
     top: 370px;
-    background-color: #412c7c;
     height: 45px;
     width: 70%;
     left: 15%;
-    border: 1px solid #FFFFFF;
     border-radius: 8px;
     margin-bottom: 20px;
     color: white;
     padding-left: 20px;
     font-size: 18px;
+    background: #3A3655;
+    border-style: none;
 }
 .create-interface-input2{
     position: absolute;
     top: 430px;
-    background-color: #412c7c;
+    background: #3A3655;
     height: 45px;
     width: 70%;
     left: 15%;
-    border: 1px solid #FFFFFF;
     border-radius: 8px;
     margin-bottom: 20px;
     color: white;
     padding-left: 20px;
     font-size: 18px;
+    border-style: none;
 }
 .create-interface button{
     position: absolute;
     top: 490px;
-    background-color: #7003ff;
+    background: #5F4CD4;
     height: 45px;
     width: 70%;
     left: 15%;
@@ -445,8 +456,7 @@ body{
         justify-content: flex-end;
         align-items: center;
         gap: 10%;
-        background: #1e1732;
-        box-shadow: 0px 4px 13px 1px rgba(255, 255, 255, 0.04) inset;
+        background: #100B15;
         width: 100%;
       
     }
