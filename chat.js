@@ -164,10 +164,16 @@ function appendListChatElement(values,username,keys){
     
     }
     else{
-      chat_li.addEventListener('dblclick',function(){
+      chat_li.addEventListener('click',function(){
+        //remove(ref(db,'rooms/'+`${room_name}/`+keys))
+        document.getElementById('profile-head-d').style.display = 'flex'
+        document.getElementById('bin').addEventListener('click',function(){
         remove(ref(db,'rooms/'+`${room_name}/`+keys))
-        let error = 'Message deleted'
+        document.getElementById('profile-head-d').style.display = 'none'
+  
+          let error = 'Message deleted'
         alerterror(error)
+        })
       })
 
     }
@@ -197,10 +203,16 @@ function appendListChatElement2(values,username,keys){
   
   }
   else{
-    chat_li.addEventListener('dblclick',function(){
-      remove(ref(db,'rooms2/'+`${room_name}/`+keys))
-      let error = 'Message deleted'
+    chat_li.addEventListener('click',function(){
+      document.getElementById('profile-head-d').style.display = 'flex'
+      document.getElementById('bin').addEventListener('click',function(){
+        remove(ref(db,'rooms2/'+`${room_name}/`+keys))
+        document.getElementById('profile-head-d').style.display = 'none'
+
+        let error = 'Message deleted'
       alerterror(error)
+      })
+      
     })
 
   }
@@ -261,4 +273,7 @@ document.getElementById('close').addEventListener('click',function(){
 
 document.getElementById("back-btn").addEventListener('click',function(){
   window.location.href = 'index2.html'
+})
+document.getElementById("back-btn2").addEventListener('click',function(){
+  document.getElementById('profile-head-d').style.display = 'none'
 })

@@ -220,6 +220,33 @@ body{
         border-radius: 0px 0px 10px 10px;
         background: #4C3BB3;
     }
+    .profile-head-d{
+        position: fixed;
+        display: flex;
+        top: 0;
+        left: 0;
+        flex-direction: row;
+        height: fit-content;
+        width: 100%;
+        flex-shrink: 0;
+        border-radius: 0px 0px 10px 10px;
+        background: #4C3BB3;
+        display: none;
+    }
+    .bin{
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        width: 25px;
+        height: 25px;
+    }
+    .del-msg{
+        position: relative;
+        top: 13px;
+        font-weight: 300;
+        left: 10%;
+        text-align: center;
+    }
     .profile-img-mobile-chat{
         position: fixed;
         top: 14px;
@@ -385,7 +412,7 @@ body{
         transform: translateY(100%);
         transition: 0.4s;
 
-        background: #5e25a7;;
+        background: #252229;;
 
     }
     .more h2{
@@ -429,14 +456,13 @@ body{
         top: 40px;
         margin-top: 20px;
         list-style: none;
-        background-color: rgb(139, 106, 198);
+        background-color: rgb(57, 51, 69);
         padding: 10px;
         border-radius: 6px;
         text-align: center;
         user-select: none;
-        width: 80%;
-        left: 35px;
-        width: 72%;
+        width: 85%;
+        left: 20px;
         overflow: hidden;
         text-overflow:ellipsis; 
         white-space: nowrap;
