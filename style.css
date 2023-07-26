@@ -63,7 +63,7 @@ nav ul li a{
     padding-left: 30px;
     font-size: 23px;
     color: white;
-    font-weight: 200;
+    font-weight: 300;
     letter-spacing: 3px;
 }
 li:hover{
@@ -446,6 +446,8 @@ li:hover{
         border-radius: 5px;
         width: auto ;
         height: auto;
+        text-decoration: none;
+        list-style: none;
         
     }
     nav ul{
@@ -455,18 +457,23 @@ li:hover{
         padding-top: 20px;
         display: flex;
         flex-direction: column;
+        text-decoration: none;
+        list-style: none;
         
     }
-    nav ul li{
+    nav ul li {
         font-size: 24px;
         letter-spacing: 1px;
         color: #ffffff;
         text-align: center;
         padding-top: 30px;
         padding-bottom: 30px;
-        font-weight: 500;
+        font-weight: 700;
         
-     
+    }
+    nav ul li a{
+        text-decoration: none;
+        list-style: none;
     }
     li:hover{
         font-size: 30px;
@@ -496,9 +503,9 @@ li:hover{
 
         position: absolute;
         display: none;
-        width: 28px;
-        margin-top: 26px;
-        right: 20px;
+        width: 20px;
+        margin-top: 29px;
+        right: 30px;
        
     }
    

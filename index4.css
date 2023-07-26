@@ -196,6 +196,14 @@ body{
         color: white;
         
     }
+    .clear-int{
+        position: relative;
+        width: 15px;
+        height: 15px;
+        top: 25px;    
+        left: 6%;
+        display: none;
+    }
 
     .open-room-img{
         position: absolute;
@@ -215,7 +223,7 @@ body{
     position: absolute;
     top: 0px;
     width: 100%;
-    border-top: 1px solid #5B3886;
+    border-top: 1px solid #714be3;
     bottom: 0px;
     overflow-y: scroll;
    
@@ -336,25 +344,54 @@ body{
 }
 .create-img{
     position: relative;
-    background-color: #9748ff42;
-    height: 190px;
-    width: 190px;
+    background-color: #9748ff1a;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
     left: 50%;
+    top: 10px;
     transform: translate(-50%,0%);
     margin-bottom: 40px;
 }
 .create-img-img{
    margin-top: 20px;
-   margin-left: 30px;
+   margin-left: 25px;
+   height: 110px;
    opacity: 30%;
+}
+.create-open{
+    width: 35%;
+    position: relative;
+    top: 10px;
+    background: #6a58e0;
+    height: 40px;
+    left: 7%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+    border-style: none;
+}
+.create-close{
+    width: 35%;
+    position: absolute;
+    top: 89px;
+    background: #6a58e000;
+    height: 40px;
+    right: 7%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 15px;
+    border: 1px solid #5F4CD4 ;
+    
 }
 
 .create-room-h{
     position: relative;
     text-align: center;
     margin-bottom: 40px;
-    top: 30px;
+    top: 20px;
     font-size: 25px;
     font-weight: 300;
 
@@ -378,8 +415,8 @@ body{
 }
 .place-img{
     position: absolute;
-    height: 190px;
-    width: 190px;
+    height: 160px;
+    width: 160px;
     border-radius: 50%;
     left: 50%;
     transform: translate(-50%,0%);
@@ -393,7 +430,7 @@ body{
   
 .create-interface-input{
     position: absolute;
-    top: 370px;
+    top: 400px;
     height: 45px;
     width: 70%;
     left: 15%;
@@ -406,8 +443,8 @@ body{
     border-style: none;
 }
 .create-interface-input2{
-    position: absolute;
-    top: 430px;
+    position: relative;
+    top: 60px;
     background: #3A3655;
     height: 45px;
     width: 70%;
@@ -418,10 +455,12 @@ body{
     padding-left: 20px;
     font-size: 18px;
     border-style: none;
+    display: none;
+    
 }
-.create-interface button{
-    position: absolute;
-    top: 490px;
+.create-room-int-button{
+    position: relative;
+    top: 50px;
     background: #5F4CD4;
     height: 45px;
     width: 70%;
@@ -434,12 +473,12 @@ body{
 }
 
 .create-interface p{
-    position: absolute;
+    position: relative;
     text-align: center;
  margin-top: 20px;
  margin-left: 40px;
  margin-right: 40px;
- top: 550px;
+ top: 50px;
 }
 
 
@@ -453,7 +492,7 @@ body{
         position:fixed;
         bottom: 0px;
         display: flex;
-        height: 58px;
+        height: 53px;
         justify-content: flex-end;
         align-items: center;
         gap: 10%;
@@ -464,8 +503,8 @@ body{
     .bottom-nav img{
 
        position: relative;
-       width: 25px;
-       margin-right: 8%; 
+       width: 22px;
+       margin-right: 9%; 
      
     }
     

@@ -36,8 +36,9 @@
         <div class="input-field">
             <img src="open-room.png" class="open-room-img" id="open-room-img">
             <img src="close-room.png" class="close-room-img" id="close-room-img">
-            <input class="search-int" type="search" placeholder="search" id="search-input" >
+            <input class="search-int" type="name" placeholder="search" id="search-input" >
             <img src="search.png" class="search-icon">
+            <img src="close.png" alt="" class="clear-int" id="clear-int">
 
 
 
@@ -96,6 +97,8 @@
 
     <div class="create-interface" id="create-interface">
         <h4 class="create-room-h">Create a room</h4>
+        <button class="create-open" id="create-open">Opened room</button>
+        <button class="create-close" id="create-close">Closed room</button>
         <div class="create-img">
             <img src="user.png" class="create-img-img">
             <img id="place-img"  class="place-img">
@@ -105,8 +108,8 @@
         <input type="file" id="img-input" class="file-int" >
         <input type="text" placeholder="Room name" class="create-interface-input" id="room-name-int">
         <input type="text" placeholder="Room key" class="create-interface-input2" id="room-key-int">
-        <button class="create-room-int" id="create-room-int">Create</button>
-        <p class="alert">* To create a opened room skip the room key session else enter a rememberable room key </p>
+        <button class="create-room-int-button" id="create-room-int">Create</button>
+        <p class="alert">* Room name must not contain special characters <br> [# . % # $]</p>
     </div>
  
    
@@ -120,6 +123,13 @@
     <div class="alter" id="alter">
         <img src="exclamation.png" alt="">
         <p id="alterp">Error notification</p>
+    </div>
+    <div class="load-create-room" id="create-room-load">
+        <div class="ploder">
+            <div class="loader"></div>
+
+        </div>
+        <h1 class="load">Creating a room</h1>
     </div>
   
     <script type="module" src="index4.js"></script>

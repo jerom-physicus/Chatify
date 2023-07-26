@@ -272,7 +272,9 @@ document.getElementById('close').addEventListener('click',function(){
 
 
 document.getElementById("back-btn").addEventListener('click',function(){
+  document.getElementById('back-btn2').style.display = 'flex'
   window.location.href = 'index2.html'
+
 })
 document.getElementById("back-btn2").addEventListener('click',function(){
   document.getElementById('profile-head-d').style.display = 'none'

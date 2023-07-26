@@ -1,25 +1,32 @@
-const string = 'split by space';
-
-let usingSplit2 = string.split(' ');
-let funList = [];
-for (let i = 0; i < 3; i++) {
-  const fun = usingSplit2[i];
-  funList.push(fun);
-}
-
-console.log(funList);
-
-//console.log(usingSplit2[1])
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js";
+import { getDatabase, ref,push,onValue, remove,set, } from "https://www.gstatic.com/firebasejs/9.22.1/firebase-database.js";
 
 
-let list = ['apple','mango','banana','orange']
-for (let i = 0; i < list.length; i++) {
-  if(list[i].includes('m')){
-    console.log('found')
-    console.log(i)
-  }else{
-    console.log("not found")
-  }
+const firebaseConfig = {
+  apiKey: "AIzaSyCf2VrpS1xIt26nCQNMPAxq4foZ9qVkwYk",
+  authDomain: "chatify-f48eb.firebaseapp.com",
+  databaseURL: "https://chatify-f48eb-default-rtdb.firebaseio.com",
+  projectId: "chatify-f48eb",
+  storageBucket: "chatify-f48eb.appspot.com",
+  messagingSenderId: "591165520919",
+  appId: "1:591165520919:web:db98bdf3eb412b050bf052",
+  measurementId: "G-J0D2NKV2Z7"
+};
   
-}
+  // Initialize Firebase
+const app = initializeApp(firebaseConfig);
+var db = getDatabase(app);
+
+
+
+
+
+set(ref(db,"rooms/"+'.'), {
+}).catch((error) => {
+  console.log(error)
+  console.log("room name must not contain '. / # $'")
+  let errors = ("room name must not contain '. / # $'")
+  
+
+});
 

@@ -33,12 +33,14 @@ let profile = document.getElementById('place-img')
 profile.src = URL.createObjectURL(file)
 document.getElementById('place-img').style.display = 'inline'
 })
-
-
+let exceptions = ['.','#','[',']','/']
+console.log(exceptions)
 
 document.getElementById('create-room-int').addEventListener('click',function(){
     let room_name = document.getElementById('room-name-int').value
     let room_key = document.getElementById('room-key-int').value
+    let room_name_str = room_name.split('');
+    console.log(room_name_str)
     onValue(data2,function(snapshot){  
       globalThis.values2 = Object.keys(snapshot.val('room_name'))})
     onValue(data,function(snapshot){  
@@ -46,6 +48,7 @@ document.getElementById('create-room-int').addEventListener('click',function(){
           
     })
     let totalroom = values.concat(values2)
+    console.log(totalroom)
     let room_name2 = room_name.replace(' ','')
     if (room_name2 == ''){
       
@@ -60,86 +63,106 @@ document.getElementById('create-room-int').addEventListener('click',function(){
 
       }
       else{
-        if (room_key == ''){
-          let file = document.getElementById('img-input').files[0]
-          
-          if (file != null){
-            
-            
-            const refl  = Sref(storage,room_name)
-            const metadata = {
-                contentType : file.type
-              }
-            const task = uploadBytesResumable(refl,file)
-            task.on('state-changed',(snapshot)=>{
-              let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
-              if(pro == 100){
-                setTimeout(() => {
-                  set(ref(db,"rooms/"+room_name), {
-                    email:email,
-                    room_name:room_name                 
-                  });
-                }, 4000);
-                
-
-              }
-            })
-            document.getElementById('create-interface').style.transform = 'translateY(180%)'
-            document.getElementById('create-close-room-btn').style.display = 'none'
-            document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
-            document.getElementById('create-room-btn').style.display = 'block'
-            let error = "Successfuly created a room"           
-            alerterror(error) 
-            
-
-
-          } 
-          else{
-            let error = "Room profile must be uploded"
-            alerterror(error)
-          } 
-          
-      }
-      else{
-        let file = document.getElementById('img-input').files[0]
-        if (file != null){
-         
-          const refl  = Sref(storage,room_name)
-            const metadata = {
-                contentType : file.type
-              }
-            const task = uploadBytesResumable(refl,file)
-          task.on('state-changed',(snapshot)=>{
-            let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
-            if(pro == 100){
-              setTimeout(() => {
-                set(ref(db,"rooms2/"+room_name), {
-                  email:email,
-                  room_name:room_name,
-                  room_key:room_key
-                });
-              }, 4000);
-              
-              
-                 
-             
-            }
-
-            })
-          document.getElementById('create-interface').style.transform = 'translateY(180%)'
-          document.getElementById('create-close-room-btn').style.display = 'none'
-          document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
-          document.getElementById('create-room-btn').style.display = 'block'
-          let error = "Successfuly created a closed room"           
-          alerterror(error)
-
+        if(room_name_str.includes(exceptions)){
+          console.log("exceptions")
         }
         else{
-          let error = "Room profile must be uploded"
-          alerterror(error)
-        }
-          
-      }
+
+        
+            if (room_key == ''){
+              let file = document.getElementById('img-input').files[0]
+            
+              if (file != null){
+
+                
+                    const refl  = Sref(storage,room_name)
+                    const metadata = {
+                        contentType : file.type
+                      }
+                const task = uploadBytesResumable(refl,file)
+                task.on('state-changed',(snapshot)=>{
+                  let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
+                  console.log(pro)
+                  if(pro == 100){
+                    setTimeout(() => {
+                      set(ref(db,"rooms/"+room_name), {
+                        email:email,
+                        room_name:room_name                 
+                    })
+                      document.getElementById('create-interface').style.transform = 'translateY(180%)'
+                    document.getElementById('create-close-room-btn').style.display = 'none'
+                    document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
+                    document.getElementById('create-room-btn').style.display = 'block'
+                    document.getElementById('create-room-load').style.display = 'none'
+                    let error = "Successfuly created a room"           
+                    alerterror(error) 
+                    }, 2000);
+                    
+                  }
+                  else{
+                    document.getElementById('create-room-load').style.display = 'flex'
+                  }
+                       
+            
+                      
+                   
+                    
+
+                  
+                })
+                
+                
+
+
+              } 
+              else{
+                let error = "Room profile must be uploded"
+                alerterror(error)
+              } 
+              
+          }
+          else{
+            let file = document.getElementById('img-input').files[0]
+            if (file != null){
+            
+              const refl  = Sref(storage,room_name)
+                const metadata = {
+                    contentType : file.type
+                  }
+                const task = uploadBytesResumable(refl,file)
+              task.on('state-changed',(snapshot)=>{
+                let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
+                if(pro == 100){
+                  setTimeout(() => {
+                    set(ref(db,"rooms2/"+room_name), {
+                      email:email,
+                      room_name:room_name,
+                      room_key:room_key
+                    })
+                    document.getElementById('create-interface').style.transform = 'translateY(180%)'
+                    document.getElementById('create-close-room-btn').style.display = 'none'
+                    document.getElementById('create-close-room-btn').style.transform =  'rotate(-45deg)'
+                    document.getElementById('create-room-btn').style.display = 'block'
+                    document.getElementById('create-room-load').style.display = 'none'
+                    let error = "Successfuly created a closed room"           
+                    alerterror(error)
+                        }, 2000);
+      
+                }
+                else{
+                  document.getElementById('create-room-load').style.display = 'flex'
+                  } 
+
+                })
+              
+
+            }
+            else{
+              let error = "Room profile must be uploded"
+              alerterror(error)
+            }
+              
+           } }
       }
     }
 })
@@ -746,5 +769,21 @@ document.getElementById('home-btn').addEventListener('click',function(){
     window.location.href = 'index.html'
 })
 
+document.getElementById('create-open').addEventListener('click',function(){
+  document.getElementById('create-close').style.background =  '#6a58e000'
+  document.getElementById('create-close').style.border = '1px solid #5F4CD4'
+  document.getElementById('create-open').style.background =  '#6a58e0'
+  document.getElementById('create-open').style.borderStyle = 'none'
+  document.getElementById('create-close').style.borderStyle = 'solid'
+  document.getElementById('room-key-int').style.display = 'none'
+})
+document.getElementById('create-close').addEventListener('click',function(){
+  document.getElementById('create-open').style.background =  '#6a58e000'
+  document.getElementById('create-open').style.border = '1px solid #5F4CD4'
+  document.getElementById('create-close').style.background =  '#6a58e0'
+  document.getElementById('create-close').style.borderStyle = 'none'
+  document.getElementById('create-open').style.borderStyle = 'solid'
+  document.getElementById('room-key-int').style.display = 'flex'
 
+})
 //------------------------- CHAT INTERFACE CONTENT----------------------------------------
