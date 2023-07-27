@@ -60,7 +60,7 @@ body{
     .top-bar{
         position: fixed;
          background: #543EE0;
-        height: 110px;
+        height: 120px;
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -73,7 +73,7 @@ body{
         left: 5%;
         height: 2px;
         border-radius: 31px;
-        background: #9E54FF;
+        background: #E4CEFF;
         box-shadow: 0px -4px 17px 5px rgba(112, 0, 255, 0.34);
         transition: 0.4s;
     }
@@ -93,13 +93,13 @@ body{
     .openroom-btn-txt{
        
         position: absolute;
-        top: 12px;
+        top: 19px;
         left: 10%;
     }
     .closeroom-btn-txt{
         color: #9d8fc5;
         position: absolute;
-        top: 12px;
+        top: 19px;
         right: 10%;
         font-weight: 300;
     }
@@ -117,21 +117,23 @@ body{
     }
     .profile-img-mobile{
         position: absolute;
-        width: 35px;
-        height: 35px;
-        left: 20px;
+        width: 52px;
+        height: 52px;
+        left: 12px;
         top: 10px;
         display: block;
+        border-radius: 50%;
+        box-shadow: 0px 5px 15px 2px rgba(0, 0, 0, 0.26);
     }
     .user-name-mobile{
         position: relative;
         height: 57px;
-        padding-left: 40px;
-        top: 15px;        
+        padding-left: 50px;
+        top: 20px;        
         font-style: normal;
         left: 30px;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 26px;
         max-width: 86%;
         white-space: nowrap; 
         overflow: hidden;

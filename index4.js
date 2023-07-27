@@ -22,10 +22,16 @@ const provider = new GoogleAuthProvider();
 const storage = getStorage();
 
 var email = localStorage.getItem('email');
-user_name.innerHTML = email
+let use  = localStorage.getItem('username')
+user_name.innerHTML = use
 const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
+let profile_img = localStorage.getItem('profile')
+console.log(profile_img)
+let user_profile = document.getElementById('profile')
+user_profile.src = profile_img
+
 
 document.getElementById('img-input').addEventListener('input',function(){
   let file = document.getElementById('img-input').files[0]

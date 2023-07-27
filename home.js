@@ -42,6 +42,9 @@ document.getElementById('sign').addEventListener('click',function(){
        
         localStorage.setItem('email',user.email );
         let username= user.displayName
+        let profile_img = user.photoURL
+        localStorage.setItem('profile',profile_img)
+        console.log(profile_img)
         let accountname1 = username.replace(' ','')
         let accountname = accountname1.replace(' ','')
         localStorage.setItem('username',accountname );
