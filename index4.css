@@ -59,7 +59,7 @@ body{
      }
     .top-bar{
         position: fixed;
-         background: #4738A1;
+         background: #543EE0;
         height: 110px;
         width: 100%;
         display: flex;
@@ -223,7 +223,7 @@ body{
     position: absolute;
     top: 0px;
     width: 100%;
-    border-top: 1px solid #714be3;
+    border-top: 1px solid #25222d;
     bottom: 0px;
     overflow-y: scroll;
    
@@ -235,7 +235,7 @@ body{
     top: 0px;
     left: 500px;
     width: 100%;
-    border-top: 1px solid #5B3886;
+    border-top: 1px solid #25222d;
     bottom: 0px;
     overflow-y: scroll;
     display: block;

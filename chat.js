@@ -219,21 +219,29 @@ function appendListChatElement2(values,username,keys){
   
 }
 if(roomtype =='room'){
+
   document.getElementById('send-btn').addEventListener('click',function(){
-    audio.play();
+    
     const message_chat = document.getElementById('chat_int').value
-    chat_int.value = ""
-    push(ref(db,"rooms/"+room_name),message_chat+' '+usernamedb)
+    if(message_chat != ''){
+      chat_int.value = ""
+      push(ref(db,"rooms/"+room_name),message_chat+' '+usernamedb)
+      audio.play();
+    }
+    
    
 })
 
 }
 else{
   document.getElementById('send-btn').addEventListener('click',function(){
-    audio.play();
     const message_chat = document.getElementById('chat_int').value
-    chat_int.value = ""
-    push(ref(db,"rooms2/"+room_name),message_chat+' '+usernamedb)
+    if(message_chat != ''){
+      chat_int.value = ""
+      push(ref(db,"rooms2/"+room_name),message_chat+' '+usernamedb)
+      audio.play();
+
+    }
    
 })
 }

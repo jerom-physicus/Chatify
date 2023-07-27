@@ -206,7 +206,7 @@ body{
 @media only screen and (max-width: 600px){
     body{
         overflow: hidden;
-        background: #0F0D11;
+        background: #18151B;
     }
     .profile-head{
         position: fixed;
@@ -214,11 +214,11 @@ body{
         top: 0;
         left: 0;
         flex-direction: row;
-        height: 57px;
+        height: 60px;
         width: 100%;
         flex-shrink: 0;
-        border-radius: 0px 0px 10px 10px;
-        background: #4C3BB3;
+        border-radius: 12px;
+        background: #543EE0;
     }
     .profile-head-d{
         position: fixed;
@@ -229,47 +229,47 @@ body{
         height: fit-content;
         width: 100%;
         flex-shrink: 0;
-        border-radius: 0px 0px 10px 10px;
-        background: #4C3BB3;
+        border-radius: 12px;
+        background: #543EE0;
         display: none;
     }
     .bin{
         position: absolute;
         right: 20px;
-        top: 15px;
+        top: 18px;
         width: 25px;
         height: 25px;
     }
     .del-msg{
         position: relative;
-        top: 13px;
+        top: 16px;
         font-weight: 300;
         left: 10%;
         text-align: center;
     }
     .profile-img-mobile-chat{
         position: fixed;
-        top: 14px;
-        left:82%;
-        width: 35px;
-        height: 35px;
+        top: 16px;
+        left:83%;
+        width: 30px;
+        height: 30px;
     }
     .count{
         position: fixed;
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 400;
+        color: #221e3d;
+        font-size: 11.5px;
+        font-weight: 900;
         top: 9px;
         left:92%;
         border-radius: 17px;
-        background: #ffffff2f;
-        width: 18px;
-        height: 18px;
+        background: #ffffff;
+        width: 16px;
+        height: 16px;
         text-align: center;
     }
     .arrow{
         position: relative;
-        width: 28px;
+        width: 27px;
         height: 28px;
         top: 15px;
         left: 4px;
@@ -293,8 +293,8 @@ body{
     }
     .user-name-mobile-chat{
         position: relative;
-        left: 7%;
-        top: 13px;
+        left: 5%;
+        top: 17px;
         font-size: 18px;
         font-weight: 400;
         max-width: 250px;
@@ -334,7 +334,7 @@ body{
         position: relative;
         bottom: -10px;
         width: 91%;
-        height: 45px;
+        height: 41px;
         left: 2px; 
         color: #FFFFFF;
         border-style: none;
@@ -347,9 +347,11 @@ body{
     .send-icon{
         position: fixed;
         z-index: 1;
-        width: 23px;
-        bottom: 20px;
-        left: 85%;
+        width: 35px;
+        bottom: 13px;
+        left: 83%;
+        border-style: none;
+        padding: 5px;
     
     }
     .message-box{
@@ -366,7 +368,7 @@ body{
         height: fit-content;
         padding-right: 14px;
         border-radius: 10px 0px 10px 10px ;
-        background: #624dd7;
+        background: #543EE0;
         margin-top: 20px;
     }
     .chat{
@@ -396,7 +398,7 @@ body{
         padding-bottom: 3px;
         user-select: none;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 16px;
         user-select: none;
     }
     ::-webkit-scrollbar {
