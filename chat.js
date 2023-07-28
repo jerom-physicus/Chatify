@@ -24,6 +24,10 @@ const roomtype = localStorage.getItem('room_type');
 const usernamedb = localStorage.getItem('username');
 const room_name = localStorage.getItem('room_name');
 var email = localStorage.getItem('email');
+if(room_name == null){
+  alert('Select a room to join')
+  window.location.href = 'index2.html'
+}
 
 
 getDownloadURL(Sref(storage, room_name))
@@ -32,7 +36,6 @@ getDownloadURL(Sref(storage, room_name))
     image.src = url
   })
   .catch((error) => {
-    console.log(error)
     // Handle any errors
   });
 
@@ -124,7 +127,6 @@ function getusername(username){
   count.innerHTML = usersnbr
   for (let i = 0; i < users.length; i++) {
     globalThis.element = users[i];
-    //console.log(element)
     getmembers(element)
 
     
@@ -149,10 +151,7 @@ function appendListChatElement(values,username,keys){
     let chatname = document.createElement("p")
     chatname.textContent = username
     chatdiv.append(chatname)
-    //console.log('hello')
-    //alerterror('new message')
-    //var audio = new Audio('notify2.wav');
-    //audio.play();
+    
    
 
     if(usernamedb !== username) {

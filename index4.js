@@ -28,7 +28,6 @@ const dbroom_name = localStorage.getItem('room_name');
 const data = ref(db,"rooms/")
 const data2 = ref(db,"rooms2/")
 let profile_img = localStorage.getItem('profile')
-console.log(profile_img)
 let user_profile = document.getElementById('profile')
 user_profile.src = profile_img
 
@@ -40,13 +39,11 @@ profile.src = URL.createObjectURL(file)
 document.getElementById('place-img').style.display = 'inline'
 })
 let exceptions = ['.','#','[',']','/']
-console.log(exceptions)
 
 document.getElementById('create-room-int').addEventListener('click',function(){
     let room_name = document.getElementById('room-name-int').value
     let room_key = document.getElementById('room-key-int').value
     let room_name_str = room_name.split('');
-    console.log(room_name_str)
     onValue(data2,function(snapshot){  
       globalThis.values2 = Object.keys(snapshot.val('room_name'))})
     onValue(data,function(snapshot){  
@@ -54,7 +51,6 @@ document.getElementById('create-room-int').addEventListener('click',function(){
           
     })
     let totalroom = values.concat(values2)
-    console.log(totalroom)
     let room_name2 = room_name.replace(' ','')
     if (room_name2 == ''){
       
@@ -70,7 +66,6 @@ document.getElementById('create-room-int').addEventListener('click',function(){
       }
       else{
         if(room_name_str.includes(exceptions)){
-          console.log("exceptions")
         }
         else{
 
@@ -88,7 +83,6 @@ document.getElementById('create-room-int').addEventListener('click',function(){
                 const task = uploadBytesResumable(refl,file)
                 task.on('state-changed',(snapshot)=>{
                   let pro = (snapshot.bytesTransferred / snapshot.totalBytes)*100
-                  console.log(pro)
                   if(pro == 100){
                     setTimeout(() => {
                       set(ref(db,"rooms/"+room_name), {
@@ -177,7 +171,6 @@ document.getElementById('create-room-int').addEventListener('click',function(){
 onValue(data,function(snapshot){ 
    add.innerHTML = ''
     let values = Object.keys(snapshot.val('room'))
-    console.log(values)
     let setdata = Object.entries(snapshot.val())
     for (let i=0 ; i <values.length; i++){
       let itemsarray = setdata[i]
@@ -241,7 +234,6 @@ function appendListElement(room_list,room_name){
                     deleteObject(Sref(storage,values)).then(() => {
                       // File deleted successfully
                     }).catch((error) => {
-                      console.log(error)
                       // Uh-oh, an error occurred!
                     });
                         remove(ref(db,"rooms/"+values))
@@ -282,7 +274,6 @@ function appendListElement(room_list,room_name){
       })
       })
       .catch((error) => {
-        console.log(error)
         alerterror(error)
         
       });
@@ -295,9 +286,11 @@ function appendListElement(room_list,room_name){
     
   
       document.getElementById('search-input').addEventListener('input',e=>{
-        
+        document.getElementById('clear-int').style.display = 'block'
+        document.getElementById('open-room-content-s').style.display = 'block'
+        document.getElementById('open-room-content').style.display = 'none'
       let filter = e.target.value
-      add.innerHTML = ''
+      adds.innerHTML = ''
       for (let i = 0; i < room_list.length; i++) {
         
         let values = room_list[i]
@@ -308,10 +301,8 @@ function appendListElement(room_list,room_name){
             globalThis.newImg = document.createElement("img")
             globalThis.newTxt = document.createElement("p")
             newImg.src = url
-    
-            
             newTxt.textContent =values
-            add.append(newEl)
+            adds.append(newEl)
             newEl.append(newImg)
             newEl.append(newTxt)
             newEl.style.display = "flex";
@@ -380,7 +371,7 @@ function appendListElement(room_list,room_name){
             
             globalThis. newEl = document.createElement("li")
             newEl.textContent =room_list[i]
-            add.append(newEl)
+            adds.append(newEl)
             newEl.style.display = "none";
           }
             
@@ -392,14 +383,22 @@ function appendListElement(room_list,room_name){
       
      
       })
+      document.getElementById('open-room-content-s').style.display = 'none'
+        document.getElementById('open-room-content').style.display = 'block'
       
   }
-
+document.getElementById('clear-int').addEventListener('click',function(){
+  document.getElementById('clear-int').style.display = 'none'
+  document.getElementById('search-input').value = ''
+  document.getElementById('open-room-content-s').style.display = 'none'
+  document.getElementById('close-room-content-s').style.display = 'none'
+  document.getElementById('open-room-content').style.display = 'block'
+  document.getElementById('close-room-content').style.display = 'block'
+})
 
   onValue(data2,function(snapshot){ 
     add2.innerHTML = '' 
       let values = Object.keys(snapshot.val('room_name'))
-      console.log(values)
       let setdata = Object.entries(snapshot.val())
       for (let i=0 ; i <values.length; i++){
         let itemsarray = setdata[i]
@@ -424,7 +423,6 @@ function appendListElement2(room_list){
     globalThis.newImg = document.createElement("img")
     globalThis.newTxt = document.createElement("p")
     newImg.src = url
-    console.log(url)
     
     
     newTxt.textContent =room_list[k]
@@ -435,15 +433,17 @@ function appendListElement2(room_list){
   })
   .catch((error) => {
     alerterror(error)
-    console.log(error)
     
   });
       
     }
     document.getElementById('search-input').addEventListener('input',e=>{
+      document.getElementById('clear-int').style.display = 'block'
+        document.getElementById('close-room-content-s').style.display = 'block'
+        document.getElementById('close-room-content').style.display = 'none'
   
       let filter = e.target.value
-      add2.innerHTML = ''
+      add2s.innerHTML = ''
       
       for (let i = 0; i < room_list.length; i++) {
         let values = room_list[i]
@@ -455,11 +455,10 @@ function appendListElement2(room_list){
             globalThis.newImg = document.createElement("img")
             globalThis.newTxt = document.createElement("p")
             newImg.src = url
-            console.log(url)
             
             
             newTxt.textContent =room_list[i]
-            add2.append(newEl)
+            add2s.append(newEl)
             newEl.append(newImg)
             newEl.append(newTxt)
             newEl.style.display = "flex";
@@ -469,7 +468,7 @@ function appendListElement2(room_list){
           } else {
             globalThis. newEl = document.createElement("li")
             newEl.textContent =room_list[i]
-            add2.append(newEl)
+            add2s.append(newEl)
             newEl.style.display = "none";
             functions(values)
           }
@@ -493,7 +492,6 @@ function appendListElement2(room_list){
             let dbemail = Object.values(snapshot.val('email'))
             let sorted = dbemail.length
             let emailindex = sorted-3 
-            console.log(dbemail[emailindex]) 
             if(dbemail[emailindex]==email){
               document.getElementById('join-delete-alert').style.transform = ' translateY(0%)'
               document.getElementById('close_icon2').addEventListener('click',function(){          
@@ -529,16 +527,12 @@ function appendListElement2(room_list){
             else{
                 onValue(ref(db,"rooms2/"+values),function(snapshot){  
                     let dbemail = Object.values(snapshot.val('room_key'))
-                    //console.log(values)
-                   // let dbemail = Object.values(snapshot.val('email'))
                    
                    
                     let sorted = dbemail.length
                     let emailindex = sorted-2
                     let dbkey = dbemail[emailindex] 
                     let localkey = localStorage.getItem(values)
-                    //console.log(localkey)
-                    //console.log(dbkey)
                    
                    if(localkey == dbkey){
                    
@@ -696,7 +690,7 @@ function chatHTML(){
 
 
 document.getElementById('open-room-content').addEventListener('swiped-left',function(){
-  document.getElementById('bar').style.left = '55%'
+  document.getElementById('bar').style.left = '56%'
   document.getElementById('open-room-img').style.display = 'none'
     document.getElementById('close-room-img').style.display = 'block'
     document.getElementById('close-room-content').style.display = 'block'
@@ -704,7 +698,6 @@ document.getElementById('open-room-content').addEventListener('swiped-left',func
     document.getElementById('close-room-btn-txt').style.color = 'white'
     document.getElementById('open-room-btn-txt').style.color = '#9d8fc5'
 
-    console.log("swiped")
 })
 document.getElementById('close-room-content').addEventListener('swiped-right',function(){
   document.getElementById('bar').style.left = '20px'
@@ -715,7 +708,6 @@ document.getElementById('close-room-content').addEventListener('swiped-right',fu
     document.getElementById('open-room-btn-txt').style.color = 'white'
     document.getElementById('close-room-btn-txt').style.color = '#9d8fc5'
 
-    console.log("swiped")
 })
 
 
@@ -729,7 +721,7 @@ document.getElementById('open-room-btn-txt').addEventListener('click',function()
     document.getElementById('close-room-btn-txt').style.color = '#9d8fc5'
 })
 document.getElementById('close-room-btn-txt').addEventListener('click',function(){
-  document.getElementById('bar').style.left = '55%'
+  document.getElementById('bar').style.left = '56%'
   document.getElementById('open-room-img').style.display = 'none'
     document.getElementById('close-room-img').style.display = 'block'
     document.getElementById('close-room-content').style.display = 'block'

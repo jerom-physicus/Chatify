@@ -65,6 +65,7 @@ nav ul li a{
     color: white;
     font-weight: 300;
     letter-spacing: 3px;
+    text-decoration: none;
 }
 li:hover{
     font-size: 28px;
