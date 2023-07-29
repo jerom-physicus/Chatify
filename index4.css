@@ -1064,6 +1064,7 @@ body{
     transition: 0.8s;
     transform: translateY(180%);
     overflow-y: scroll;
+    left: 0;
 
 }
 .create-img{

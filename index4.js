@@ -784,4 +784,4 @@ document.getElementById('create-close').addEventListener('click',function(){
   document.getElementById('room-key-int').style.display = 'flex'
 
 })
-//------------------------- CHAT INTERFACE CONTENT----------------------------------------
+//------------------------- THE END----------------------------------------
